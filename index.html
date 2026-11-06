@@ -29,7 +29,7 @@ html{scroll-behavior:smooth}
 @keyframes dcup{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 .dc-up{opacity:0;animation:dcup .7s cubic-bezier(.2,.7,.2,1) forwards}
 @keyframes dcfade{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
-@supports (animation-timeline: view()){.dc-reveal{animation:dcfade linear both;animation-timeline:view();animation-range:entry 0% cover 22%}}
+@supports (animation-timeline: view()){.dc-reveal{animation:dcfade linear both;animation-timeline:view();animation-range:entry 0% entry 70%}}
 @keyframes dcmarq{to{transform:translateX(-50%)}}
 .dc-marquee{display:flex;width:max-content;animation:dcmarq 45s linear infinite}
 .dc-marquee-wrap:hover .dc-marquee{animation-play-state:paused}
@@ -40,6 +40,37 @@ html{scroll-behavior:smooth}
 .dc-glow:hover{border-color:#3DDC84 !important}
 @keyframes dcrole{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 .dc-role{display:inline-block;animation:dcrole .45s ease-out}
+
+.dc-bnav{display:none}
+.dc-more>summary{list-style:none;cursor:pointer}
+.dc-more>summary::-webkit-details-marker{display:none}
+.dc-more[open]>summary .dc-more-open{display:none}
+.dc-more:not([open])>summary .dc-more-close{display:none}
+.dc-snap::-webkit-scrollbar{display:none}
+.dc-swipe-hint{display:none}
+@media (max-width:760px){
+ .dc-toplink{display:none!important}
+ .dc-bnav{display:flex;position:fixed;left:10px;right:10px;bottom:10px;z-index:40;justify-content:space-around;align-items:center;padding:6px;border-radius:22px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 12px 40px rgba(0,0,0,.45)}
+ .dc-bnav a{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;min-height:52px;justify-content:center;border-radius:16px;text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700}
+ .dc-page{padding-bottom:96px}
+ section{padding-top:40px!important;padding-bottom:40px!important}
+ #top{padding-top:36px!important;gap:28px!important}
+ h1{font-size:50px!important}
+ h2{font-size:30px!important}
+ .dc-code{font-size:11.5px!important}
+ .dc-stats{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
+ .dc-stats>div{padding:16px!important}
+ .dc-stats>div>span:nth-child(2){font-size:34px!important}
+ .dc-snap{display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;align-items:stretch;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px!important;margin-left:-24px!important;margin-right:-24px!important;padding:4px 24px 12px!important;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+ .dc-snap>*{flex:0 0 86%!important;min-width:0;scroll-snap-align:center;margin-bottom:0!important}
+ .dc-snap .dc-reveal{animation:none!important}
+ .dc-swipe-hint{display:inline-flex}
+ .dc-shot{height:300px!important}
+ .dc-panel{border-left:0!important;border-top:1px solid #1F2A36;padding:20px!important}
+ .dc-body{padding:22px!important}
+ .dc-about{padding-left:16px!important;font-size:16px!important}
+ .dc-bigtitle{font-size:36px!important}
+}
 @media (prefers-reduced-motion: reduce){.dc-cursor,.dc-marquee,.dc-pulse,.dc-role{animation:none}.dc-line,.dc-up{animation:none;opacity:1}.dc-reveal{animation:none}.dc-card:hover{transform:none}}
 </style>
 
@@ -50,7 +81,7 @@ html{scroll-behavior:smooth}
 <noscript><p style="padding:24px;font-family:sans-serif">Dostonbek Eshmurodov — Mobile Developer (Android / iOS). Email: eshmurodovdoston630@gmail.com · Telegram: @Programmer_2001</p></noscript>
 <template id="dc-template">
 
-<div style="position: relative; overflow: hidden; font-family: Inter, system-ui, sans-serif; color: {{c.text}}; background-color: {{c.bg}}; background-image: radial-gradient({{c.dot}} 1px, transparent 1px); background-size: 26px 26px; min-height: 100vh">
+<div class="dc-page" style="position: relative; overflow: hidden; font-family: Inter, system-ui, sans-serif; color: {{c.text}}; background-color: {{c.bg}}; background-image: radial-gradient({{c.dot}} 1px, transparent 1px); background-size: 26px 26px; min-height: 100vh">
 
 <div aria-hidden="true" style="position: absolute; top: -260px; right: -200px; width: 820px; height: 820px; border-radius: 50%; background: radial-gradient(circle, {{c.glow}} 0%, transparent 65%); pointer-events: none"></div>
 <div aria-hidden="true" style="position: absolute; top: 340px; left: -320px; width: 640px; height: 640px; border-radius: 50%; background: radial-gradient(circle, {{c.glow2}} 0%, transparent 65%); pointer-events: none"></div>
@@ -60,7 +91,7 @@ html{scroll-behavior:smooth}
 <a href="#top" style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 17px; color: {{c.text}}; text-decoration: none"><span style="color: {{c.accentText}}">~/</span>dostonbek<span style="color: {{c.subtle}}">.dev</span></a>
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 2px">
 <sc-for list="{{t.nav}}" as="n" hint-placeholder-count="5">
-<a href="{{n.href}}" style="padding: 12px 9px; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: {{c.muted}}; text-decoration: none"><span style="color: {{c.accentText}}">{{n.num}}</span>{{n.label}}</a>
+<a href="{{n.href}}" class="dc-toplink" style="padding: 12px 9px; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: {{c.muted}}; text-decoration: none"><span style="color: {{c.accentText}}">{{n.num}}</span>{{n.label}}</a>
 </sc-for>
 <div role="group" aria-label="Language" style="display: flex; gap: 2px; padding: 3px; border-radius: 10px; border: 1px solid {{c.border}}; background: {{c.surface}}; margin-left: 8px">
 <sc-for list="{{langs}}" as="l" hint-placeholder-count="3">
@@ -111,7 +142,7 @@ html{scroll-behavior:smooth}
 <span style="margin-left: 12px; padding: 4px 10px; border-radius: 6px; background: #0D1117; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #E6EDF3">Developer.kt</span>
 <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #8B949E">Backend.kt</span>
 </div>
-<div style="padding: 20px 0; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.75; overflow-x: auto">
+<div class="dc-code" style="padding: 20px 0; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.75; overflow-x: auto">
 <sc-for list="{{code}}" as="ln" hint-placeholder-count="13">
 <div class="dc-line" style="animation-delay: {{ln.delay}}; display: flex; white-space: pre; padding-right: 20px">
 <span style="display: inline-block; width: 44px; flex-shrink: 0; text-align: right; padding-right: 16px; color: #6E7681; user-select: none">{{ln.no}}</span>
@@ -136,7 +167,7 @@ html{scroll-behavior:smooth}
 </div>
 
 <section style="position: relative; max-width: 1180px; margin: 0 auto; padding: 64px 24px 24px">
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px">
+<div class="dc-stats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px">
 <sc-for list="{{t.stats}}" as="s" hint-placeholder-count="4">
 <div class="dc-reveal dc-card" style="background: {{c.surface}}; border: 1px solid {{c.border}}; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 6px">
 <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: {{c.subtle}}">{{s.key}}</span>
@@ -152,7 +183,7 @@ html{scroll-behavior:smooth}
 <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 15px; color: {{c.accentText}}">01. <span style="color: {{c.subtle}}">{{t.aboutKicker}}</span></p>
 <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 42px; line-height: 1.08">{{t.aboutTitle}}</h2>
 </div>
-<div class="dc-reveal" style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 18px; font-size: 17px; line-height: 1.8; color: {{c.muted}}; border-left: 2px solid {{c.border}}; padding-left: 28px">
+<div class="dc-reveal" style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 18px; font-size: 17px; line-height: 1.8; color: {{c.muted}}; border-left: 2px solid {{c.border}}; padding-left: 28px" class="dc-about">
 <sc-for list="{{about}}" as="p" hint-placeholder-count="4">
 <p style="margin: 0"><sc-for list="{{p.segs}}" as="sg" hint-placeholder-count="3"><sc-if value="{{sg.b}}" hint-placeholder-val="{{ false }}"><strong style="color: {{c.text}}; font-weight: 600">{{sg.t}}</strong></sc-if><sc-if value="{{sg.n}}" hint-placeholder-val="{{ true }}">{{sg.t}}</sc-if></sc-for></p>
 </sc-for>
@@ -187,9 +218,12 @@ html{scroll-behavior:smooth}
 <span style="font-size: 15px; color: {{c.accentText}}; font-weight: 600">{{j.company}} <span style="color: {{c.subtle}}; font-weight: 400">· {{j.sector}}</span></span>
 </div>
 <div style="display: flex; flex-direction: column; gap: 8px">
-<sc-for list="{{j.points}}" as="p" hint-placeholder-count="3">
+<sc-for list="{{j.pts.top}}" as="p" hint-placeholder-count="3">
 <div style="display: flex; gap: 10px; font-size: 16px; line-height: 1.6; color: {{c.muted}}"><span style="font-family: 'JetBrains Mono', monospace; color: {{c.accentText}}; flex-shrink: 0">+</span><span><sc-for list="{{p}}" as="sg" hint-placeholder-count="2"><sc-if value="{{sg.b}}" hint-placeholder-val="{{ false }}"><strong style="color: {{c.text}}; font-weight: 600">{{sg.t}}</strong></sc-if><sc-if value="{{sg.n}}" hint-placeholder-val="{{ true }}">{{sg.t}}</sc-if></sc-for></span></div>
 </sc-for>
+<sc-if value="{{j.pts.hasRest}}" hint-placeholder-val="{{ false }}"><details class="dc-more"><summary style="display: inline-flex; align-items: center; gap: 8px; margin-top: 4px; padding: 10px 14px; min-height: 44px; box-sizing: border-box; border-radius: 10px; border: 1px dashed {{c.accentText}}; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; color: {{c.accentText}}"><span class="dc-more-open">{{j.pts.more}}</span><span class="dc-more-close">{{t.lessLabel}}</span></summary><div style="display: flex; flex-direction: column; gap: 8px; padding-top: 10px"><sc-for list="{{j.pts.rest}}" as="p" hint-placeholder-count="2">
+<div style="display: flex; gap: 10px; font-size: 16px; line-height: 1.6; color: {{c.muted}}"><span style="font-family: 'JetBrains Mono', monospace; color: {{c.accentText}}; flex-shrink: 0">+</span><span><sc-for list="{{p}}" as="sg" hint-placeholder-count="2"><sc-if value="{{sg.b}}" hint-placeholder-val="{{ false }}"><strong style="color: {{c.text}}; font-weight: 600">{{sg.t}}</strong></sc-if><sc-if value="{{sg.n}}" hint-placeholder-val="{{ true }}">{{sg.t}}</sc-if></sc-for></span></div>
+</sc-for></div></details></sc-if>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: 4px">
 <sc-for list="{{j.stack}}" as="s" hint-placeholder-count="5">
@@ -208,15 +242,17 @@ html{scroll-behavior:smooth}
 <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 42px; line-height: 1.08">{{t.projTitle}}</h2>
 </div>
 
+<p class="dc-swipe-hint" style="margin: 0; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: {{c.subtle}}">{{t.swipe}} →</p>
+<div class="dc-snap" style="display: flex; flex-direction: column; gap: 28px">
 <sc-for list="{{t.cases}}" as="cs" hint-placeholder-count="2">
 <article class="dc-reveal dc-card" style="border-radius: 18px; overflow: hidden; border: 1px solid #30363D; background: #0D1117; display: flex; flex-wrap: wrap">
-<div style="flex: 999 1 460px; min-width: 0; padding: 36px; display: flex; flex-direction: column; gap: 16px">
+<div class="dc-body" style="flex: 999 1 460px; min-width: 0; padding: 36px; display: flex; flex-direction: column; gap: 16px">
 <div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px">
 <span style="padding: 5px 10px; border-radius: 999px; background: #1F6FEB; color: #FFFFFF; font-weight: 700">{{cs.badge}}</span>
 <span style="padding: 5px 10px; border-radius: 999px; border: 1px solid #30363D; color: #C9D1D9">{{cs.kind}}</span>
 </div>
 <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #8B949E">{{cs.module}}</p>
-<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 44px; line-height: 1; color: #FFFFFF">{{cs.name}}</h3>
+<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 44px; line-height: 1; color: #FFFFFF" class="dc-bigtitle">{{cs.name}}</h3>
 <p style="margin: 0; font-size: 17px; line-height: 1.65; color: #C9D1D9">{{cs.desc}}</p>
 <div style="display: flex; flex-wrap: wrap; gap: 6px">
 <sc-for list="{{cs.tags}}" as="tg" hint-placeholder-count="6">
@@ -225,25 +261,31 @@ html{scroll-behavior:smooth}
 </div>
 <p style="margin: 4px 0 0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #8B949E">{{t.nda}}</p>
 </div>
-<div style="flex: 1 1 360px; min-width: 0; padding: 32px; background: #111821; border-left: 1px solid #1F2A36; display: flex; flex-direction: column; gap: 10px">
+<div class="dc-panel" style="flex: 1 1 360px; min-width: 0; padding: 32px; background: #111821; border-left: 1px solid #1F2A36; display: flex; flex-direction: column; gap: 10px">
 <p style="margin: 0 0 4px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #8B949E">features.kt</p>
-<sc-for list="{{cs.features}}" as="f" hint-placeholder-count="6">
+<sc-for list="{{cs.feat.top}}" as="f" hint-placeholder-count="4">
 <div style="display: flex; gap: 12px; align-items: flex-start; padding: 11px 14px; border-radius: 10px; border: 1px solid #1F2A36; background: #0D1117">
 <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #79C0FF; flex-shrink: 0">{{f.n}}</span>
 <span style="font-size: 15px; line-height: 1.5; color: #E6EDF3">{{f.t}}</span>
 </div>
 </sc-for>
+<sc-if value="{{cs.feat.hasRest}}" hint-placeholder-val="{{ false }}"><details class="dc-more"><summary style="display: inline-flex; align-items: center; gap: 8px; margin-top: 4px; padding: 10px 14px; min-height: 44px; box-sizing: border-box; border-radius: 10px; border: 1px dashed #79C0FF; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; color: #79C0FF"><span class="dc-more-open">{{cs.feat.more}}</span><span class="dc-more-close">{{t.lessLabel}}</span></summary><div style="display: flex; flex-direction: column; gap: 10px; padding-top: 10px"><sc-for list="{{cs.feat.rest}}" as="f" hint-placeholder-count="3">
+<div style="display: flex; gap: 12px; align-items: flex-start; padding: 11px 14px; border-radius: 10px; border: 1px solid #1F2A36; background: #0D1117">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #79C0FF; flex-shrink: 0">{{f.n}}</span>
+<span style="font-size: 15px; line-height: 1.5; color: #E6EDF3">{{f.t}}</span>
+</div>
+</sc-for></div></details></sc-if>
 </div>
 </article>
 </sc-for>
 
 <article class="dc-reveal dc-card" style="border-radius: 18px; overflow: hidden; border: 1px solid #2B4A39; background: #0D1117; display: flex; flex-wrap: wrap">
-<div style="flex: 999 1 460px; min-width: 0; padding: 36px; display: flex; flex-direction: column; gap: 16px">
+<div class="dc-body" style="flex: 999 1 460px; min-width: 0; padding: 36px; display: flex; flex-direction: column; gap: 16px">
 <div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px">
 <span style="padding: 5px 10px; border-radius: 999px; background: #3DDC84; color: #04130A; font-weight: 700">{{t.featured}}</span>
 <span style="padding: 5px 10px; border-radius: 999px; border: 1px solid #30363D; color: #C9D1D9">Google Play</span>
 </div>
-<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 44px; line-height: 1; color: #FFFFFF">Farovon</h3>
+<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 44px; line-height: 1; color: #FFFFFF" class="dc-bigtitle">Farovon</h3>
 <p style="margin: 0; font-size: 17px; line-height: 1.65; color: #C9D1D9">{{t.farovonDesc}}</p>
 <div style="display: flex; flex-wrap: wrap; gap: 6px">
 <sc-for list="{{farovonTags}}" as="tg" hint-placeholder-count="5">
@@ -252,18 +294,25 @@ html{scroll-behavior:smooth}
 </div>
 <a href="https://play.google.com/store/apps/details?id=uz.dostonbek.cleancomposelayers" style="align-self: flex-start; margin-top: 6px; padding: 13px 18px; border-radius: 10px; background: #3DDC84; color: #04130A; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; text-decoration: none">{{t.storeLabel}}</a>
 </div>
-<div style="flex: 1 1 320px; min-width: 0; padding: 36px; background: #111821; border-left: 1px solid #1F2A36; display: flex; flex-direction: column; gap: 12px">
+<div class="dc-panel" style="flex: 1 1 320px; min-width: 0; padding: 36px; background: #111821; border-left: 1px solid #1F2A36; display: flex; flex-direction: column; gap: 12px">
 <p style="margin: 0 0 4px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #8B949E">features.kt</p>
-<sc-for list="{{t.farovonFeatures}}" as="f" hint-placeholder-count="5">
+<sc-for list="{{fvFeat.top}}" as="f" hint-placeholder-count="4">
 <div style="display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; border-radius: 10px; border: 1px solid #1F2A36; background: #0D1117">
 <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #3DDC84; flex-shrink: 0">{{f.n}}</span>
 <span style="font-size: 15px; line-height: 1.5; color: #E6EDF3">{{f.t}}</span>
 </div>
 </sc-for>
+<sc-if value="{{fvFeat.hasRest}}" hint-placeholder-val="{{ false }}"><details class="dc-more"><summary style="display: inline-flex; align-items: center; gap: 8px; margin-top: 4px; padding: 10px 14px; min-height: 44px; box-sizing: border-box; border-radius: 10px; border: 1px dashed #3DDC84; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; color: #3DDC84"><span class="dc-more-open">{{fvFeat.more}}</span><span class="dc-more-close">{{t.lessLabel}}</span></summary><div style="display: flex; flex-direction: column; gap: 10px; padding-top: 10px"><sc-for list="{{fvFeat.rest}}" as="f" hint-placeholder-count="3">
+<div style="display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; border-radius: 10px; border: 1px solid #1F2A36; background: #0D1117">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #3DDC84; flex-shrink: 0">{{f.n}}</span>
+<span style="font-size: 15px; line-height: 1.5; color: #E6EDF3">{{f.t}}</span>
+</div>
+</sc-for></div></details></sc-if>
 </div>
 </article>
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px">
+</div>
+<div class="dc-snap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px">
 <sc-for list="{{t.projects}}" as="pr" hint-placeholder-count="5">
 <article class="dc-reveal dc-card" style="border-radius: 14px; overflow: hidden; border: 1px solid #30363D; background: #0D1117; display: flex; flex-direction: column">
 <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 14px; background: #161B22; border-bottom: 1px solid #30363D; font-family: 'JetBrains Mono', monospace; font-size: 13px">
@@ -299,7 +348,7 @@ html{scroll-behavior:smooth}
 <span style="padding: 5px 10px; border-radius: 999px; background: {{c.accent}}; color: {{c.onAccent}}; font-weight: 700">full-stack</span>
 <span style="padding: 5px 10px; border-radius: 999px; border: 1px solid {{c.border}}; color: {{c.muted}}">EdTech · SaaS</span>
 </div>
-<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 40px; line-height: 1">IQ School Portal</h3>
+<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 40px; line-height: 1" class="dc-bigtitle">IQ School Portal</h3>
 <p style="margin: 0; max-width: 700px; font-size: 17px; line-height: 1.6; color: {{c.muted}}">{{t.iqDesc}}</p>
 </div>
 <div role="group" aria-label="Screenshots" style="display: flex; gap: 4px; padding: 4px; border-radius: 12px; border: 1px solid {{c.border}}; background: {{c.surface2}}">
@@ -316,7 +365,7 @@ html{scroll-behavior:smooth}
 <span style="width: 10px; height: 10px; border-radius: 50%; background: #28C840"></span>
 <span style="margin-left: 10px; flex: 1; max-width: 420px; padding: 4px 12px; border-radius: 6px; background: #0D1117; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #8B949E">iqschool · {{shotPath}}</span>
 </div>
-<div style="height: 520px; overflow-y: auto; background: #FFFFFF">
+<div class="dc-shot" style="height: 520px; overflow-y: auto; background: #FFFFFF">
 <sc-if value="{{shot0}}" hint-placeholder-val="{{ true }}"><img src="img/iq-landing.jpg" alt="IQ School landing page" style="display: block; width: 100%; height: auto"></sc-if>
 <sc-if value="{{shot1}}" hint-placeholder-val="{{ false }}"><img src="img/iq-teacher.jpg" alt="IQ School teacher dashboard" style="display: block; width: 100%; height: auto"></sc-if>
 <sc-if value="{{shot2}}" hint-placeholder-val="{{ false }}"><img src="img/iq-director.jpg" alt="IQ School director dashboard" style="display: block; width: 100%; height: auto"></sc-if>
@@ -327,12 +376,18 @@ html{scroll-behavior:smooth}
 <div style="flex: 999 1 460px; min-width: 0; padding: 28px 32px; display: flex; flex-direction: column; gap: 10px">
 <p style="margin: 0 0 4px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: {{c.subtle}}">features.kt</p>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px">
-<sc-for list="{{t.iqFeatures}}" as="f" hint-placeholder-count="8">
+<sc-for list="{{iqFeat.top}}" as="f" hint-placeholder-count="4">
 <div style="display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: 10px; border: 1px solid {{c.border}}; background: {{c.surface2}}">
 <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: {{c.accentText}}; flex-shrink: 0">{{f.n}}</span>
 <span style="font-size: 15px; line-height: 1.5; color: {{c.text}}">{{f.t}}</span>
 </div>
 </sc-for>
+<sc-if value="{{iqFeat.hasRest}}" hint-placeholder-val="{{ false }}"><details class="dc-more" style="grid-column: 1 / -1"><summary style="display: inline-flex; align-items: center; gap: 8px; margin-top: 4px; padding: 10px 14px; min-height: 44px; box-sizing: border-box; border-radius: 10px; border: 1px dashed {{c.accentText}}; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; color: {{c.accentText}}"><span class="dc-more-open">{{iqFeat.more}}</span><span class="dc-more-close">{{t.lessLabel}}</span></summary><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; padding-top: 10px"><sc-for list="{{iqFeat.rest}}" as="f" hint-placeholder-count="3">
+<div style="display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: 10px; border: 1px solid {{c.border}}; background: {{c.surface2}}">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: {{c.accentText}}; flex-shrink: 0">{{f.n}}</span>
+<span style="font-size: 15px; line-height: 1.5; color: {{c.text}}">{{f.t}}</span>
+</div>
+</sc-for></div></details></sc-if>
 </div>
 </div>
 <div style="flex: 1 1 320px; min-width: 0; padding: 28px 32px; border-left: 1px solid {{c.border}}; display: flex; flex-direction: column; gap: 18px">
@@ -351,12 +406,12 @@ html{scroll-behavior:smooth}
 </article>
 
 <article class="dc-reveal dc-card" style="border-radius: 18px; overflow: hidden; border: 1px solid #3A2E44; background: #110D16; display: flex; flex-wrap: wrap">
-<div style="flex: 999 1 460px; min-width: 0; padding: 36px; display: flex; flex-direction: column; gap: 16px">
+<div class="dc-body" style="flex: 999 1 460px; min-width: 0; padding: 36px; display: flex; flex-direction: column; gap: 16px">
 <div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px">
 <span style="padding: 5px 10px; border-radius: 999px; background: #F4C2D7; color: #2A0F1C; font-weight: 700">full-stack · live</span>
 <span style="padding: 5px 10px; border-radius: 999px; border: 1px solid #3A2E44; color: #D8CCE0">wedlink.uz</span>
 </div>
-<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 44px; line-height: 1; color: #FFFFFF">WedLink</h3>
+<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 44px; line-height: 1; color: #FFFFFF" class="dc-bigtitle">WedLink</h3>
 <p style="margin: 0; font-size: 17px; line-height: 1.65; color: #D8CCE0">{{t.wedDesc}}</p>
 <sc-for list="{{wedStack}}" as="g" hint-placeholder-count="2">
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px">
@@ -368,14 +423,20 @@ html{scroll-behavior:smooth}
 </sc-for>
 <a href="https://wedlink.uz" style="align-self: flex-start; margin-top: 6px; padding: 13px 18px; border-radius: 10px; background: #F4C2D7; color: #2A0F1C; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; text-decoration: none">{{t.wedLink}}</a>
 </div>
-<div style="flex: 1 1 340px; min-width: 0; padding: 32px; background: #17111D; border-left: 1px solid #2A2131; display: flex; flex-direction: column; gap: 10px">
+<div class="dc-panel" style="flex: 1 1 340px; min-width: 0; padding: 32px; background: #17111D; border-left: 1px solid #2A2131; display: flex; flex-direction: column; gap: 10px">
 <p style="margin: 0 0 4px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #A895B5">features.kt</p>
-<sc-for list="{{t.wedFeatures}}" as="f" hint-placeholder-count="7">
+<sc-for list="{{wdFeat.top}}" as="f" hint-placeholder-count="4">
 <div style="display: flex; gap: 12px; align-items: flex-start; padding: 11px 14px; border-radius: 10px; border: 1px solid #2A2131; background: #110D16">
 <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #F4C2D7; flex-shrink: 0">{{f.n}}</span>
 <span style="font-size: 15px; line-height: 1.5; color: #F1E6F5">{{f.t}}</span>
 </div>
 </sc-for>
+<sc-if value="{{wdFeat.hasRest}}" hint-placeholder-val="{{ false }}"><details class="dc-more"><summary style="display: inline-flex; align-items: center; gap: 8px; margin-top: 4px; padding: 10px 14px; min-height: 44px; box-sizing: border-box; border-radius: 10px; border: 1px dashed #F4C2D7; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; color: #F4C2D7"><span class="dc-more-open">{{wdFeat.more}}</span><span class="dc-more-close">{{t.lessLabel}}</span></summary><div style="display: flex; flex-direction: column; gap: 10px; padding-top: 10px"><sc-for list="{{wdFeat.rest}}" as="f" hint-placeholder-count="3">
+<div style="display: flex; gap: 12px; align-items: flex-start; padding: 11px 14px; border-radius: 10px; border: 1px solid #2A2131; background: #110D16">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #F4C2D7; flex-shrink: 0">{{f.n}}</span>
+<span style="font-size: 15px; line-height: 1.5; color: #F1E6F5">{{f.t}}</span>
+</div>
+</sc-for></div></details></sc-if>
 </div>
 </article>
 </section>
@@ -385,7 +446,7 @@ html{scroll-behavior:smooth}
 <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 15px; color: {{c.accentText}}">05. <span style="color: {{c.subtle}}">{{t.skillsKicker}}</span></p>
 <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 42px; line-height: 1.08">{{t.skillsTitle}}</h2>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px">
+<div class="dc-snap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px">
 <sc-for list="{{t.skillGroups}}" as="g" hint-placeholder-count="6">
 <div class="dc-reveal dc-card" style="border: 1px solid {{c.border}}; border-radius: 14px; background: {{c.surface}}; overflow: hidden">
 <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 20px; border-bottom: 1px solid {{c.border}}; background: {{c.surface2}}; font-family: 'JetBrains Mono', monospace; font-size: 14px">
@@ -410,7 +471,7 @@ html{scroll-behavior:smooth}
 <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 15px; color: {{c.accentText}}">06. <span style="color: {{c.subtle}}">{{t.extraKicker}}</span></p>
 <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 42px; line-height: 1.08">{{t.extraTitle}}</h2>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px">
+<div class="dc-snap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px">
 <sc-for list="{{t.extras}}" as="x" hint-placeholder-count="3">
 <div class="dc-reveal dc-card" style="background: {{c.surface}}; border: 1px solid {{c.border}}; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
 <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: {{c.swift}}">{{x.endpoint}}</span>
@@ -468,6 +529,11 @@ html{scroll-behavior:smooth}
 </div>
 </section>
 
+<nav class="dc-bnav" aria-label="Mobile navigation" style="background: {{c.bnavBg}}; border: 1px solid {{c.border}}">
+<sc-for list="{{bnav}}" as="b" hint-placeholder-count="5">
+<a href="{{b.href}}" style="color: {{b.color}}; background: {{b.bg}}"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="{{b.d}}"></path></svg>{{b.label}}</a>
+</sc-for>
+</nav>
 <footer style="position: relative; border-top: 1px solid {{c.border}}; background: {{c.headerBg}}">
 <div style="max-width: 1180px; margin: 0 auto; padding: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: {{c.subtle}}">
 <span>© 2026 {{t.first}} {{t.last}}</span>
@@ -517,7 +583,7 @@ function patchKids(parent,nk){var i;for(i=0;i<nk.length;i++){var o=parent.childN
  while(parent.childNodes.length>nk.length)parent.removeChild(parent.lastChild);}
 function patch(o,n){if(o.nodeType===3){if(o.data!==n.data)o.data=n.data;return;}
  var i,oa=o.attributes,na=n.attributes;
- for(i=oa.length-1;i>=0;i--)if(!n.hasAttribute(oa[i].name))o.removeAttribute(oa[i].name);
+ for(i=oa.length-1;i>=0;i--)if(!n.hasAttribute(oa[i].name)&&!(o.nodeName==='DETAILS'&&oa[i].name==='open'))o.removeAttribute(oa[i].name);
  for(i=0;i<na.length;i++)if(o.getAttribute(na[i].name)!==na[i].value)o.setAttribute(na[i].name,na[i].value);
  o.__h=n.__h;patchKids(o,Array.prototype.slice.call(n.childNodes));}
 function render(){var vals=comp.renderVals();var out=[];kids(tpl,vals,null,out);patchKids(app,out);
@@ -538,13 +604,29 @@ window.__dcStart=function(Component,defaults){
 class Component extends DCLogic {
 constructor(props) {
 super(props);
-this.state = { lang: null, dark: null, roleIdx: 0, shot: 0 };
+this.state = { lang: null, dark: null, roleIdx: 0, shot: 0, sec: 'home' };
 }
 componentDidMount() {
 this.timer = setInterval(() => this.setState((s) => ({ roleIdx: (s.roleIdx + 1) % 4 })), 2600);
+this.onScroll = () => {
+if (this.raf) return;
+this.raf = requestAnimationFrame(() => {
+this.raf = null;
+const map = [['contact', 'contact'], ['skills', 'skills'], ['projects', 'proj'], ['fullstack', 'proj'], ['experience', 'exp'], ['about', 'home'], ['top', 'home']];
+const order = ['top', 'about', 'experience', 'projects', 'fullstack', 'skills', 'contact'];
+let cur = 'home';
+for (const id of order) { const el = document.getElementById(id); if (el && el.getBoundingClientRect().top < window.innerHeight * 0.45) { cur = (map.find((m) => m[0] === id) || [0, 'home'])[1]; } }
+if (cur !== this.state.sec) this.setState({ sec: cur });
+});
+};
+window.addEventListener('scroll', this.onScroll, { passive: true });
 }
 componentWillUnmount() {
-clearInterval(this.timer);
+clearInterval(this.timer); window.removeEventListener('scroll', this.onScroll);
+}
+split(list, n, moreTpl) {
+const top = list.slice(0, n), rest = list.slice(n);
+return { top, rest, hasRest: rest.length > 0, more: moreTpl.replace('{n}', String(rest.length)) };
 }
 segs(str) {
 return String(str).split('**').map((t, i) => ({ t, b: i % 2 === 1, n: i % 2 === 0 })).filter((s) => s.t.length > 0);
@@ -558,7 +640,7 @@ text: '#E6EDF3', muted: '#B3BECB', subtle: '#8B97A6', dot: 'rgba(255,255,255,0.0
 glow: 'rgba(61,220,132,0.16)', glow2: 'rgba(255,138,101,0.09)',
 accent: '#3DDC84', accentText: '#3DDC84', onAccent: '#04130A', swift: '#FF8A65',
 chipBg: '#131A23', chipBorder: '#2A3542', headerBg: 'rgba(9,12,18,0.82)',
-tagBg: 'rgba(61,220,132,0.08)', tagBorder: 'rgba(61,220,132,0.28)', tagText: '#8EF0B9'
+tagBg: 'rgba(61,220,132,0.08)', tagBorder: 'rgba(61,220,132,0.28)', tagText: '#8EF0B9', bnavBg: 'rgba(15,20,27,0.86)'
 };
 const day = {
 bg: '#F7F8FA', surface: '#FFFFFF', surface2: '#F2F4F7', border: '#E1E5EB',
@@ -566,7 +648,7 @@ text: '#0D1117', muted: '#2F3A47', subtle: '#4B5563', dot: 'rgba(13,17,23,0.07)'
 glow: 'rgba(21,128,61,0.12)', glow2: 'rgba(194,65,12,0.07)',
 accent: '#15803D', accentText: '#15803D', onAccent: '#FFFFFF', swift: '#C2410C',
 chipBg: '#FFFFFF', chipBorder: '#CBD3DD', headerBg: 'rgba(247,248,250,0.86)',
-tagBg: '#ECFDF3', tagBorder: '#B7E4C7', tagText: '#14532D'
+tagBg: '#ECFDF3', tagBorder: '#B7E4C7', tagText: '#14532D', bnavBg: 'rgba(255,255,255,0.9)'
 };
 const c = dark ? night : day;
 const T = this.texts();
@@ -621,9 +703,12 @@ const wedStack = [
 { title: 'front:', color: '#F4C2D7', items: ['React 18', 'Vite', 'Tailwind CSS', 'Framer Motion', 'Node.js / Express', 'WebSocket'] },
 { title: 'back:', color: '#3DDC84', items: ['Kotlin', 'Spring Boot 3', 'Spring Security 6', 'Google OAuth2', 'JWT', 'PostgreSQL', 'Redis', 'Hexagonal', 'Swagger', 'Docker'] }
 ];
-const jobs = t0.jobs.map((j, i) => ({ ...j, dot: i === 0 ? c.accentText : c.subtle, points: j.points.map((p) => this.segs(p)) }));
+const jobs = t0.jobs.map((j, i) => ({ ...j, dot: i === 0 ? c.accentText : c.subtle, pts: this.split(j.points.map((p) => this.segs(p)), 3, t0.moreLabel) }));
+const cases = t0.cases.map((cs) => ({ ...cs, feat: this.split(cs.features, 4, t0.moreLabel) }));
+const icons = { home: 'M3 11l9-8 9 8M5 10v10h14V10', exp: 'M4 7h16v12H4zM9 7V4h6v3', proj: 'M8 9l-4 3 4 3M16 9l4 3-4 3M13 6l-2 12', skills: 'M12 2l3 7h7l-5.5 4.5L18.5 21 12 16.5 5.5 21l2-7.5L2 9h7z', contact: 'M4 5h16v12H8l-4 4z' };
+const bnav = t0.bnav.map((b) => ({ ...b, d: icons[b.k], color: b.k === this.state.sec ? c.onAccent : c.muted, bg: b.k === this.state.sec ? c.accent : 'transparent' }));
 return {
-c, t: { ...t0, jobs }, langs, shots, iqStack, wedStack, shotPath: shotPaths[this.state.shot], shot0: this.state.shot === 0, shot1: this.state.shot === 1, shot2: this.state.shot === 2, code, marquee, dark, light: !dark,
+c, t: { ...t0, jobs, cases }, langs, bnav, fvFeat: this.split(t0.farovonFeatures, 3, t0.moreLabel), iqFeat: this.split(t0.iqFeatures, 6, t0.moreLabel), wdFeat: this.split(t0.wedFeatures, 4, t0.moreLabel), shots, iqStack, wedStack, shotPath: shotPaths[this.state.shot], shot0: this.state.shot === 0, shot1: this.state.shot === 1, shot2: this.state.shot === 2, code, marquee, dark, light: !dark,
 role: r[0], roleColor: r[1], roleKey: 'r' + this.state.roleIdx,
 heroSegs: this.segs(t0.heroText),
 about: t0.aboutParas.map((p) => ({ segs: this.segs(p) })),
@@ -723,7 +808,9 @@ eduKicker: '// образование', eduTitle: 'Образование и я�
 uni: 'Ташкентский университет информационных технологий им. Мухаммада аль-Хорезми (ТУИТ)', faculty: 'Компьютерный инжиниринг',
 langsTitle: 'Языки', spoken: ['Узбекский — родной', 'Русский', 'Английский', 'Таджикский'],
 contactTitle: 'Давайте обсудим ваш проект', contactText: 'Открыт к интересным предложениям в мобильной разработке.', location: 'Ташкент, Узбекистан',
-footer: 'сделано с Kotlin-мышлением'
+footer: 'сделано с Kotlin-мышлением',
+moreLabel: '+ ещё {n}', lessLabel: '− свернуть', swipe: 'листайте',
+bnav: [{ k: 'home', label: 'главная', href: '#top' }, { k: 'exp', label: 'опыт', href: '#experience' }, { k: 'proj', label: 'проекты', href: '#projects' }, { k: 'skills', label: 'стек', href: '#skills' }, { k: 'contact', label: 'связь', href: '#contact' }]
 }),
 uz: build({
 first: 'Dostonbek', last: 'Eshmurodov',
@@ -779,7 +866,9 @@ eduKicker: '// ta’lim', eduTitle: 'Ta’lim va tillar', degree: 'Bakalavr',
 uni: 'Muhammad al-Xorazmiy nomidagi Toshkent axborot texnologiyalari universiteti (TATU)', faculty: 'Kompyuter injiniringi',
 langsTitle: 'Tillar', spoken: ['O‘zbek — ona tili', 'Rus tili', 'Ingliz tili', 'Tojik tili'],
 contactTitle: 'Loyihangizni muhokama qilamiz', contactText: 'Mobil dasturlash sohasidagi qiziqarli takliflarga ochiqman.', location: 'Toshkent, O‘zbekiston',
-footer: 'Kotlin fikrlashi bilan yaratilgan'
+footer: 'Kotlin fikrlashi bilan yaratilgan',
+moreLabel: '+ yana {n} ta', lessLabel: '− yig‘ish', swipe: 'suring',
+bnav: [{ k: 'home', label: 'bosh', href: '#top' }, { k: 'exp', label: 'tajriba', href: '#experience' }, { k: 'proj', label: 'loyiha', href: '#projects' }, { k: 'skills', label: 'stek', href: '#skills' }, { k: 'contact', label: 'aloqa', href: '#contact' }]
 }),
 en: build({
 first: 'Dostonbek', last: 'Eshmurodov',
@@ -835,7 +924,9 @@ eduKicker: '// education', eduTitle: 'Education & languages', degree: 'Bachelor�
 uni: 'Tashkent University of Information Technologies named after Muhammad al-Khwarizmi (TUIT)', faculty: 'Computer Engineering',
 langsTitle: 'Languages', spoken: ['Uzbek — native', 'Russian', 'English', 'Tajik'],
 contactTitle: 'Let’s talk about your project', contactText: 'Open to interesting opportunities in mobile development.', location: 'Tashkent, Uzbekistan',
-footer: 'built with a Kotlin mindset'
+footer: 'built with a Kotlin mindset',
+moreLabel: '+ {n} more', lessLabel: '− show less', swipe: 'swipe',
+bnav: [{ k: 'home', label: 'home', href: '#top' }, { k: 'exp', label: 'work', href: '#experience' }, { k: 'proj', label: 'projects', href: '#projects' }, { k: 'skills', label: 'stack', href: '#skills' }, { k: 'contact', label: 'contact', href: '#contact' }]
 })
 };
 }
