@@ -70,7 +70,17 @@ html{scroll-behavior:smooth}
  .dc-body{padding:22px!important}
  .dc-about{padding-left:16px!important;font-size:16px!important}
  .dc-bigtitle{font-size:36px!important}
+ .dc-aud{display:flex!important;width:100%;flex-wrap:nowrap!important;box-sizing:border-box}
+ .dc-aud>span{display:none}
+ .dc-aud button{flex:1;justify-content:center;padding:0 8px!important;font-size:12px!important}
+ .dc-term-out{height:260px!important}
 }
+.dc-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;transform-origin:0 50%;transform:scaleX(0);pointer-events:none}
+@keyframes dcprog{to{transform:scaleX(1)}}
+@supports (animation-timeline: scroll()){.dc-progress{animation:dcprog linear both;animation-timeline:scroll(root)}}
+.dc-term-out{display:flex;flex-direction:column-reverse;overflow-y:auto}
+.dc-term input{outline:none}
+.dc-chipbtn:active{transform:scale(.97)}
 @media (prefers-reduced-motion: reduce){.dc-cursor,.dc-marquee,.dc-pulse,.dc-role{animation:none}.dc-line,.dc-up{animation:none;opacity:1}.dc-reveal{animation:none}.dc-card:hover{transform:none}}
 </style>
 
@@ -81,8 +91,9 @@ html{scroll-behavior:smooth}
 <noscript><p style="padding:24px;font-family:sans-serif">Dostonbek Eshmurodov — Mobile Developer (Android / iOS). Email: eshmurodovdoston630@gmail.com · Telegram: @Programmer_2001</p></noscript>
 <template id="dc-template">
 
-<div class="dc-page" style="position: relative; overflow: hidden; font-family: Inter, system-ui, sans-serif; color: {{c.text}}; background-color: {{c.bg}}; background-image: radial-gradient({{c.dot}} 1px, transparent 1px); background-size: 26px 26px; min-height: 100vh">
+<div class="dc-page" style="position: relative; overflow-x: clip; font-family: Inter, system-ui, sans-serif; color: {{c.text}}; background-color: {{c.bg}}; background-image: radial-gradient({{c.dot}} 1px, transparent 1px); background-size: 26px 26px; min-height: 100vh">
 
+<div class="dc-progress" aria-hidden="true" style="background: {{c.accent}}"></div>
 <div aria-hidden="true" style="position: absolute; top: -260px; right: -200px; width: 820px; height: 820px; border-radius: 50%; background: radial-gradient(circle, {{c.glow}} 0%, transparent 65%); pointer-events: none"></div>
 <div aria-hidden="true" style="position: absolute; top: 340px; left: -320px; width: 640px; height: 640px; border-radius: 50%; background: radial-gradient(circle, {{c.glow2}} 0%, transparent 65%); pointer-events: none"></div>
 
@@ -116,6 +127,12 @@ html{scroll-behavior:smooth}
 <span style="display: inline-flex; align-items: center; gap: 8px; padding: 7px 13px; border-radius: 999px; border: 1px solid {{c.border}}; background: {{c.surface}}; color: {{c.text}}"><span class="dc-pulse" style="width: 8px; height: 8px; border-radius: 50%; background: #3DDC84"></span>{{t.status}}</span>
 <span style="color: {{c.subtle}}">{{t.city}}</span>
 </div>
+<div class="dc-up" style="animation-delay: 0.1s; display: flex"><div role="group" class="dc-aud" aria-label="{{t.audLabel}}" style="display: inline-flex; align-items: center; gap: 4px; padding: 4px; border-radius: 12px; border: 1px solid {{c.border}}; background: {{c.surface}}; align-self: flex-start; flex-wrap: wrap">
+<span style="padding: 0 8px 0 6px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: {{c.subtle}}">{{t.audLabel}}</span>
+<sc-for list="{{auds}}" as="a" hint-placeholder-count="2">
+<button type="button" onClick="{{a.pick}}" aria-pressed="{{a.active}}" style="display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 14px; border: 0; border-radius: 9px; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; background: {{a.bg}}; color: {{a.fg}}"><span aria-hidden="true">{{a.icon}}</span>{{a.label}}</button>
+</sc-for>
+</div></div>
 <p class="dc-up" style="animation-delay: 0.15s; margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 18px; color: {{c.muted}}"><span style="color: {{c.accentText}}">$</span> whoami<span class="dc-cursor" style="background: {{c.accentText}}"></span></p>
 <h1 class="dc-up" style="animation-delay: 0.25s; margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 72px; line-height: 0.98; letter-spacing: -0.03em">{{t.first}}<br><span style="color: {{c.accentText}}">{{t.last}}</span></h1>
 <p class="dc-up" style="animation-delay: 0.35s; margin: 0; min-height: 34px; font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 24px; line-height: 1.35; color: {{c.subtle}}">&gt; <span class="dc-role" key="{{roleKey}}" style="color: {{roleColor}}">{{role}}</span></p>
@@ -134,6 +151,7 @@ html{scroll-behavior:smooth}
 </div>
 
 <div class="dc-up" style="animation-delay: 0.3s; flex: 1 1 440px; min-width: 0">
+<sc-if value="{{audDev}}" hint-placeholder-val="{{ true }}">
 <div style="border-radius: 16px; overflow: hidden; border: 1px solid #30363D; background: #0D1117; box-shadow: 0 30px 80px rgba(0,0,0,0.45)">
 <div style="display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: #161B22; border-bottom: 1px solid #30363D">
 <span style="width: 12px; height: 12px; border-radius: 50%; background: #FF5F57"></span>
@@ -155,6 +173,27 @@ html{scroll-behavior:smooth}
 <span>Kotlin · UTF-8</span>
 </div>
 </div>
+</sc-if>
+<sc-if value="{{audHr}}" hint-placeholder-val="{{ false }}">
+<div style="border-radius: 20px; border: 1px solid {{c.border}}; background: {{c.surface}}; box-shadow: 0 30px 80px rgba(0,0,0,0.25); overflow: hidden">
+<div style="padding: 22px 24px; border-bottom: 1px solid {{c.border}}; display: flex; align-items: center; gap: 14px">
+<div aria-hidden="true" style="width: 52px; height: 52px; flex-shrink: 0; border-radius: 14px; background: {{c.accent}}; color: {{c.onAccent}}; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px">DE</div>
+<div style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
+<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px">{{t.plainTitle}}</span>
+<span style="font-size: 14px; color: {{c.subtle}}">{{t.plainSub}}</span>
+</div>
+</div>
+<div style="display: flex; flex-direction: column">
+<sc-for list="{{t.plainRows}}" as="r" hint-placeholder-count="5">
+<div style="display: flex; gap: 14px; padding: 16px 24px; border-bottom: 1px solid {{c.border}}">
+<span style="width: 108px; flex-shrink: 0; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: {{c.accentText}}">{{r.k}}</span>
+<span style="font-size: 16px; line-height: 1.55; color: {{c.text}}">{{r.v}}</span>
+</div>
+</sc-for>
+</div>
+<a href="#skills" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; min-height: 52px; box-sizing: border-box; text-decoration: none; font-weight: 600; font-size: 15px; color: {{c.accentText}}">{{t.plainCta}}<span aria-hidden="true">→</span></a>
+</div>
+</sc-if>
 </div>
 </section>
 
@@ -444,8 +483,16 @@ html{scroll-behavior:smooth}
 <section id="skills" style="position: relative; max-width: 1180px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 36px">
 <div class="dc-reveal" style="display: flex; flex-direction: column; gap: 12px">
 <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 15px; color: {{c.accentText}}">05. <span style="color: {{c.subtle}}">{{t.skillsKicker}}</span></p>
-<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 42px; line-height: 1.08">{{t.skillsTitle}}</h2>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 42px; line-height: 1.08">{{skillsTitle}}</h2>
+<p style="margin: 0; max-width: 720px; font-size: 17px; line-height: 1.6; color: {{c.muted}}">{{skillsIntro}}</p>
+<div role="group" class="dc-aud" aria-label="{{t.audLabel}}" style="display: inline-flex; align-items: center; gap: 4px; padding: 4px; border-radius: 12px; border: 1px solid {{c.border}}; background: {{c.surface}}; align-self: flex-start; flex-wrap: wrap">
+<span style="padding: 0 8px 0 6px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: {{c.subtle}}">{{t.audLabel}}</span>
+<sc-for list="{{auds}}" as="a" hint-placeholder-count="2">
+<button type="button" onClick="{{a.pick}}" aria-pressed="{{a.active}}" style="display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 14px; border: 0; border-radius: 9px; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; background: {{a.bg}}; color: {{a.fg}}"><span aria-hidden="true">{{a.icon}}</span>{{a.label}}</button>
+</sc-for>
 </div>
+</div>
+<sc-if value="{{audDev}}" hint-placeholder-val="{{ true }}">
 <div class="dc-snap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px">
 <sc-for list="{{t.skillGroups}}" as="g" hint-placeholder-count="6">
 <div class="dc-reveal dc-card" style="border: 1px solid {{c.border}}; border-radius: 14px; background: {{c.surface}}; overflow: hidden">
@@ -464,6 +511,26 @@ html{scroll-behavior:smooth}
 </div>
 </sc-for>
 </div>
+</sc-if>
+<sc-if value="{{audHr}}" hint-placeholder-val="{{ false }}">
+<div class="dc-snap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px">
+<sc-for list="{{t.gloss}}" as="g" hint-placeholder-count="6">
+<article class="dc-card" style="border: 1px solid {{c.border}}; border-radius: 16px; background: {{c.surface}}; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: center; gap: 12px">
+<span aria-hidden="true" style="width: 40px; height: 40px; flex-shrink: 0; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: {{c.tagBg}}; border: 1px solid {{c.tagBorder}}; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; color: {{c.tagText}}">{{g.n}}</span>
+<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; line-height: 1.25">{{g.title}}</h3>
+</div>
+<p style="margin: 0; font-size: 16px; line-height: 1.65; color: {{c.muted}}">{{g.plain}}</p>
+<div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 4px">
+<sc-for list="{{g.tech}}" as="tc" hint-placeholder-count="4">
+<span style="padding: 4px 9px; border-radius: 6px; background: {{c.chipBg}}; border: 1px solid {{c.chipBorder}}; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: {{c.text}}">{{tc}}</span>
+</sc-for>
+</div>
+<p style="margin: 0; font-size: 13px; color: {{c.subtle}}"><span style="font-weight: 600; color: {{c.accentText}}">{{t.usedIn}}</span> {{g.where}}</p>
+</article>
+</sc-for>
+</div>
+</sc-if>
 </section>
 
 <section style="position: relative; max-width: 1180px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 36px">
@@ -482,9 +549,42 @@ html{scroll-behavior:smooth}
 </div>
 </section>
 
+<section id="terminal" style="position: relative; max-width: 1180px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 24px">
+<div class="dc-reveal" style="display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 15px; color: {{c.accentText}}">07. <span style="color: {{c.subtle}}">{{t.termKicker}}</span></p>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 42px; line-height: 1.08">{{t.termTitle}}</h2>
+<p style="margin: 0; max-width: 720px; font-size: 17px; line-height: 1.6; color: {{c.muted}}">{{t.termIntro}}</p>
+</div>
+<div class="dc-term" style="border-radius: 16px; overflow: hidden; border: 1px solid #30363D; background: #0D1117; box-shadow: 0 30px 80px rgba(0,0,0,0.35)">
+<div style="display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: #161B22; border-bottom: 1px solid #30363D">
+<span style="width: 12px; height: 12px; border-radius: 50%; background: #FF5F57"></span>
+<span style="width: 12px; height: 12px; border-radius: 50%; background: #FEBC2E"></span>
+<span style="width: 12px; height: 12px; border-radius: 50%; background: #28C840"></span>
+<span style="margin-left: 12px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #8B949E">dostonbek@portfolio: ~</span>
+</div>
+<div class="dc-term-out" style="height: 340px; padding: 16px 18px; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.65">
+<div>
+<sc-for list="{{termLines}}" as="tl" hint-placeholder-count="4">
+<div style="white-space: pre-wrap; overflow-wrap: anywhere; color: {{tl.color}}">{{tl.text}}</div>
+</sc-for>
+</div>
+</div>
+<form onSubmit="{{onTermSubmit}}" style="display: flex; align-items: center; gap: 10px; padding: 12px 18px; border-top: 1px solid #30363D; background: #0B0F14">
+<label for="dc-term-input" style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #3DDC84; white-space: nowrap">~ $</label>
+<input id="dc-term-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" value="{{termInput}}" onChange="{{onTermChange}}" placeholder="{{t.termPlaceholder}}" style="flex: 1; min-width: 0; min-height: 40px; border: 0; background: transparent; color: #E6EDF3; font-family: 'JetBrains Mono', monospace; font-size: 16px">
+<button type="submit" style="min-height: 40px; padding: 0 14px; border: 0; border-radius: 8px; cursor: pointer; background: #3DDC84; color: #04130A; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 13px">{{t.termRun}}</button>
+</form>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{termChips}}" as="ch" hint-placeholder-count="6">
+<button type="button" class="dc-chipbtn" onClick="{{ch.run}}" style="min-height: 44px; padding: 0 14px; border-radius: 10px; border: 1px solid {{c.chipBorder}}; background: {{c.surface}}; color: {{c.text}}; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 13px"><span style="color: {{c.accentText}}">$</span> {{ch.cmd}}</button>
+</sc-for>
+</div>
+</section>
+
 <section id="education" style="position: relative; max-width: 1180px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 36px">
 <div class="dc-reveal" style="display: flex; flex-direction: column; gap: 12px">
-<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 15px; color: {{c.accentText}}">07. <span style="color: {{c.subtle}}">{{t.eduKicker}}</span></p>
+<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 15px; color: {{c.accentText}}">08. <span style="color: {{c.subtle}}">{{t.eduKicker}}</span></p>
 <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 42px; line-height: 1.08">{{t.eduTitle}}</h2>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 16px">
@@ -585,17 +685,19 @@ function patch(o,n){if(o.nodeType===3){if(o.data!==n.data)o.data=n.data;return;}
  var i,oa=o.attributes,na=n.attributes;
  for(i=oa.length-1;i>=0;i--)if(!n.hasAttribute(oa[i].name)&&!(o.nodeName==='DETAILS'&&oa[i].name==='open'))o.removeAttribute(oa[i].name);
  for(i=0;i<na.length;i++)if(o.getAttribute(na[i].name)!==na[i].value)o.setAttribute(na[i].name,na[i].value);
- o.__h=n.__h;patchKids(o,Array.prototype.slice.call(n.childNodes));}
+ o.__h=n.__h;if(o.nodeName==='INPUT'&&n.hasAttribute('value')&&o.value!==n.getAttribute('value'))o.value=n.getAttribute('value');patchKids(o,Array.prototype.slice.call(n.childNodes));}
 function render(){var vals=comp.renderVals();var out=[];kids(tpl,vals,null,out);patchKids(app,out);
  var st=comp.state;document.documentElement.lang=(st.lang||comp.props.defaultLang||'ru');
- save({lang:st.lang,dark:st.dark});
+ save({lang:st.lang,dark:st.dark,aud:st.aud});
  if(!mounted){mounted=true;if(comp.componentDidMount)comp.componentDidMount();}}
-document.addEventListener('click',function(e){var t=e.target;while(t&&t!==document){if(t.__h&&t.__h.click){t.__h.click(e);return;}t=t.parentNode;}});
+function deleg(type,keys){document.addEventListener(type,function(e){var t=e.target;while(t&&t!==document){if(t.__h){for(var i=0;i<keys.length;i++){if(t.__h[keys[i]]){t.__h[keys[i]](e);return;}}}t=t.parentNode;}},true);}
+deleg('click',['click']);deleg('input',['change','input']);deleg('submit',['submit']);
 window.__dcStart=function(Component,defaults){
  app=document.getElementById('app');tpl=document.getElementById('dc-template').content;
  comp=new Component(defaults);var p=load();
  if(p.lang)comp.state.lang=p.lang;
  if(typeof p.dark==='boolean')comp.state.dark=p.dark;
+ if(p.aud)comp.state.aud=p.aud;
  render();};
 })();
 </script>
@@ -604,7 +706,7 @@ window.__dcStart=function(Component,defaults){
 class Component extends DCLogic {
 constructor(props) {
 super(props);
-this.state = { lang: null, dark: null, roleIdx: 0, shot: 0, sec: 'home' };
+this.state = { lang: null, dark: null, roleIdx: 0, shot: 0, sec: 'home', aud: null, term: null, termInput: '' };
 }
 componentDidMount() {
 this.timer = setInterval(() => this.setState((s) => ({ roleIdx: (s.roleIdx + 1) % 4 })), 2600);
@@ -624,6 +726,30 @@ window.addEventListener('scroll', this.onScroll, { passive: true });
 componentWillUnmount() {
 clearInterval(this.timer); window.removeEventListener('scroll', this.onScroll);
 }
+plainText(str) { return String(str).split('**').join(''); }
+runCmd(raw, t) {
+const cmd = String(raw || '').trim();
+const prev = this.state.term || this.termWelcome(t);
+if (!cmd) return;
+const out = [{ k: 'cmd', text: '~ $ ' + cmd }];
+const [name, ...args] = cmd.toLowerCase().split(/\s+/);
+const push = (k, text) => out.push({ k, text });
+if (name === 'clear') { this.setState({ term: [], termInput: '' }); return; }
+if (name === 'help') { t.termHelp.forEach((h) => push('out', h)); }
+else if (name === 'whoami') { push('ok', t.first + ' ' + t.last + ' — Mobile Developer (Android / iOS)'); push('out', this.plainText(t.heroText)); push('out', t.location); }
+else if (name === 'skills') { t.skillGroups.forEach((g) => push('out', (g.pkg + '            ').slice(0, 16) + g.items.join(', '))); }
+else if (name === 'experience' || name === 'exp') { t.jobs.forEach((j) => push('out', j.period + ' · ' + j.company + ' · ' + j.role)); }
+else if (name === 'projects') { t.cases.forEach((c) => push('out', '• ' + c.name + ' — ' + c.kind)); push('out', '• Farovon — Google Play'); t.projects.forEach((p) => push('out', '• ' + p.name + ' — ' + p.kind)); push('out', '• IQ School Portal — full-stack'); push('out', '• WedLink — full-stack · wedlink.uz'); }
+else if (name === 'contact') { ['phone:    +998 77 488-27-08', 'email:    eshmurodovdoston630@gmail.com', 'telegram: @Programmer_2001', 'github:   Eshmurodov-Doston1', 'site:     eshmurodov.uz'].forEach((l) => push('out', l)); }
+else if (name === 'hire' || (name === 'sudo' && args[0] === 'hire')) { push('ok', t.termHire); push('out', 'eshmurodovdoston630@gmail.com · @Programmer_2001'); }
+else if (name === 'lang' && ['uz', 'ru', 'en'].includes(args[0])) { push('ok', 'lang → ' + args[0]); this.setState({ lang: args[0] }); }
+else if (name === 'theme') { push('ok', 'theme → ' + (this.isDark() ? 'light' : 'dark')); this.setState({ dark: !this.isDark() }); }
+else if (name === 'mode' && ['dev', 'hr'].includes(args[0])) { push('ok', 'mode → ' + args[0]); this.setState({ aud: args[0] }); }
+else { push('err', t.termNotFound.replace('{c}', name)); }
+this.setState({ term: prev.concat(out).slice(-80), termInput: '' });
+}
+termWelcome(t) { return [{ k: 'ok', text: t.termWelcome }, { k: 'out', text: t.termWelcome2 }]; }
+isDark() { return this.state.dark ?? this.props.defaultDark ?? true; }
 split(list, n, moreTpl) {
 const top = list.slice(0, n), rest = list.slice(n);
 return { top, rest, hasRest: rest.length > 0, more: moreTpl.replace('{n}', String(rest.length)) };
@@ -705,10 +831,19 @@ const wedStack = [
 ];
 const jobs = t0.jobs.map((j, i) => ({ ...j, dot: i === 0 ? c.accentText : c.subtle, pts: this.split(j.points.map((p) => this.segs(p)), 3, t0.moreLabel) }));
 const cases = t0.cases.map((cs) => ({ ...cs, feat: this.split(cs.features, 4, t0.moreLabel) }));
+const aud = this.state.aud ?? 'dev';
+const auds = [['dev', '</>', t0.audDev], ['hr', 'Aa', t0.audHr]].map(([k, icon, label]) => ({ icon, label, active: k === aud ? 'true' : 'false', bg: k === aud ? c.accent : 'transparent', fg: k === aud ? c.onAccent : c.muted, pick: () => this.setState({ aud: k }) }));
+const tc = { cmd: '#E6EDF3', out: '#9DA7B3', ok: '#3DDC84', err: '#FF7B72' };
+const termLines = (this.state.term || this.termWelcome(t0)).map((l) => ({ text: l.text, color: tc[l.k] }));
+const termChips = ['help', 'whoami', 'skills', 'experience', 'projects', 'contact', 'hire', 'clear'].map((cmd) => ({ cmd, run: () => this.runCmd(cmd, t0) }));
 const icons = { home: 'M3 11l9-8 9 8M5 10v10h14V10', exp: 'M4 7h16v12H4zM9 7V4h6v3', proj: 'M8 9l-4 3 4 3M16 9l4 3-4 3M13 6l-2 12', skills: 'M12 2l3 7h7l-5.5 4.5L18.5 21 12 16.5 5.5 21l2-7.5L2 9h7z', contact: 'M4 5h16v12H8l-4 4z' };
 const bnav = t0.bnav.map((b) => ({ ...b, d: icons[b.k], color: b.k === this.state.sec ? c.onAccent : c.muted, bg: b.k === this.state.sec ? c.accent : 'transparent' }));
 return {
-c, t: { ...t0, jobs, cases }, langs, bnav, fvFeat: this.split(t0.farovonFeatures, 3, t0.moreLabel), iqFeat: this.split(t0.iqFeatures, 6, t0.moreLabel), wdFeat: this.split(t0.wedFeatures, 4, t0.moreLabel), shots, iqStack, wedStack, shotPath: shotPaths[this.state.shot], shot0: this.state.shot === 0, shot1: this.state.shot === 1, shot2: this.state.shot === 2, code, marquee, dark, light: !dark,
+c, t: { ...t0, jobs, cases }, langs, bnav, auds, audDev: aud === 'dev', audHr: aud === 'hr',
+skillsTitle: aud === 'hr' ? t0.skillsTitleHr : t0.skillsTitle, skillsIntro: aud === 'hr' ? t0.skillsIntroHr : t0.skillsIntroDev,
+termLines, termChips, termInput: this.state.termInput,
+onTermChange: (e) => this.setState({ termInput: e.target.value }),
+onTermSubmit: (e) => { if (e && e.preventDefault) e.preventDefault(); this.runCmd(this.state.termInput, t0); }, fvFeat: this.split(t0.farovonFeatures, 3, t0.moreLabel), iqFeat: this.split(t0.iqFeatures, 6, t0.moreLabel), wdFeat: this.split(t0.wedFeatures, 4, t0.moreLabel), shots, iqStack, wedStack, shotPath: shotPaths[this.state.shot], shot0: this.state.shot === 0, shot1: this.state.shot === 1, shot2: this.state.shot === 2, code, marquee, dark, light: !dark,
 role: r[0], roleColor: r[1], roleKey: 'r' + this.state.roleIdx,
 heroSegs: this.segs(t0.heroText),
 about: t0.aboutParas.map((p) => ({ segs: this.segs(p) })),
@@ -742,6 +877,20 @@ const pr = [
 { file: 'EInvoice.java', client: 'E-Invoice', dot: '#FFA657', tags: ['Java', 'Kotlin', 'RxJava'] }
 ];
 const ep = ['POST /api/backend', 'GET /web/new-site', 'PATCH /web/support'];
+const gt = [
+['Kotlin', 'Java', 'Swift', 'Android SDK', 'Xcode'],
+['Jetpack Compose', 'XML / Fragments', 'Material 3'],
+['MVI', 'MVVM', 'Clean Architecture', 'SOLID', 'Multi-module'],
+['Room', 'SQLite', 'DataStore', 'Offline-first'],
+['REST API', 'Retrofit', 'OkHttp', 'WebSocket'],
+['Kotlin', 'Spring Boot', 'PostgreSQL', 'Redis', 'Docker'],
+['Vue 3', 'React', 'TypeScript', 'Tailwind CSS'],
+['JWT', 'Biometric', 'Spring Security', 'Argon2'],
+['Google Maps', 'Yandex Maps', 'Foreground Service'],
+['WebRTC', 'LiveKit', 'Firebase'],
+['Gemini API', 'Claude', 'ChatGPT'],
+['Git', 'GitLab', 'Google Play', 'In-App Update']
+];
 const build = (L) => ({
 ...L,
 skillGroups: L.skillGroups.map((g, i) => ({ ...g, pkg: pk[i], items: si[g.k] })),
@@ -750,6 +899,7 @@ projects: L.projects.map((p, i) => ({ ...p, ...pr[i] })),
 cases: L.cases.map((cs, i) => ({ ...cs, ...cm[i], badge: L.caseBadge, features: cs.features.map((f, k) => ({ t: f, n: String(k + 1).padStart(2, '0') })) })),
 extras: L.extras.map((x, i) => ({ ...x, endpoint: ep[i] })),
 farovonFeatures: L.farovonFeatures.map((f, i) => ({ t: f, n: String(i + 1).padStart(2, '0') })),
+gloss: L.gloss.map((g, i) => ({ title: g[0], plain: g[1], where: g[2], tech: gt[i], n: String(i + 1).padStart(2, '0') })),
 iqFeatures: L.iqFeatures.map((f, i) => ({ t: f, n: String(i + 1).padStart(2, '0') })),
 wedFeatures: L.wedFeatures.map((f, i) => ({ t: f, n: String(i + 1).padStart(2, '0') }))
 });
@@ -809,6 +959,30 @@ uni: 'Ташкентский университет информационных
 langsTitle: 'Языки', spoken: ['Узбекский — родной', 'Русский', 'Английский', 'Таджикский'],
 contactTitle: 'Давайте обсудим ваш проект', contactText: 'Открыт к интересным предложениям в мобильной разработке.', location: 'Ташкент, Узбекистан',
 footer: 'сделано с Kotlin-мышлением',
+audLabel: 'вид:', audDev: 'для разработчика', audHr: 'простым языком',
+plainTitle: 'Коротко — простым языком', plainSub: 'Понятно, даже если вы не программист',
+plainRows: [{ k: 'Кто?', v: 'Разработчик мобильных приложений — для Android и iPhone. Опыт более 6 лет.' }, { k: 'Что делает?', v: 'Мобильные приложения для банков и компаний, их серверную часть и веб-сайты.' }, { k: 'Где?', v: 'Ипотека-банк (сейчас), сеть магазинов IDEA, сервис электронных документов E-Invoice.' }, { k: 'Результат', v: '8 проектов, приложения используются в 60+ филиалах, собственное приложение в Google Play.' }, { k: 'Связь', v: '+998 77 488-27-08 · Telegram @Programmer_2001' }],
+plainCta: 'Навыки простым языком',
+skillsTitleHr: 'Мои навыки — простым языком', skillsIntroDev: 'Технологический стек. Если вы не разработчик — выберите «простым языком», и я объясню, что означает каждый навык и какую пользу он даёт.', skillsIntroHr: 'Что означает каждый навык и какую пользу он приносит работодателю. Ниже — технические термины из этой области.',
+usedIn: 'Где применял:',
+gloss: [
+['Мобильные приложения — Android и iPhone', 'Создаю приложения для телефонов с нуля: для Android (Samsung, Xiaomi и др.) и для iPhone. Kotlin и Swift — основные языки, на которых пишутся такие приложения.', 'Ипотека-банк, IDEA, E-Invoice, Farovon'],
+['Современный дизайн экранов', 'Строю экраны приложения — кнопки, списки, анимации — современным способом: быстро работает, красиво выглядит, подстраивается под телефон и планшет.', 'Monitoring, Farovon'],
+['Аккуратная архитектура кода', 'Делю код на части и строю по чётким правилам. В итоге даже в большом приложении мало ошибок, новые функции добавляются быстро и дёшево, а другим разработчикам легко разобраться.', 'Monitoring (12 модулей), Unduruv'],
+['Работа без интернета', 'Приложение хранит данные на телефоне: работает даже без интернета, а когда связь появляется — само отправляет всё на сервер. Это критично для сотрудников банка, работающих «в поле».', 'Monitoring, Unduruv, Farovon'],
+['Связь с сервером', 'Приложение безопасно обменивается данными с сервером банка или компании: списки, документы, платежи. WebSocket — мгновенная доставка сообщений в реальном времени.', 'Все проекты'],
+['Серверная часть (backend)', 'Сам пишу и сервер, который стоит за приложением: база данных, пользователи, права доступа. То есть могу сделать проект от начала до конца в одиночку.', 'IQ School, WedLink'],
+['Веб-сайты', 'Создаю сайты и панели управления, работающие в браузере — например, систему управления школой или сервис свадебных приглашений.', 'IQ School, WedLink, этот сайт'],
+['Безопасность', 'Защищаю данные пользователей: вход по отпечатку пальца или PIN, безопасные токены, шифрование паролей. Для банковских приложений это обязательно.', 'Monitoring, IQ School'],
+['Карты и геолокация', 'Показываю в приложении карты, адреса и маршруты; делал систему отслеживания местоположения сотрудника в реальном времени.', 'Unduruv, Monitoring, IDEA'],
+['Звонки, чат, уведомления', 'Делаю видео/аудиозвонки и чат внутри приложения, а также push-уведомления на телефон.', 'Monitoring, IQ School'],
+['Искусственный интеллект (AI)', 'Встраиваю AI в приложения — например, финансовый помощник в Farovon. Каждый день использую AI-инструменты, чтобы работать быстрее.', 'Farovon, Monitoring, IQ School'],
+['Командная работа и релизы', 'Безопасно работаю с командой над одним кодом, публикую приложения в Google Play. Построил и систему обновления приложений без Play Market — через собственный сервер.', 'Ипотека-банк, Farovon']
+],
+termKicker: '// терминал', termTitle: 'Изучите сайт с помощью команд', termIntro: 'Как настоящий терминал: введите команду или нажмите одну из кнопок ниже. Например, help.',
+termPlaceholder: 'введите help…', termRun: 'run', termWelcome: 'Добро пожаловать в терминал портфолио Достонбека!', termWelcome2: "Введите 'help', чтобы увидеть список команд.",
+termHelp: ['whoami       — кто я', 'skills       — мои навыки', 'experience   — опыт работы', 'projects     — мои проекты', 'contact      — контакты', 'hire         — пригласить на работу', 'lang uz|ru|en — сменить язык', 'theme        — светлая/тёмная тема', 'mode dev|hr  — для разработчика / простым языком', 'clear        — очистить'],
+termNotFound: "команда не найдена: {c}. Попробуйте 'help'.", termHire: 'Отличный выбор! Напишите мне — отвечу быстро.',
 moreLabel: '+ ещё {n}', lessLabel: '− свернуть', swipe: 'листайте',
 bnav: [{ k: 'home', label: 'главная', href: '#top' }, { k: 'exp', label: 'опыт', href: '#experience' }, { k: 'proj', label: 'проекты', href: '#projects' }, { k: 'skills', label: 'стек', href: '#skills' }, { k: 'contact', label: 'связь', href: '#contact' }]
 }),
@@ -867,6 +1041,30 @@ uni: 'Muhammad al-Xorazmiy nomidagi Toshkent axborot texnologiyalari universitet
 langsTitle: 'Tillar', spoken: ['O‘zbek — ona tili', 'Rus tili', 'Ingliz tili', 'Tojik tili'],
 contactTitle: 'Loyihangizni muhokama qilamiz', contactText: 'Mobil dasturlash sohasidagi qiziqarli takliflarga ochiqman.', location: 'Toshkent, O‘zbekiston',
 footer: 'Kotlin fikrlashi bilan yaratilgan',
+audLabel: 'ko‘rinish:', audDev: 'dasturchi uchun', audHr: 'oddiy tilda',
+plainTitle: 'Qisqacha — oddiy tilda', plainSub: 'Dasturlashni bilmasangiz ham tushunarli',
+plainRows: [{ k: 'Kim?', v: 'Telefon ilovalarini yaratadigan dasturchi — Android va iPhone uchun. 6 yildan ortiq tajriba.' }, { k: 'Nima qiladi?', v: 'Banklar va kompaniyalar uchun mobil ilovalar, ularning server qismi hamda veb-saytlar.' }, { k: 'Qayerda?', v: 'Ipoteka-bank (hozir), IDEA do‘konlar tarmog‘i, E-Invoice elektron hujjatlar xizmati.' }, { k: 'Natija', v: '8 ta loyiha, ilovalari 60+ filialda ishlatiladi, o‘z ilovasi Google Play’da.' }, { k: 'Aloqa', v: '+998 77 488-27-08 · Telegram @Programmer_2001' }],
+plainCta: 'Bilimlari oddiy tilda',
+skillsTitleHr: 'Bilimlarim — oddiy tilda', skillsIntroDev: 'Texnologiyalar steki. Dasturchi bo‘lmasangiz, «oddiy tilda» ni tanlang — har bir bilim nima ekanini va qanday foyda berishini tushuntirib beraman.', skillsIntroHr: 'Har bir bilim nima ekani va ish beruvchiga qanday foyda berishi. Pastda — shu sohadagi texnik atamalar.',
+usedIn: 'Qayerda ishlatganman:',
+gloss: [
+['Mobil ilovalar — Android va iPhone', 'Telefon uchun ilovalarni noldan yarataman: Android (Samsung, Xiaomi va boshqalar) va iPhone uchun. Kotlin va Swift — shu ilovalar yoziladigan asosiy dasturlash tillari.', 'Ipoteka-bank, IDEA, E-Invoice, Farovon'],
+['Zamonaviy ekran dizayni', 'Ilova ekranlarini — tugmalar, ro‘yxatlar, animatsiyalar — zamonaviy usulda quraman: tez ishlaydi, chiroyli ko‘rinadi, telefon va planshetga moslashadi.', 'Monitoring, Farovon'],
+['Tartibli kod arxitekturasi', 'Kodni qismlarga ajratib, aniq qoidalar asosida quraman. Natijada ilova katta bo‘lsa ham xato kam, yangi funksiya qo‘shish tez va arzon, boshqa dasturchilar ham oson tushunadi.', 'Monitoring (12 modul), Unduruv'],
+['Internetsiz ishlash', 'Ilova ma’lumotni telefonda saqlaydi: internet yo‘q joyda ham ishlayveradi, internet paydo bo‘lganda hammasini serverga o‘zi yuboradi. Ko‘chada ishlaydigan bank xodimlari uchun juda muhim.', 'Monitoring, Unduruv, Farovon'],
+['Server bilan aloqa', 'Ilova bank yoki kompaniya serveri bilan xavfsiz ma’lumot almashadi: ro‘yxatlar, hujjatlar, to‘lovlar. WebSocket — xabarlarni darhol, real vaqtda yetkazish.', 'Barcha loyihalar'],
+['Server qismi (backend)', 'Ilova ortida turadigan serverni ham o‘zim yozaman: ma’lumotlar bazasi, foydalanuvchilar, huquqlar. Ya’ni loyihani boshidan oxirigacha bir o‘zim qila olaman.', 'IQ School, WedLink'],
+['Veb-saytlar', 'Brauzerda ishlaydigan saytlar va boshqaruv panellarini yarataman — masalan, maktabni boshqarish tizimi yoki to‘y taklifnomalari xizmati.', 'IQ School, WedLink, shu sayt'],
+['Xavfsizlik', 'Foydalanuvchi ma’lumotlarini himoya qilaman: barmoq izi yoki PIN bilan kirish, xavfsiz tokenlar, parollarni shifrlash. Bank ilovalari uchun bu majburiy.', 'Monitoring, IQ School'],
+['Xarita va joylashuv', 'Ilovada xarita, manzil va marshrutlarni ko‘rsataman; xodim joylashuvini real vaqtda kuzatish tizimini qilganman.', 'Unduruv, Monitoring, IDEA'],
+['Qo‘ng‘iroq, chat, bildirishnomalar', 'Ilova ichida video/audio qo‘ng‘iroq, chat va telefonga keladigan push-xabarlarni qilaman.', 'Monitoring, IQ School'],
+['Sun’iy intellekt (AI)', 'AI’ni ilovaga qo‘shaman — masalan, Farovon’dagi moliyaviy maslahatchi. Ishimni tezlashtirish uchun AI vositalaridan har kuni foydalanaman.', 'Farovon, Monitoring, IQ School'],
+['Jamoada ishlash va relizlar', 'Jamoa bilan bitta kod ustida xavfsiz ishlayman, ilovalarni Google Play’ga chiqaraman. Play Market’siz, o‘z serverimiz orqali yangilash tizimini ham qurganman.', 'Ipoteka-bank, Farovon']
+],
+termKicker: '// terminal', termTitle: 'Saytni buyruqlar bilan o‘rganing', termIntro: 'Haqiqiy terminal kabi: buyruq yozing yoki pastdagi tugmalardan birini bosing. Masalan, help.',
+termPlaceholder: 'help deb yozing…', termRun: 'run', termWelcome: 'Xush kelibsiz! Dostonbek’ning portfolio terminali.', termWelcome2: "Buyruqlar ro‘yxati uchun 'help' deb yozing.",
+termHelp: ['whoami       — men kimman', 'skills       — bilimlarim', 'experience   — ish tajribam', 'projects     — loyihalarim', 'contact      — bog‘lanish', 'hire         — ishga taklif qilish', 'lang uz|ru|en — tilni almashtirish', 'theme        — kunduzgi/tungi rejim', 'mode dev|hr  — dasturchi / oddiy til', 'clear        — tozalash'],
+termNotFound: "buyruq topilmadi: {c}. 'help' deb yozib ko‘ring.", termHire: 'Ajoyib tanlov! Menga yozing — tezda javob beraman.',
 moreLabel: '+ yana {n} ta', lessLabel: '− yig‘ish', swipe: 'suring',
 bnav: [{ k: 'home', label: 'bosh', href: '#top' }, { k: 'exp', label: 'tajriba', href: '#experience' }, { k: 'proj', label: 'loyiha', href: '#projects' }, { k: 'skills', label: 'stek', href: '#skills' }, { k: 'contact', label: 'aloqa', href: '#contact' }]
 }),
@@ -925,6 +1123,30 @@ uni: 'Tashkent University of Information Technologies named after Muhammad al-Kh
 langsTitle: 'Languages', spoken: ['Uzbek — native', 'Russian', 'English', 'Tajik'],
 contactTitle: 'Let’s talk about your project', contactText: 'Open to interesting opportunities in mobile development.', location: 'Tashkent, Uzbekistan',
 footer: 'built with a Kotlin mindset',
+audLabel: 'view:', audDev: 'for developers', audHr: 'plain language',
+plainTitle: 'In short — plain language', plainSub: 'Clear even if you are not technical',
+plainRows: [{ k: 'Who?', v: 'A developer who builds phone apps — for Android and iPhone. 6+ years of experience.' }, { k: 'What?', v: 'Mobile apps for banks and companies, their server side, and websites.' }, { k: 'Where?', v: 'Ipoteka Bank (now), the IDEA retail chain, the E-Invoice e-document service.' }, { k: 'Results', v: '8 projects, apps used in 60+ branches, own app on Google Play.' }, { k: 'Contact', v: '+998 77 488-27-08 · Telegram @Programmer_2001' }],
+plainCta: 'Skills in plain language',
+skillsTitleHr: 'My skills — in plain language', skillsIntroDev: 'Tech stack. Not a developer? Pick “plain language” and I will explain what each skill means and how it helps your business.', skillsIntroHr: 'What each skill means and how it benefits an employer. Below each — the technical terms from that area.',
+usedIn: 'Where I used it:',
+gloss: [
+['Mobile apps — Android and iPhone', 'I build phone apps from scratch: for Android (Samsung, Xiaomi and others) and for iPhone. Kotlin and Swift are the main languages these apps are written in.', 'Ipoteka Bank, IDEA, E-Invoice, Farovon'],
+['Modern screen design', 'I build app screens — buttons, lists, animations — the modern way: fast, good-looking, and adapting to phones and tablets.', 'Monitoring, Farovon'],
+['Clean code architecture', 'I split code into parts and follow clear rules. Even a large app stays low on bugs, new features are quick and cheap to add, and other developers understand it easily.', 'Monitoring (12 modules), Unduruv'],
+['Works without internet', 'The app stores data on the phone, keeps working offline, and sends everything to the server once the connection is back. Critical for bank staff working in the field.', 'Monitoring, Unduruv, Farovon'],
+['Talking to the server', 'The app exchanges data securely with the bank or company server: lists, documents, payments. WebSocket delivers messages instantly, in real time.', 'All projects'],
+['Server side (backend)', 'I also write the server behind the app: database, users, permissions. So I can deliver a project end to end on my own.', 'IQ School, WedLink'],
+['Websites', 'I build websites and admin panels that run in the browser — for example a school management system or a wedding invitation service.', 'IQ School, WedLink, this site'],
+['Security', 'I protect user data: fingerprint or PIN login, secure tokens, password encryption. Mandatory for banking apps.', 'Monitoring, IQ School'],
+['Maps and location', 'I show maps, addresses and routes in apps, and built real-time staff location tracking.', 'Unduruv, Monitoring, IDEA'],
+['Calls, chat, notifications', 'I add in-app video/audio calls, chat, and push notifications to the phone.', 'Monitoring, IQ School'],
+['Artificial intelligence (AI)', 'I build AI into apps — like the financial assistant in Farovon — and use AI tools every day to work faster.', 'Farovon, Monitoring, IQ School'],
+['Teamwork and releases', 'I work safely with a team on one codebase and publish apps to Google Play. I also built an update system that ships new versions through our own server, without the Play Store.', 'Ipoteka Bank, Farovon']
+],
+termKicker: '// terminal', termTitle: 'Explore the site with commands', termIntro: 'Like a real terminal: type a command or tap one of the buttons below. Try help.',
+termPlaceholder: 'type help…', termRun: 'run', termWelcome: "Welcome to Dostonbek's portfolio terminal!", termWelcome2: "Type 'help' to see the list of commands.",
+termHelp: ['whoami       — who I am', 'skills       — my skills', 'experience   — work history', 'projects     — my projects', 'contact      — get in touch', 'hire         — make me an offer', 'lang uz|ru|en — switch language', 'theme        — light/dark theme', 'mode dev|hr  — developer / plain language', 'clear        — clear screen'],
+termNotFound: "command not found: {c}. Try 'help'.", termHire: 'Great choice! Write to me — I reply fast.',
 moreLabel: '+ {n} more', lessLabel: '− show less', swipe: 'swipe',
 bnav: [{ k: 'home', label: 'home', href: '#top' }, { k: 'exp', label: 'work', href: '#experience' }, { k: 'proj', label: 'projects', href: '#projects' }, { k: 'skills', label: 'stack', href: '#skills' }, { k: 'contact', label: 'contact', href: '#contact' }]
 })
