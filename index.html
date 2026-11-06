@@ -1,0 +1,847 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dostonbek Eshmurodov — Mobile Developer (Android / iOS)</title>
+<meta name="description" content="Android va iOS dasturchi, 6+ yillik tajriba: bank, fintech va B2B mobil ilovalar, Kotlin/Spring Boot va Vue/React full-stack loyihalar. Toshkent.">
+<meta name="author" content="Dostonbek Eshmurodov">
+<meta name="theme-color" content="#090C12">
+<link rel="canonical" href="https://eshmurodov-doston1.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230D1117'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-weight='700' font-size='30' fill='%233DDC84'%3E~/%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dostonbek Eshmurodov — Mobile Developer (Android / iOS)">
+<meta property="og:description" content="Android va iOS dasturchi, 6+ yillik tajriba: bank, fintech va B2B mobil ilovalar, Kotlin/Spring Boot va Vue/React full-stack loyihalar. Toshkent.">
+<meta property="og:url" content="https://eshmurodov-doston1.github.io/">
+<meta property="og:image" content="https://eshmurodov-doston1.github.io/img/iq-landing.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#3DDC84}a:hover{color:#7EE8AE}
+html{scroll-behavior:smooth}
+@keyframes dcblink{0%,49%{opacity:1}50%,100%{opacity:0}}
+.dc-cursor{display:inline-block;width:10px;height:1.05em;vertical-align:-0.15em;margin-left:4px;animation:dcblink 1s steps(1) infinite}
+@keyframes dcline{from{opacity:0;transform:translateX(-6px)}to{opacity:1;transform:none}}
+.dc-line{opacity:0;animation:dcline .35s ease-out forwards}
+@keyframes dcup{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.dc-up{opacity:0;animation:dcup .7s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes dcfade{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@supports (animation-timeline: view()){.dc-reveal{animation:dcfade linear both;animation-timeline:view();animation-range:entry 0% cover 22%}}
+@keyframes dcmarq{to{transform:translateX(-50%)}}
+.dc-marquee{display:flex;width:max-content;animation:dcmarq 45s linear infinite}
+.dc-marquee-wrap:hover .dc-marquee{animation-play-state:paused}
+@keyframes dcpulse{0%{box-shadow:0 0 0 0 rgba(61,220,132,.55)}70%{box-shadow:0 0 0 10px rgba(61,220,132,0)}100%{box-shadow:0 0 0 0 rgba(61,220,132,0)}}
+.dc-pulse{animation:dcpulse 2s infinite}
+.dc-card{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.dc-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.28)}
+.dc-glow:hover{border-color:#3DDC84 !important}
+@keyframes dcrole{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.dc-role{display:inline-block;animation:dcrole .45s ease-out}
+@media (prefers-reduced-motion: reduce){.dc-cursor,.dc-marquee,.dc-pulse,.dc-role{animation:none}.dc-line,.dc-up{animation:none;opacity:1}.dc-reveal{animation:none}.dc-card:hover{transform:none}}
+</style>
+
+<style>@media (max-width:760px){header{position:static!important}}@media (max-width:640px){h1{font-size:48px!important}h2{font-size:32px!important}}</style>
+</head>
+<body>
+<div id="app"></div>
+<noscript><p style="padding:24px;font-family:sans-serif">Dostonbek Eshmurodov — Mobile Developer (Android / iOS). Email: eshmurodovdoston630@gmail.com · Telegram: @Programmer_2001</p></noscript>
+<template id="dc-template">
+
+<div style="position: relative; overflow: hidden; font-family: Inter, system-ui, sans-serif; color: {{c.text}}; background-color: {{c.bg}}; background-image: radial-gradient({{c.dot}} 1px, transparent 1px); background-size: 26px 26px; min-height: 100vh">
+
+<div aria-hidden="true" style="position: absolute; top: -260px; right: -200px; width: 820px; height: 820px; border-radius: 50%; background: radial-gradient(circle, {{c.glow}} 0%, transparent 65%); pointer-events: none"></div>
+<div aria-hidden="true" style="position: absolute; top: 340px; left: -320px; width: 640px; height: 640px; border-radius: 50%; background: radial-gradient(circle, {{c.glow2}} 0%, transparent 65%); pointer-events: none"></div>
+
+<header style="position: sticky; top: 0; z-index: 20; background: {{c.headerBg}}; backdrop-filter: blur(12px); border-bottom: 1px solid {{c.border}}">
+<nav style="max-width: 1180px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
+<a href="#top" style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 17px; color: {{c.text}}; text-decoration: none"><span style="color: {{c.accentText}}">~/</span>dostonbek<span style="color: {{c.subtle}}">.dev</span></a>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 2px">
+<sc-for list="{{t.nav}}" as="n" hint-placeholder-count="5">
+<a href="{{n.href}}" style="padding: 12px 9px; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: {{c.muted}}; text-decoration: none"><span style="color: {{c.accentText}}">{{n.num}}</span>{{n.label}}</a>
+</sc-for>
+<div role="group" aria-label="Language" style="display: flex; gap: 2px; padding: 3px; border-radius: 10px; border: 1px solid {{c.border}}; background: {{c.surface}}; margin-left: 8px">
+<sc-for list="{{langs}}" as="l" hint-placeholder-count="3">
+<button type="button" onClick="{{l.pick}}" aria-pressed="{{l.active}}" style="min-width: 44px; height: 38px; padding: 0 8px; border: 0; border-radius: 7px; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; background: {{l.bg}}; color: {{l.fg}}">{{l.code}}</button>
+</sc-for>
+</div>
+<button type="button" onClick="{{toggleTheme}}" aria-label="{{t.themeLabel}}" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 10px; border: 1px solid {{c.border}}; background: {{c.surface}}; color: {{c.text}}; cursor: pointer">
+<sc-if value="{{dark}}" hint-placeholder-val="{{ true }}">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+</sc-if>
+<sc-if value="{{light}}" hint-placeholder-val="{{ false }}">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
+</sc-if>
+</button>
+</div>
+</nav>
+</header>
+
+<section id="top" style="position: relative; max-width: 1180px; margin: 0 auto; padding: 96px 24px 72px; display: flex; flex-wrap: wrap; align-items: center; gap: 56px">
+<div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+<div class="dc-up" style="animation-delay: 0.05s; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 14px">
+<span style="display: inline-flex; align-items: center; gap: 8px; padding: 7px 13px; border-radius: 999px; border: 1px solid {{c.border}}; background: {{c.surface}}; color: {{c.text}}"><span class="dc-pulse" style="width: 8px; height: 8px; border-radius: 50%; background: #3DDC84"></span>{{t.status}}</span>
+<span style="color: {{c.subtle}}">{{t.city}}</span>
+</div>
+<p class="dc-up" style="animation-delay: 0.15s; margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 18px; color: {{c.muted}}"><span style="color: {{c.accentText}}">$</span> whoami<span class="dc-cursor" style="background: {{c.accentText}}"></span></p>
+<h1 class="dc-up" style="animation-delay: 0.25s; margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 72px; line-height: 0.98; letter-spacing: -0.03em">{{t.first}}<br><span style="color: {{c.accentText}}">{{t.last}}</span></h1>
+<p class="dc-up" style="animation-delay: 0.35s; margin: 0; min-height: 34px; font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 24px; line-height: 1.35; color: {{c.subtle}}">&gt; <span class="dc-role" key="{{roleKey}}" style="color: {{roleColor}}">{{role}}</span></p>
+<p class="dc-up" style="animation-delay: 0.45s; margin: 0; max-width: 600px; font-size: 18px; line-height: 1.65; color: {{c.muted}}"><sc-for list="{{heroSegs}}" as="sg" hint-placeholder-count="3"><sc-if value="{{sg.b}}" hint-placeholder-val="{{ false }}"><strong style="color: {{c.text}}; font-weight: 600">{{sg.t}}</strong></sc-if><sc-if value="{{sg.n}}" hint-placeholder-val="{{ true }}">{{sg.t}}</sc-if></sc-for></p>
+<div class="dc-up" style="animation-delay: 0.55s; display: flex; flex-wrap: wrap; gap: 12px; padding-top: 6px">
+<a href="#contact" style="padding: 14px 22px; border-radius: 10px; background: {{c.accent}}; color: {{c.onAccent}}; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 15px; text-decoration: none">./hire_me.sh</a>
+<a href="#projects" style="padding: 14px 22px; border-radius: 10px; border: 1px solid {{c.chipBorder}}; background: {{c.surface}}; color: {{c.text}}; font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 15px; text-decoration: none">{{t.ctaProjects}}</a>
+</div>
+<div class="dc-up" style="animation-delay: 0.65s; display: flex; gap: 10px; padding-top: 4px">
+<a href="https://github.com/Eshmurodov-Doston1" aria-label="GitHub" class="dc-glow" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 12px; border: 1px solid {{c.border}}; background: {{c.surface}}; color: {{c.text}}"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"></path></svg></a>
+<a href="https://t.me/Programmer_2001" aria-label="Telegram" class="dc-glow" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 12px; border: 1px solid {{c.border}}; background: {{c.surface}}; color: {{c.text}}"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 4 3 11l6 2 2 6 3-4 5 4z"></path><path d="m9 13 8-6"></path></svg></a>
+<a href="mailto:eshmurodovdoston630@gmail.com" aria-label="Email" class="dc-glow" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 12px; border: 1px solid {{c.border}}; background: {{c.surface}}; color: {{c.text}}"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg></a>
+<a href="tel:+998774882708" aria-label="Phone" class="dc-glow" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 12px; border: 1px solid {{c.border}}; background: {{c.surface}}; color: {{c.text}}"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg></a>
+<a href="https://play.google.com/store/apps/details?id=uz.dostonbek.cleancomposelayers" aria-label="Google Play" class="dc-glow" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 12px; border: 1px solid {{c.border}}; background: {{c.surface}}; color: {{c.text}}"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v18l15-9z"></path><path d="m5 3 9 9-9 9"></path></svg></a>
+</div>
+</div>
+
+<div class="dc-up" style="animation-delay: 0.3s; flex: 1 1 440px; min-width: 0">
+<div style="border-radius: 16px; overflow: hidden; border: 1px solid #30363D; background: #0D1117; box-shadow: 0 30px 80px rgba(0,0,0,0.45)">
+<div style="display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: #161B22; border-bottom: 1px solid #30363D">
+<span style="width: 12px; height: 12px; border-radius: 50%; background: #FF5F57"></span>
+<span style="width: 12px; height: 12px; border-radius: 50%; background: #FEBC2E"></span>
+<span style="width: 12px; height: 12px; border-radius: 50%; background: #28C840"></span>
+<span style="margin-left: 12px; padding: 4px 10px; border-radius: 6px; background: #0D1117; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #E6EDF3">Developer.kt</span>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #8B949E">Backend.kt</span>
+</div>
+<div style="padding: 20px 0; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.75; overflow-x: auto">
+<sc-for list="{{code}}" as="ln" hint-placeholder-count="13">
+<div class="dc-line" style="animation-delay: {{ln.delay}}; display: flex; white-space: pre; padding-right: 20px">
+<span style="display: inline-block; width: 44px; flex-shrink: 0; text-align: right; padding-right: 16px; color: #6E7681; user-select: none">{{ln.no}}</span>
+<span><sc-for list="{{ln.tokens}}" as="tk" hint-placeholder-count="3"><span style="color: {{tk.color}}">{{tk.text}}</span></sc-for></span>
+</div>
+</sc-for>
+</div>
+<div style="display: flex; justify-content: space-between; gap: 8px; padding: 8px 16px; border-top: 1px solid #30363D; background: #161B22; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #8B949E">
+<span><span style="color: #3DDC84">●</span> BUILD SUCCESSFUL</span>
+<span>Kotlin · UTF-8</span>
+</div>
+</div>
+</div>
+</section>
+
+<div class="dc-marquee-wrap" aria-hidden="true" style="position: relative; border-top: 1px solid {{c.border}}; border-bottom: 1px solid {{c.border}}; background: {{c.surface}}; overflow: hidden; padding: 18px 0">
+<div class="dc-marquee">
+<sc-for list="{{marquee}}" as="m" hint-placeholder-count="12">
+<span style="display: inline-flex; align-items: center; gap: 14px; padding: 0 22px; font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 500; color: {{c.muted}}; white-space: nowrap"><span style="color: {{m.color}}">◆</span>{{m.t}}</span>
+</sc-for>
+</div>
+</div>
+
+<section style="position: relative; max-width: 1180px; margin: 0 auto; padding: 64px 24px 24px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px">
+<sc-for list="{{t.stats}}" as="s" hint-placeholder-count="4">
+<div class="dc-reveal dc-card" style="background: {{c.surface}}; border: 1px solid {{c.border}}; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: {{c.subtle}}">{{s.key}}</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 46px; line-height: 1; color: {{c.accentText}}">{{s.n}}</span>
+<span style="font-size: 15px; color: {{c.muted}}">{{s.label}}</span>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section id="about" style="position: relative; max-width: 1180px; margin: 0 auto; padding: 72px 24px; display: flex; flex-wrap: wrap; gap: 48px">
+<div class="dc-reveal" style="flex: 1 1 280px; display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 15px; color: {{c.accentText}}">01. <span style="color: {{c.subtle}}">{{t.aboutKicker}}</span></p>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 42px; line-height: 1.08">{{t.aboutTitle}}</h2>
+</div>
+<div class="dc-reveal" style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 18px; font-size: 17px; line-height: 1.8; color: {{c.muted}}; border-left: 2px solid {{c.border}}; padding-left: 28px">
+<sc-for list="{{about}}" as="p" hint-placeholder-count="4">
+<p style="margin: 0"><sc-for list="{{p.segs}}" as="sg" hint-placeholder-count="3"><sc-if value="{{sg.b}}" hint-placeholder-val="{{ false }}"><strong style="color: {{c.text}}; font-weight: 600">{{sg.t}}</strong></sc-if><sc-if value="{{sg.n}}" hint-placeholder-val="{{ true }}">{{sg.t}}</sc-if></sc-for></p>
+</sc-for>
+</div>
+</section>
+
+<section id="experience" style="position: relative; max-width: 1180px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 36px">
+<div class="dc-reveal" style="display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 15px; color: {{c.accentText}}">02. <span style="color: {{c.subtle}}">{{t.expKicker}}</span></p>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 42px; line-height: 1.08">{{t.expTitle}}</h2>
+<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: {{c.subtle}}"><span style="color: {{c.accentText}}">$</span> git log --career --graph</p>
+</div>
+<div style="display: flex; flex-direction: column">
+<sc-for list="{{t.jobs}}" as="j" hint-placeholder-count="3">
+<div style="display: flex; gap: 20px">
+<div style="display: flex; flex-direction: column; align-items: center; width: 20px; flex-shrink: 0">
+<span style="width: 16px; height: 16px; border-radius: 50%; border: 3px solid {{j.dot}}; background: {{c.bg}}; margin-top: 30px; flex-shrink: 0"></span>
+<span style="flex: 1; width: 2px; background: {{c.border}}"></span>
+</div>
+<article class="dc-reveal dc-card" style="flex: 1; min-width: 0; margin-bottom: 20px; background: {{c.surface}}; border: 1px solid {{c.border}}; border-radius: 14px; padding: 26px 28px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 13px">
+<span style="color: {{c.swift}}">commit {{j.hash}}</span>
+<sc-if value="{{j.head}}" hint-placeholder-val="{{ false }}">
+<span style="padding: 2px 8px; border-radius: 6px; border: 1px solid {{c.accentText}}; color: {{c.accentText}}">HEAD -&gt; main</span>
+</sc-if>
+</div>
+<span style="padding: 5px 12px; border-radius: 999px; background: {{c.surface2}}; border: 1px solid {{c.border}}; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: {{c.muted}}">{{j.period}}</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 24px">{{j.role}}</h3>
+<span style="font-size: 15px; color: {{c.accentText}}; font-weight: 600">{{j.company}} <span style="color: {{c.subtle}}; font-weight: 400">· {{j.sector}}</span></span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<sc-for list="{{j.points}}" as="p" hint-placeholder-count="3">
+<div style="display: flex; gap: 10px; font-size: 16px; line-height: 1.6; color: {{c.muted}}"><span style="font-family: 'JetBrains Mono', monospace; color: {{c.accentText}}; flex-shrink: 0">+</span><span><sc-for list="{{p}}" as="sg" hint-placeholder-count="2"><sc-if value="{{sg.b}}" hint-placeholder-val="{{ false }}"><strong style="color: {{c.text}}; font-weight: 600">{{sg.t}}</strong></sc-if><sc-if value="{{sg.n}}" hint-placeholder-val="{{ true }}">{{sg.t}}</sc-if></sc-for></span></div>
+</sc-for>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: 4px">
+<sc-for list="{{j.stack}}" as="s" hint-placeholder-count="5">
+<span style="padding: 4px 9px; border-radius: 6px; background: {{c.tagBg}}; border: 1px solid {{c.tagBorder}}; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: {{c.tagText}}">{{s}}</span>
+</sc-for>
+</div>
+</article>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section id="projects" style="position: relative; max-width: 1180px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 36px">
+<div class="dc-reveal" style="display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 15px; color: {{c.accentText}}">03. <span style="color: {{c.subtle}}">{{t.projKicker}}</span></p>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 42px; line-height: 1.08">{{t.projTitle}}</h2>
+</div>
+
+<sc-for list="{{t.cases}}" as="cs" hint-placeholder-count="2">
+<article class="dc-reveal dc-card" style="border-radius: 18px; overflow: hidden; border: 1px solid #30363D; background: #0D1117; display: flex; flex-wrap: wrap">
+<div style="flex: 999 1 460px; min-width: 0; padding: 36px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px">
+<span style="padding: 5px 10px; border-radius: 999px; background: #1F6FEB; color: #FFFFFF; font-weight: 700">{{cs.badge}}</span>
+<span style="padding: 5px 10px; border-radius: 999px; border: 1px solid #30363D; color: #C9D1D9">{{cs.kind}}</span>
+</div>
+<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #8B949E">{{cs.module}}</p>
+<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 44px; line-height: 1; color: #FFFFFF">{{cs.name}}</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.65; color: #C9D1D9">{{cs.desc}}</p>
+<div style="display: flex; flex-wrap: wrap; gap: 6px">
+<sc-for list="{{cs.tags}}" as="tg" hint-placeholder-count="6">
+<span style="padding: 4px 9px; border-radius: 6px; border: 1px solid #30363D; color: #A5D6FF; font-family: 'JetBrains Mono', monospace; font-size: 12px">{{tg}}</span>
+</sc-for>
+</div>
+<p style="margin: 4px 0 0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #8B949E">{{t.nda}}</p>
+</div>
+<div style="flex: 1 1 360px; min-width: 0; padding: 32px; background: #111821; border-left: 1px solid #1F2A36; display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0 0 4px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #8B949E">features.kt</p>
+<sc-for list="{{cs.features}}" as="f" hint-placeholder-count="6">
+<div style="display: flex; gap: 12px; align-items: flex-start; padding: 11px 14px; border-radius: 10px; border: 1px solid #1F2A36; background: #0D1117">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #79C0FF; flex-shrink: 0">{{f.n}}</span>
+<span style="font-size: 15px; line-height: 1.5; color: #E6EDF3">{{f.t}}</span>
+</div>
+</sc-for>
+</div>
+</article>
+</sc-for>
+
+<article class="dc-reveal dc-card" style="border-radius: 18px; overflow: hidden; border: 1px solid #2B4A39; background: #0D1117; display: flex; flex-wrap: wrap">
+<div style="flex: 999 1 460px; min-width: 0; padding: 36px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px">
+<span style="padding: 5px 10px; border-radius: 999px; background: #3DDC84; color: #04130A; font-weight: 700">{{t.featured}}</span>
+<span style="padding: 5px 10px; border-radius: 999px; border: 1px solid #30363D; color: #C9D1D9">Google Play</span>
+</div>
+<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 44px; line-height: 1; color: #FFFFFF">Farovon</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.65; color: #C9D1D9">{{t.farovonDesc}}</p>
+<div style="display: flex; flex-wrap: wrap; gap: 6px">
+<sc-for list="{{farovonTags}}" as="tg" hint-placeholder-count="5">
+<span style="padding: 4px 9px; border-radius: 6px; border: 1px solid #30363D; color: #A5D6FF; font-family: 'JetBrains Mono', monospace; font-size: 12px">{{tg}}</span>
+</sc-for>
+</div>
+<a href="https://play.google.com/store/apps/details?id=uz.dostonbek.cleancomposelayers" style="align-self: flex-start; margin-top: 6px; padding: 13px 18px; border-radius: 10px; background: #3DDC84; color: #04130A; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; text-decoration: none">{{t.storeLabel}}</a>
+</div>
+<div style="flex: 1 1 320px; min-width: 0; padding: 36px; background: #111821; border-left: 1px solid #1F2A36; display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0 0 4px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #8B949E">features.kt</p>
+<sc-for list="{{t.farovonFeatures}}" as="f" hint-placeholder-count="5">
+<div style="display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; border-radius: 10px; border: 1px solid #1F2A36; background: #0D1117">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #3DDC84; flex-shrink: 0">{{f.n}}</span>
+<span style="font-size: 15px; line-height: 1.5; color: #E6EDF3">{{f.t}}</span>
+</div>
+</sc-for>
+</div>
+</article>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px">
+<sc-for list="{{t.projects}}" as="pr" hint-placeholder-count="5">
+<article class="dc-reveal dc-card" style="border-radius: 14px; overflow: hidden; border: 1px solid #30363D; background: #0D1117; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 14px; background: #161B22; border-bottom: 1px solid #30363D; font-family: 'JetBrains Mono', monospace; font-size: 13px">
+<span style="display: flex; align-items: center; gap: 8px; color: #E6EDF3"><span style="width: 10px; height: 10px; border-radius: 50%; background: {{pr.dot}}"></span>{{pr.file}}</span>
+<span style="color: #8B949E">{{pr.client}}</span>
+</div>
+<div style="padding: 24px; display: flex; flex-direction: column; gap: 12px; flex: 1">
+<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #8B949E">/** {{pr.kind}} */</p>
+<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 25px; color: #FFFFFF">{{pr.name}}</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C9D1D9">{{pr.desc}}</p>
+<div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 8px">
+<sc-for list="{{pr.tags}}" as="tg" hint-placeholder-count="3">
+<span style="padding: 4px 8px; border-radius: 6px; border: 1px solid #30363D; color: #A5D6FF; font-family: 'JetBrains Mono', monospace; font-size: 12px">{{tg}}</span>
+</sc-for>
+</div>
+</div>
+</article>
+</sc-for>
+</div>
+</section>
+
+<section id="fullstack" style="position: relative; max-width: 1180px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 28px">
+<div class="dc-reveal" style="display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 15px; color: {{c.accentText}}">04. <span style="color: {{c.subtle}}">{{t.fsKicker}}</span></p>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 42px; line-height: 1.08">{{t.fsTitle}}</h2>
+<p style="margin: 0; max-width: 760px; font-size: 17px; line-height: 1.65; color: {{c.muted}}">{{t.fsIntro}}</p>
+</div>
+
+<article class="dc-reveal" style="border-radius: 18px; overflow: hidden; border: 1px solid {{c.border}}; background: {{c.surface}}">
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 28px 32px; border-bottom: 1px solid {{c.border}}">
+<div style="display: flex; flex-direction: column; gap: 8px; min-width: 0">
+<div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px">
+<span style="padding: 5px 10px; border-radius: 999px; background: {{c.accent}}; color: {{c.onAccent}}; font-weight: 700">full-stack</span>
+<span style="padding: 5px 10px; border-radius: 999px; border: 1px solid {{c.border}}; color: {{c.muted}}">EdTech · SaaS</span>
+</div>
+<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 40px; line-height: 1">IQ School Portal</h3>
+<p style="margin: 0; max-width: 700px; font-size: 17px; line-height: 1.6; color: {{c.muted}}">{{t.iqDesc}}</p>
+</div>
+<div role="group" aria-label="Screenshots" style="display: flex; gap: 4px; padding: 4px; border-radius: 12px; border: 1px solid {{c.border}}; background: {{c.surface2}}">
+<sc-for list="{{shots}}" as="sh" hint-placeholder-count="3">
+<button type="button" onClick="{{sh.pick}}" aria-pressed="{{sh.active}}" style="height: 44px; padding: 0 14px; border: 0; border-radius: 9px; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; background: {{sh.bg}}; color: {{sh.fg}}">{{sh.label}}</button>
+</sc-for>
+</div>
+</div>
+<div style="background: #0D1117; padding: 22px 22px 0">
+<div style="border-radius: 12px 12px 0 0; overflow: hidden; border: 1px solid #30363D; border-bottom: 0; background: #161B22">
+<div style="display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-bottom: 1px solid #30363D">
+<span style="width: 10px; height: 10px; border-radius: 50%; background: #FF5F57"></span>
+<span style="width: 10px; height: 10px; border-radius: 50%; background: #FEBC2E"></span>
+<span style="width: 10px; height: 10px; border-radius: 50%; background: #28C840"></span>
+<span style="margin-left: 10px; flex: 1; max-width: 420px; padding: 4px 12px; border-radius: 6px; background: #0D1117; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #8B949E">iqschool · {{shotPath}}</span>
+</div>
+<div style="height: 520px; overflow-y: auto; background: #FFFFFF">
+<sc-if value="{{shot0}}" hint-placeholder-val="{{ true }}"><img src="img/iq-landing.jpg" alt="IQ School landing page" style="display: block; width: 100%; height: auto"></sc-if>
+<sc-if value="{{shot1}}" hint-placeholder-val="{{ false }}"><img src="img/iq-teacher.jpg" alt="IQ School teacher dashboard" style="display: block; width: 100%; height: auto"></sc-if>
+<sc-if value="{{shot2}}" hint-placeholder-val="{{ false }}"><img src="img/iq-director.jpg" alt="IQ School director dashboard" style="display: block; width: 100%; height: auto"></sc-if>
+</div>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; border-top: 1px solid {{c.border}}">
+<div style="flex: 999 1 460px; min-width: 0; padding: 28px 32px; display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0 0 4px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: {{c.subtle}}">features.kt</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px">
+<sc-for list="{{t.iqFeatures}}" as="f" hint-placeholder-count="8">
+<div style="display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: 10px; border: 1px solid {{c.border}}; background: {{c.surface2}}">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: {{c.accentText}}; flex-shrink: 0">{{f.n}}</span>
+<span style="font-size: 15px; line-height: 1.5; color: {{c.text}}">{{f.t}}</span>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="flex: 1 1 320px; min-width: 0; padding: 28px 32px; border-left: 1px solid {{c.border}}; display: flex; flex-direction: column; gap: 18px">
+<sc-for list="{{iqStack}}" as="g" hint-placeholder-count="2">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; color: {{g.color}}">{{g.title}}</span>
+<div style="display: flex; flex-wrap: wrap; gap: 6px">
+<sc-for list="{{g.items}}" as="s" hint-placeholder-count="6">
+<span style="padding: 4px 9px; border-radius: 6px; background: {{c.chipBg}}; border: 1px solid {{c.chipBorder}}; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: {{c.text}}">{{s}}</span>
+</sc-for>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+</article>
+
+<article class="dc-reveal dc-card" style="border-radius: 18px; overflow: hidden; border: 1px solid #3A2E44; background: #110D16; display: flex; flex-wrap: wrap">
+<div style="flex: 999 1 460px; min-width: 0; padding: 36px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px">
+<span style="padding: 5px 10px; border-radius: 999px; background: #F4C2D7; color: #2A0F1C; font-weight: 700">full-stack · live</span>
+<span style="padding: 5px 10px; border-radius: 999px; border: 1px solid #3A2E44; color: #D8CCE0">wedlink.uz</span>
+</div>
+<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 44px; line-height: 1; color: #FFFFFF">WedLink</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.65; color: #D8CCE0">{{t.wedDesc}}</p>
+<sc-for list="{{wedStack}}" as="g" hint-placeholder-count="2">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; color: {{g.color}}; margin-right: 4px">{{g.title}}</span>
+<sc-for list="{{g.items}}" as="s" hint-placeholder-count="5">
+<span style="padding: 4px 9px; border-radius: 6px; border: 1px solid #3A2E44; color: #F1E6F5; font-family: 'JetBrains Mono', monospace; font-size: 12px">{{s}}</span>
+</sc-for>
+</div>
+</sc-for>
+<a href="https://wedlink.uz" style="align-self: flex-start; margin-top: 6px; padding: 13px 18px; border-radius: 10px; background: #F4C2D7; color: #2A0F1C; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; text-decoration: none">{{t.wedLink}}</a>
+</div>
+<div style="flex: 1 1 340px; min-width: 0; padding: 32px; background: #17111D; border-left: 1px solid #2A2131; display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0 0 4px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #A895B5">features.kt</p>
+<sc-for list="{{t.wedFeatures}}" as="f" hint-placeholder-count="7">
+<div style="display: flex; gap: 12px; align-items: flex-start; padding: 11px 14px; border-radius: 10px; border: 1px solid #2A2131; background: #110D16">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #F4C2D7; flex-shrink: 0">{{f.n}}</span>
+<span style="font-size: 15px; line-height: 1.5; color: #F1E6F5">{{f.t}}</span>
+</div>
+</sc-for>
+</div>
+</article>
+</section>
+
+<section id="skills" style="position: relative; max-width: 1180px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 36px">
+<div class="dc-reveal" style="display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 15px; color: {{c.accentText}}">05. <span style="color: {{c.subtle}}">{{t.skillsKicker}}</span></p>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 42px; line-height: 1.08">{{t.skillsTitle}}</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px">
+<sc-for list="{{t.skillGroups}}" as="g" hint-placeholder-count="6">
+<div class="dc-reveal dc-card" style="border: 1px solid {{c.border}}; border-radius: 14px; background: {{c.surface}}; overflow: hidden">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 20px; border-bottom: 1px solid {{c.border}}; background: {{c.surface2}}; font-family: 'JetBrains Mono', monospace; font-size: 14px">
+<span style="color: {{c.text}}; font-weight: 700"><span style="color: {{c.accentText}}">import</span> {{g.pkg}}</span>
+<span style="color: {{c.subtle}}">{{g.tag}}</span>
+</div>
+<div style="padding: 18px 20px; display: flex; flex-direction: column; gap: 12px">
+<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 20px">{{g.title}}</h3>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{g.items}}" as="s" hint-placeholder-count="5">
+<span style="padding: 6px 10px; border-radius: 6px; background: {{c.chipBg}}; border: 1px solid {{c.chipBorder}}; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: {{c.text}}">{{s}}</span>
+</sc-for>
+</div>
+</div>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section style="position: relative; max-width: 1180px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 36px">
+<div class="dc-reveal" style="display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 15px; color: {{c.accentText}}">06. <span style="color: {{c.subtle}}">{{t.extraKicker}}</span></p>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 42px; line-height: 1.08">{{t.extraTitle}}</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px">
+<sc-for list="{{t.extras}}" as="x" hint-placeholder-count="3">
+<div class="dc-reveal dc-card" style="background: {{c.surface}}; border: 1px solid {{c.border}}; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: {{c.swift}}">{{x.endpoint}}</span>
+<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 21px">{{x.title}}</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: {{c.muted}}">{{x.desc}}</p>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section id="education" style="position: relative; max-width: 1180px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 36px">
+<div class="dc-reveal" style="display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 15px; color: {{c.accentText}}">07. <span style="color: {{c.subtle}}">{{t.eduKicker}}</span></p>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 42px; line-height: 1.08">{{t.eduTitle}}</h2>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+<div class="dc-reveal dc-card" style="flex: 999 1 460px; min-width: 0; background: {{c.surface}}; border: 1px solid {{c.border}}; border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
+<span style="align-self: flex-start; padding: 5px 12px; border-radius: 999px; background: {{c.surface2}}; border: 1px solid {{c.border}}; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: {{c.muted}}">2024 · {{t.degree}}</span>
+<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 22px; line-height: 1.3">{{t.uni}}</h3>
+<p style="margin: 0; font-size: 16px; color: {{c.muted}}">{{t.faculty}}</p>
+</div>
+<div class="dc-reveal dc-card" style="flex: 1 1 320px; min-width: 0; background: {{c.surface}}; border: 1px solid {{c.border}}; border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 22px">{{t.langsTitle}}</h3>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{t.spoken}}" as="sp" hint-placeholder-count="4">
+<span style="padding: 7px 12px; border-radius: 8px; background: {{c.chipBg}}; border: 1px solid {{c.chipBorder}}; font-size: 14px; color: {{c.text}}">{{sp}}</span>
+</sc-for>
+</div>
+</div>
+</div>
+</section>
+
+<section id="contact" style="position: relative; max-width: 1180px; margin: 0 auto; padding: 48px 24px 96px">
+<div class="dc-reveal" style="border-radius: 18px; overflow: hidden; border: 1px solid #30363D; background: #0D1117; box-shadow: 0 30px 80px rgba(0,0,0,0.35)">
+<div style="display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: #161B22; border-bottom: 1px solid #30363D">
+<span style="width: 12px; height: 12px; border-radius: 50%; background: #FF5F57"></span>
+<span style="width: 12px; height: 12px; border-radius: 50%; background: #FEBC2E"></span>
+<span style="width: 12px; height: 12px; border-radius: 50%; background: #28C840"></span>
+<span style="margin-left: 12px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #8B949E">bash — contact</span>
+</div>
+<div style="padding: 44px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center; justify-content: space-between">
+<div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 15px; color: #8B949E"><span style="color: #3DDC84">$</span> ./contact --dostonbek</p>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 46px; line-height: 1.04; color: #FFFFFF">{{t.contactTitle}}</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #C9D1D9">{{t.contactText}}</p>
+</div>
+<div style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 15px">
+<a href="tel:+998774882708" class="dc-glow" style="display: flex; gap: 12px; padding: 14px 18px; border-radius: 10px; border: 1px solid #30363D; background: #161B22; color: #E6EDF3; text-decoration: none"><span style="color: #D2A8FF">phone:</span> +998 77 488-27-08</a>
+<a href="mailto:eshmurodovdoston630@gmail.com" class="dc-glow" style="display: flex; flex-wrap: wrap; gap: 12px; padding: 14px 18px; border-radius: 10px; border: 1px solid #30363D; background: #161B22; color: #E6EDF3; text-decoration: none; overflow-wrap: anywhere"><span style="color: #D2A8FF">email:</span> eshmurodovdoston630@gmail.com</a>
+<a href="https://t.me/Programmer_2001" class="dc-glow" style="display: flex; gap: 12px; padding: 14px 18px; border-radius: 10px; border: 1px solid #30363D; background: #161B22; color: #E6EDF3; text-decoration: none"><span style="color: #D2A8FF">telegram:</span> @Programmer_2001</a>
+<a href="https://github.com/Eshmurodov-Doston1" class="dc-glow" style="display: flex; gap: 12px; padding: 14px 18px; border-radius: 10px; border: 1px solid #30363D; background: #161B22; color: #E6EDF3; text-decoration: none"><span style="color: #D2A8FF">github:</span> Eshmurodov-Doston1</a>
+<div style="display: flex; gap: 12px; padding: 14px 18px; border-radius: 10px; border: 1px dashed #30363D; color: #8B949E"><span style="color: #D2A8FF">location:</span> {{t.location}}</div>
+</div>
+</div>
+</div>
+</section>
+
+<footer style="position: relative; border-top: 1px solid {{c.border}}; background: {{c.headerBg}}">
+<div style="max-width: 1180px; margin: 0 auto; padding: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: {{c.subtle}}">
+<span>© 2026 {{t.first}} {{t.last}}</span>
+<span>{{t.footer}}</span>
+</div>
+</footer>
+
+</div>
+</template>
+<script>
+(function(){
+var SVGNS='http://www.w3.org/2000/svg';
+var STORE='dostonbek.dev.prefs';
+function load(){try{return JSON.parse(localStorage.getItem(STORE))||{}}catch(e){return {}}}
+function save(o){try{localStorage.setItem(STORE,JSON.stringify(o))}catch(e){}}
+var comp, app, tpl, mounted=false, queued=false;
+window.DCLogic=function DCLogic(props){this.props=props||{};this.state={};};
+DCLogic.prototype.setState=function(u){var n=typeof u==='function'?u(this.state):u;this.state=Object.assign({},this.state,n);schedule();};
+DCLogic.prototype.forceUpdate=function(){schedule();};
+function schedule(){if(queued)return;queued=true;requestAnimationFrame(function(){queued=false;render();});}
+function lit(p){if(p==='true')return true;if(p==='false')return false;if(p==='null')return null;if(/^-?\d+(\.\d+)?$/.test(p))return Number(p);var q=p.match(/^['"](.*)['"]$/);if(q)return q[1];return undefined;}
+function get(sc,p){p=p.trim();var l=lit(p);if(l!==undefined||p==='null')return l;var parts=p.split('.'),v=sc;for(var i=0;i<parts.length;i++){if(v==null)return undefined;v=v[parts[i]];}return v;}
+var WHOLE=/^\s*\{\{\s*([^}]+?)\s*\}\}\s*$/;
+function interp(str,sc){var w=str.match(WHOLE);if(w)return get(sc,w[1]);return str.replace(/\{\{\s*([^}]+?)\s*\}\}/g,function(_,p){var v=get(sc,p);return v==null?'':String(v);});}
+function build(node,sc,ns,out){
+ if(node.nodeType===3){out.push(document.createTextNode(interp(node.data,sc)));return;}
+ if(node.nodeType!==1)return;
+ var tag=node.nodeName.toLowerCase();
+ if(tag==='sc-for'){var list=interp(node.getAttribute('list'),sc)||[];var as=node.getAttribute('as')||'item';
+  for(var i=0;i<list.length;i++){var s2=Object.create(sc);s2[as]=list[i];s2.$index=i;kids(node,s2,ns,out);}return;}
+ if(tag==='sc-if'){if(interp(node.getAttribute('value'),sc))kids(node,sc,ns,out);return;}
+ var nns=(tag==='svg'||ns)?SVGNS:null;
+ var el=nns?document.createElementNS(nns,tag):document.createElement(tag);
+ el.__h={};
+ for(var a=0;a<node.attributes.length;a++){var at=node.attributes[a],n=at.name;
+  if(n.indexOf('hint-')===0)continue;
+  var v=interp(at.value,sc);
+  if(/^on[a-z]+$/i.test(n)){if(typeof v==='function')el.__h[n.slice(2).toLowerCase()]=v;continue;}
+  if(n==='key'){el.setAttribute('data-key',String(v));continue;}
+  if(v===false||v==null)continue;
+  el.setAttribute(n,v===true?'':String(v));}
+ var c=[];kids(node,sc,nns,c);for(var j=0;j<c.length;j++)el.appendChild(c[j]);
+ out.push(el);}
+function kids(node,sc,ns,out){var ch=node.childNodes;for(var i=0;i<ch.length;i++)build(ch[i],sc,ns,out);}
+function same(a,b){if(a.nodeType!==b.nodeType||a.nodeName!==b.nodeName)return false;if(a.nodeType===1&&a.getAttribute('data-key')!==b.getAttribute('data-key'))return false;return true;}
+function patchKids(parent,nk){var i;for(i=0;i<nk.length;i++){var o=parent.childNodes[i];if(!o)parent.appendChild(nk[i]);else if(same(o,nk[i]))patch(o,nk[i]);else parent.replaceChild(nk[i],o);}
+ while(parent.childNodes.length>nk.length)parent.removeChild(parent.lastChild);}
+function patch(o,n){if(o.nodeType===3){if(o.data!==n.data)o.data=n.data;return;}
+ var i,oa=o.attributes,na=n.attributes;
+ for(i=oa.length-1;i>=0;i--)if(!n.hasAttribute(oa[i].name))o.removeAttribute(oa[i].name);
+ for(i=0;i<na.length;i++)if(o.getAttribute(na[i].name)!==na[i].value)o.setAttribute(na[i].name,na[i].value);
+ o.__h=n.__h;patchKids(o,Array.prototype.slice.call(n.childNodes));}
+function render(){var vals=comp.renderVals();var out=[];kids(tpl,vals,null,out);patchKids(app,out);
+ var st=comp.state;document.documentElement.lang=(st.lang||comp.props.defaultLang||'ru');
+ save({lang:st.lang,dark:st.dark});
+ if(!mounted){mounted=true;if(comp.componentDidMount)comp.componentDidMount();}}
+document.addEventListener('click',function(e){var t=e.target;while(t&&t!==document){if(t.__h&&t.__h.click){t.__h.click(e);return;}t=t.parentNode;}});
+window.__dcStart=function(Component,defaults){
+ app=document.getElementById('app');tpl=document.getElementById('dc-template').content;
+ comp=new Component(defaults);var p=load();
+ if(p.lang)comp.state.lang=p.lang;
+ if(typeof p.dark==='boolean')comp.state.dark=p.dark;
+ render();};
+})();
+</script>
+<script>
+
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { lang: null, dark: null, roleIdx: 0, shot: 0 };
+}
+componentDidMount() {
+this.timer = setInterval(() => this.setState((s) => ({ roleIdx: (s.roleIdx + 1) % 4 })), 2600);
+}
+componentWillUnmount() {
+clearInterval(this.timer);
+}
+segs(str) {
+return String(str).split('**').map((t, i) => ({ t, b: i % 2 === 1, n: i % 2 === 0 })).filter((s) => s.t.length > 0);
+}
+renderVals() {
+const lang = this.state.lang ?? this.props.defaultLang ?? 'ru';
+const dark = this.state.dark ?? this.props.defaultDark ?? true;
+const night = {
+bg: '#090C12', surface: '#0F141B', surface2: '#131A23', border: '#1F2833',
+text: '#E6EDF3', muted: '#B3BECB', subtle: '#8B97A6', dot: 'rgba(255,255,255,0.06)',
+glow: 'rgba(61,220,132,0.16)', glow2: 'rgba(255,138,101,0.09)',
+accent: '#3DDC84', accentText: '#3DDC84', onAccent: '#04130A', swift: '#FF8A65',
+chipBg: '#131A23', chipBorder: '#2A3542', headerBg: 'rgba(9,12,18,0.82)',
+tagBg: 'rgba(61,220,132,0.08)', tagBorder: 'rgba(61,220,132,0.28)', tagText: '#8EF0B9'
+};
+const day = {
+bg: '#F7F8FA', surface: '#FFFFFF', surface2: '#F2F4F7', border: '#E1E5EB',
+text: '#0D1117', muted: '#2F3A47', subtle: '#4B5563', dot: 'rgba(13,17,23,0.07)',
+glow: 'rgba(21,128,61,0.12)', glow2: 'rgba(194,65,12,0.07)',
+accent: '#15803D', accentText: '#15803D', onAccent: '#FFFFFF', swift: '#C2410C',
+chipBg: '#FFFFFF', chipBorder: '#CBD3DD', headerBg: 'rgba(247,248,250,0.86)',
+tagBg: '#ECFDF3', tagBorder: '#B7E4C7', tagText: '#14532D'
+};
+const c = dark ? night : day;
+const T = this.texts();
+const t0 = T[lang] || T.ru;
+const roles = [
+['Android Developer', c.accentText], ['iOS Developer', c.swift], ['Spring Boot Backend', dark ? '#79C0FF' : '#1D4ED8'], ['AI-powered Engineer', dark ? '#D2A8FF' : '#7C3AED']
+];
+const r = roles[this.state.roleIdx % roles.length];
+const langs = ['uz', 'ru', 'en'].map((code) => ({
+code: code.toUpperCase(),
+active: code === lang ? 'true' : 'false',
+bg: code === lang ? c.accent : 'transparent',
+fg: code === lang ? c.onAccent : c.muted,
+pick: () => this.setState({ lang: code })
+}));
+const K = '#FF7B72', S = '#A5D6FF', P = '#D2A8FF', F = '#79C0FF', C = '#8B949E', W = '#E6EDF3', N = '#FFA657';
+const raw = [
+[[t0.codeComment, C]],
+[['data class ', K], ['Developer', N], ['(', W]],
+[['  val ', K], ['name', P], [': ', W], ['String', N], [' = ', W], ['"Dostonbek"', S], [',', W]],
+[['  val ', K], ['platforms', P], [' = ', W], ['listOf', F], ['(', W], ['"Android"', S], [', ', W], ['"iOS"', S], ['),', W]],
+[['  val ', K], ['architecture', P], [' = ', W], ['listOf', F], ['(', W], ['"MVI"', S], [', ', W], ['"MVVM"', S], ['),', W]],
+[['  val ', K], ['experience', P], [': ', W], ['Int', N], [' = ', W], ['6', N], [',', W]],
+[['  val ', K], ['stack', P], [' = ', W], ['listOf', F], ['(', W], ['"Kotlin"', S], [', ', W], ['"Compose"', S], [', ', W], ['"Swift"', S], ['),', W]],
+[['  val ', K], ['backend', P], [' = ', W], ['Backend', N], ['(', W]],
+[['    language', P], [' = ', W], ['"Kotlin"', S], [',', W]],
+[['    framework', P], [' = ', W], ['"Spring Boot 3"', S], [',', W]],
+[['    database', P], [' = ', W], ['"PostgreSQL"', S], [' + ', W], ['"Flyway"', S], [',', W]],
+[['    cache', P], [' = ', W], ['"Redis"', S], [',', W]],
+[['    auth', P], [' = ', W], ['"JWT + OAuth2"', S], [',', W]],
+[['    realtime', P], [' = ', W], ['"WebSocket"', S]],
+[['  ),', W]],
+[['  val ', K], ['frontend', P], [' = ', W], ['listOf', F], ['(', W], ['"Vue 3"', S], [', ', W], ['"React"', S], [', ', W], ['"TypeScript"', S], ['),', W]],
+[['  val ', K], ['ai', P], [' = ', W], ['listOf', F], ['(', W], ['"Claude"', S], [', ', W], ['"Gemini"', S], [', ', W], ['"GPT"', S], [')', W]],
+[[') {', W]],
+[['  fun ', K], ['hire', F], ['() = ', W], ['"eshmurodovdoston630@gmail.com"', S]],
+[['}', W]]
+];
+const code = raw.map((toks, i) => ({ no: String(i + 1), delay: (0.6 + i * 0.09).toFixed(2) + 's', tokens: toks.map(([text, color]) => ({ text, color })) }));
+const mItems = ['Kotlin', 'Jetpack Compose', 'Swift', 'MVI', 'MVVM', 'Clean Architecture', 'Spring Boot', 'PostgreSQL', 'Redis', 'Vue 3', 'React', 'TypeScript', 'Docker', 'In-App Update', 'Multi-module', 'Coroutines', 'WebRTC', 'Retrofit', 'Room', 'Hilt', 'Firebase', 'Gemini API', 'Claude', 'REST API', 'Git'];
+const mColors = [c.accentText, c.swift, dark ? '#79C0FF' : '#1D4ED8', dark ? '#D2A8FF' : '#7C3AED'];
+const half = mItems.map((m, i) => ({ t: m, color: mColors[i % 4] }));
+const marquee = half.concat(half);
+const shotPaths = ['/', '/teacher/dashboard', '/director/dashboard'];
+const shotLabels = ['Landing', t0.shotTeacher, t0.shotDirector];
+const shots = shotLabels.map((label, i) => ({ label, active: i === this.state.shot ? 'true' : 'false', bg: i === this.state.shot ? c.accent : 'transparent', fg: i === this.state.shot ? c.onAccent : c.muted, pick: () => this.setState({ shot: i }) }));
+const iqStack = [
+{ title: '// frontend', color: dark ? '#79C0FF' : '#1D4ED8', items: ['Vue 3', 'TypeScript', 'Pinia', 'Vue Router', 'Tailwind CSS', 'Vite', 'LiveKit', 'STOMP / WebSocket', 'KaTeX', 'Clean Architecture'] },
+{ title: '// backend', color: c.accentText, items: ['Kotlin', 'Spring Boot 3', 'Spring Security', 'PostgreSQL', 'Flyway', 'Spring Data JPA', 'Redis', 'WebSocket', 'JWT', 'Argon2', 'Bucket4j', 'PDFBox', 'Apache POI', 'OpenAPI / Swagger', 'Actuator', 'Docker'] }
+];
+const wedStack = [
+{ title: 'front:', color: '#F4C2D7', items: ['React 18', 'Vite', 'Tailwind CSS', 'Framer Motion', 'Node.js / Express', 'WebSocket'] },
+{ title: 'back:', color: '#3DDC84', items: ['Kotlin', 'Spring Boot 3', 'Spring Security 6', 'Google OAuth2', 'JWT', 'PostgreSQL', 'Redis', 'Hexagonal', 'Swagger', 'Docker'] }
+];
+const jobs = t0.jobs.map((j, i) => ({ ...j, dot: i === 0 ? c.accentText : c.subtle, points: j.points.map((p) => this.segs(p)) }));
+return {
+c, t: { ...t0, jobs }, langs, shots, iqStack, wedStack, shotPath: shotPaths[this.state.shot], shot0: this.state.shot === 0, shot1: this.state.shot === 1, shot2: this.state.shot === 2, code, marquee, dark, light: !dark,
+role: r[0], roleColor: r[1], roleKey: 'r' + this.state.roleIdx,
+heroSegs: this.segs(t0.heroText),
+about: t0.aboutParas.map((p) => ({ segs: this.segs(p) })),
+farovonTags: ['Kotlin', 'Jetpack Compose', 'Clean Architecture', 'Gemini AI', 'Offline-first', 'PDF'],
+toggleTheme: () => this.setState({ dark: !dark })
+};
+}
+texts() {
+const si = {
+android: ['Kotlin', 'Java', 'Jetpack Compose', 'XML / Fragments', 'Coroutines & Flow', 'Multi-module', 'Navigation', 'Foreground Service', 'WebRTC', 'Biometric', 'In-App Update', 'ViewBinding'],
+ios: ['Swift', 'Xcode', 'iOS'],
+arch: ['MVI', 'MVVM', 'MVP', 'MVC', 'Clean Architecture', 'SOLID'],
+data: ['Retrofit', 'OkHttp', 'REST API', 'JWT', 'Room', 'DataStore', 'Paging 3', 'SQLite', 'Realm', 'RxJava', 'Dagger 2', 'Hilt', 'Firebase', 'Firestore', 'Google Maps API'],
+web: ['Kotlin', 'Spring Boot 3', 'Spring Security', 'PostgreSQL', 'Flyway', 'Spring Data JPA', 'Redis', 'WebSocket / STOMP', 'JWT / OAuth2', 'Swagger', 'Docker', 'Vue 3', 'React', 'TypeScript', 'Tailwind CSS', 'Vite'],
+tools: ['Git', 'GitLab', 'Claude', 'ChatGPT', 'Gemini', 'Gemini API']
+};
+const pk = ['android.*', 'ios.*', 'architecture.*', 'data.network.*', 'backend.web.*', 'tools.ai.*'];
+const st = [
+['Kotlin', 'Jetpack Compose', 'MVI', 'MVVM', 'Clean Architecture', 'In-App Update', 'Hilt', 'Retrofit', 'Room', 'Firebase', 'GitLab'],
+['Kotlin', 'Java', 'MVVM', 'Retrofit', 'Room', 'RxJava', 'Dagger 2', 'Google Maps API'],
+['Kotlin', 'Java', 'MVP/MVVM', 'Retrofit', 'RxJava', 'SQLite/Realm', 'Dagger 2']
+];
+const hs = [['a3f9c21', true], ['7be04d8', false], ['1c52e9f', false]];
+const cm = [
+{ module: ':app :core :network :navigation :common-ui :feature:* (12)', tags: ['Kotlin', 'Jetpack Compose', 'MVI / UDF', 'Multi-module', 'Clean Architecture', 'Hilt', 'Coroutines & Flow', 'Room', 'DataStore', 'Retrofit', 'WebRTC', 'Firebase', 'Gemini AI', 'Navigation 3'] },
+{ module: 'uz.otpgroup.problemloans', tags: ['Kotlin', 'MVVM', 'Hilt', 'Retrofit', 'OkHttp', 'Room', 'Paging 3', 'Coroutines', 'Google Maps', 'osmdroid', 'Firebase', 'Pusher', 'MPAndroidChart'] }
+];
+const pr = [
+{ file: 'IdeaDelivery.kt', client: 'IDEA', dot: '#3DDC84', tags: ['Kotlin', 'Google Maps', 'REST API'] },
+{ file: 'Installments.kt', client: 'IDEA', dot: '#3DDC84', tags: ['Kotlin', 'MVVM', 'Firebase'] },
+{ file: 'EInvoice.java', client: 'E-Invoice', dot: '#FFA657', tags: ['Java', 'Kotlin', 'RxJava'] }
+];
+const ep = ['POST /api/backend', 'GET /web/new-site', 'PATCH /web/support'];
+const build = (L) => ({
+...L,
+skillGroups: L.skillGroups.map((g, i) => ({ ...g, pkg: pk[i], items: si[g.k] })),
+jobs: L.jobs.map((j, i) => ({ ...j, hash: hs[i][0], head: hs[i][1], stack: st[i] })),
+projects: L.projects.map((p, i) => ({ ...p, ...pr[i] })),
+cases: L.cases.map((cs, i) => ({ ...cs, ...cm[i], badge: L.caseBadge, features: cs.features.map((f, k) => ({ t: f, n: String(k + 1).padStart(2, '0') })) })),
+extras: L.extras.map((x, i) => ({ ...x, endpoint: ep[i] })),
+farovonFeatures: L.farovonFeatures.map((f, i) => ({ t: f, n: String(i + 1).padStart(2, '0') })),
+iqFeatures: L.iqFeatures.map((f, i) => ({ t: f, n: String(i + 1).padStart(2, '0') })),
+wedFeatures: L.wedFeatures.map((f, i) => ({ t: f, n: String(i + 1).padStart(2, '0') }))
+});
+return {
+ru: build({
+first: 'Достонбек', last: 'Эшмуродов',
+nav: [{ num: '01.', label: 'обо_мне', href: '#about' }, { num: '02.', label: 'опыт', href: '#experience' }, { num: '03.', label: 'проекты', href: '#projects' }, { num: '04.', label: 'full-stack', href: '#fullstack' }, { num: '05.', label: 'навыки', href: '#skills' }, { num: '08.', label: 'контакты', href: '#contact' }],
+themeLabel: 'Переключить светлую/тёмную тему',
+status: 'открыт к предложениям', city: 'Ташкент, UZ',
+heroText: 'Более **6 лет** создаю мобильные приложения для **банковской, финтех- и B2B-сферы** — от архитектуры до релиза и поддержки в продакшене. Также создаю **full-stack веб-платформы** на Kotlin/Spring Boot и Vue/React.',
+ctaProjects: 'смотреть проекты →',
+codeComment: '// Мобильный разработчик из Ташкента',
+stats: [{ key: 'experience', n: '6+', label: 'лет в мобильной разработке' }, { key: 'projects', n: '8', label: 'проектов: mobile и full-stack web' }, { key: 'branches', n: '60+', label: 'филиалов IDEA используют мои приложения' }, { key: 'google_play', n: '1', label: 'собственное приложение в Google Play' }],
+aboutKicker: '// обо мне', aboutTitle: 'Мобильная разработка — моя основная специализация',
+aboutParas: [
+'Я **Android- и iOS-разработчик** из Ташкента. Сейчас работаю в **Ипотека-банке (OTP Group)**: разрабатываю внутренние приложения банка — «Unduruv» для отдела проблемных кредитов и «Monitoring».',
+'Так как приложения банка работают во внутреннем контуре, я внедрил **In-App Update** — новые версии APK раздаются и устанавливаются через собственный backend, без Google Play.',
+'Знаю все основные архитектурные паттерны, а в работе использую самые актуальные — **MVI и MVVM** — поверх **Clean Architecture**. Мой pet-проект **«Farovon»** опубликован в Google Play.',
+'Помимо мобильной разработки делаю **full-stack проекты**: backend на **Kotlin + Spring Boot** (PostgreSQL, Redis, WebSocket) и frontend на **Vue 3 / React** — например, школьную платформу **IQ School** и сервис приглашений **WedLink**. Каждый день использую **Claude, ChatGPT и Gemini** для ускорения разработки и code review.'
+],
+skillsKicker: '// навыки', skillsTitle: 'Технологический стек',
+skillGroups: [{ k: 'android', title: 'Android', tag: 'основное' }, { k: 'ios', title: 'iOS', tag: 'основное' }, { k: 'arch', title: 'Архитектура', tag: 'подходы' }, { k: 'data', title: 'Данные и сеть', tag: 'библиотеки' }, { k: 'web', title: 'Backend и Web', tag: 'дополнительно' }, { k: 'tools', title: 'Инструменты и AI', tag: 'каждый день' }],
+expKicker: '// опыт работы', expTitle: '6 лет коммерческой разработки',
+jobs: [
+{ period: 'Июнь 2023 — сейчас', company: 'Ipotekabank (OTP Group)', sector: 'Банк', role: 'Android Developer', points: ['Разработал **«Unduruv»** для сотрудников взыскания — работает в продакшене и интегрировано с системой HardCollection банка.', 'Разработал **«Monitoring»** — приложение для мониторинга кредитных залогов с созданием актов на месте, интегрированное с системой **Prism**; multi-module (12 модулей), MVI, offline-first, WebRTC, Gemini AI.', 'Внедрил **In-App Update**: так как приложения внутренние, новые версии APK раздаются через собственный backend, без Google Play.', 'Архитектура — **MVI и MVVM** поверх Clean Architecture; владею и другими паттернами (MVP, MVC).', 'Интеграция с банковскими сервисами через REST API, Room, Google Maps API, Firebase.', 'Использую **Claude, ChatGPT и Gemini** для ускорения разработки и code review.'] },
+{ period: 'Сен 2022 — Май 2023', company: 'OO IDEA CONCEPT GROUP', sector: 'Ритейл', role: 'Android Developer', points: ['Разработал **«Idea Delivery»** — управление доставкой и отслеживание статусов заказов в реальном времени.', 'Создал приложение для сотрудников **60+ филиалов** по оформлению онлайн-рассрочки на товары.', 'Интеграция с сервером через REST API, локальное хранение данных, работа с картами.'] },
+{ period: 'Ноя 2020 — Дек 2022', company: 'E-Invoice', sector: 'Электронный документооборот', role: 'Android Developer', points: ['Приложение для налоговых и бухгалтерских документов: **счета-фактуры, акты, акты сверки**.', 'Просмотр, создание и подписание документов с интеграцией **ЭЦП**.', 'Поддержка и регулярные релизы в Google Play.'] }
+],
+projKicker: '// проекты', projTitle: 'Что я создал', featured: 'избранный проект', storeLabel: 'Открыть в Google Play →',
+caseBadge: 'Ipotekabank · в продакшене', nda: '// внутреннее приложение банка — код и скриншоты под NDA',
+cases: [
+{ kind: 'мониторинг залогов', name: 'Monitoring', desc: 'Приложение для сотрудников банка, которые выезжают на места и проводят мониторинг кредитных залогов: осматривают объект, пишут заключение и формируют акт прямо на месте. Интегрировано с банковской системой Prism.', features: ['Multi-module Clean Architecture: 12 feature-модулей, MVI / UDF', 'Offline-first: Room-кеш и очередь запросов с фоновой синхронизацией', 'Создание актов мониторинга и их генерация в PDF', 'Пошаговый мастер добавления нового залога', 'Геопозиция сотрудника в реальном времени (Foreground Service)', 'Чат сотрудников и звонки на WebRTC', 'AI-ассистент на Gemini', 'Вход по PIN и биометрии, JWT с авто-обновлением токена', 'Адаптивный UI для телефонов и планшетов, 3 языка'] },
+{ kind: 'взыскание проблемных кредитов', name: 'Unduruv', desc: 'Приложение для сотрудников отдела проблемных кредитов: работа с должниками в поле. Работает в продакшене и интегрировано с системой HardCollection банка.', features: ['Список должников с пагинацией (Paging 3) и детальная карточка кредита', 'Фиксация обещаний оплаты, отсрочек, штрафов и комментариев', 'Пошаговое сопровождение юридического процесса', 'Карты и геолокация: адреса должников, маршруты, трекинг сотрудника', 'Аудиозапись и чат', 'Статистика и графики эффективности', 'Офлайн-синхронизация, push и realtime-уведомления', 'Обновление APK через собственный backend (In-App Update)'] }
+],
+farovonDesc: 'Личный финансовый помощник с AI. Учёт бюджета, контроль расходов, кредитный калькулятор и советы от искусственного интеллекта в одном современном интерфейсе. Данные хранятся только на устройстве.',
+farovonFeatures: ['Голосовой ввод трат — сумма, категория и описание распознаются автоматически', 'AI-аналитик и чат-бот на Gemini', 'Кредитный калькулятор: аннуитет и дифференцированный, график в PDF', 'Курсы валют в реальном времени и конвертер', 'Работает офлайн, тёмная тема с glassmorphism'],
+projects: [
+{ kind: 'логистика', name: 'Idea Delivery', desc: 'Управление доставкой и отслеживание статусов заказов в реальном времени для внутреннего контроля.' },
+{ kind: 'ритейл / финтех', name: 'Онлайн-рассрочка', desc: 'Приложение для сотрудников 60+ филиалов: оформление онлайн-рассрочки на товары.' },
+{ kind: 'электронный документооборот', name: 'E-Invoice Mobile', desc: 'Электронные счета-фактуры, акты и акты сверки с подписанием через ЭЦП.' }
+],
+fsKicker: '// full-stack проекты', fsTitle: 'Web-платформы: frontend + backend', fsIntro: 'Помимо мобильной разработки создаю полноценные веб-платформы с нуля — backend на Kotlin/Spring Boot и frontend на Vue 3 или React.',
+shotTeacher: 'Учитель', shotDirector: 'Директор',
+iqDesc: 'Многоролевая платформа управления школой с несколькими филиалами: супер-админ, директор, администратор, учитель, ученик и родитель — у каждой роли свой кабинет.',
+iqFeatures: ['RBAC: 7 ролей с отдельными кабинетами и правами доступа', 'Филиалы школ на карте (Yandex Maps)', 'Посещаемость, оценки, домашние задания', 'Расписание с drag-and-drop: день / неделя / месяц', 'Онлайн-уроки и live-классы на LiveKit', 'Чат в реальном времени (WebSocket / STOMP)', 'AI-анализ учебников и генерация тестов с проверкой математики', 'Конструктор тестов с формулами (LaTeX / KaTeX) и экспортом', 'Поурочные планы и документы в PDF, отчёты в Excel', 'Финансы: зарплаты, бонусы, отчёты директора', 'Безопасность: JWT + refresh, Argon2, rate limiting, audit log', 'i18n: узбекский, русский, английский'],
+wedDesc: 'Платформа онлайн-приглашений на свадьбы и мероприятия: пользователь сам собирает интерактивное приглашение по шаблону, добавляет музыку, место на карте и собирает ответы гостей.',
+wedFeatures: ['Студия приглашений: шаблоны, live-превью, включение секций', 'Выбор музыки и анимации (Framer Motion, конфетти)', 'Место проведения на Yandex Maps', 'RSVP-ответы гостей и QR-коды', 'Чат с файлами и геолокацией', 'Оформление заказа и модерация через админку', 'Вход через Google OAuth2, JWT (15 мин / 7 дней) в Redis', 'Hexagonal Architecture на backend'],
+wedLink: 'Открыть wedlink.uz →',
+extraKicker: '// также могу помочь', extraTitle: 'Backend и веб',
+extras: [
+{ title: 'Backend на Spring Boot', desc: 'Серверная часть и REST API на Kotlin/Java + Spring Boot: PostgreSQL, Redis, Spring Security, WebSocket — в том числе бэкенд для собственного мобильного приложения.' },
+{ title: 'Создание веб-сайтов', desc: 'Разработка сайтов с нуля: от структуры и вёрстки до запуска.' },
+{ title: 'Поддержка сайтов', desc: 'Сопровождение работающих сайтов: исправление ошибок, новый функционал, обновления.' }
+],
+eduKicker: '// образование', eduTitle: 'Образование и языки', degree: 'Бакалавр',
+uni: 'Ташкентский университет информационных технологий им. Мухаммада аль-Хорезми (ТУИТ)', faculty: 'Компьютерный инжиниринг',
+langsTitle: 'Языки', spoken: ['Узбекский — родной', 'Русский', 'Английский', 'Таджикский'],
+contactTitle: 'Давайте обсудим ваш проект', contactText: 'Открыт к интересным предложениям в мобильной разработке.', location: 'Ташкент, Узбекистан',
+footer: 'сделано с Kotlin-мышлением'
+}),
+uz: build({
+first: 'Dostonbek', last: 'Eshmurodov',
+nav: [{ num: '01.', label: 'men_haqimda', href: '#about' }, { num: '02.', label: 'tajriba', href: '#experience' }, { num: '03.', label: 'loyihalar', href: '#projects' }, { num: '04.', label: 'full-stack', href: '#fullstack' }, { num: '05.', label: 'ko‘nikmalar', href: '#skills' }, { num: '08.', label: 'aloqa', href: '#contact' }],
+themeLabel: 'Kunduzgi/tungi rejimni almashtirish',
+status: 'takliflarni ko‘rib chiqaman', city: 'Toshkent, UZ',
+heroText: '**6 yildan ortiq** vaqtdan beri **bank, fintech va B2B** sohalari uchun mobil ilovalar yarataman — arxitekturadan tortib relizgacha va prodakshnda qo‘llab-quvvatlashgacha. Shuningdek, Kotlin/Spring Boot va Vue/React’da **full-stack veb-platformalar** yarataman.',
+ctaProjects: 'loyihalarni ko‘rish →',
+codeComment: '// Toshkentlik mobil dasturchi',
+stats: [{ key: 'experience', n: '6+', label: 'yil mobil dasturlashda' }, { key: 'projects', n: '8', label: 'loyiha: mobil va full-stack web' }, { key: 'branches', n: '60+', label: 'IDEA filiallarida ilovalarim ishlatiladi' }, { key: 'google_play', n: '1', label: 'o‘z ilovam Google Play’da' }],
+aboutKicker: '// men haqimda', aboutTitle: 'Mobil dasturlash — asosiy mutaxassisligim',
+aboutParas: [
+'Men Toshkentlik **Android va iOS dasturchiman**. Hozir **Ipoteka-bankda (OTP Group)** ishlayman: bankning ichki ilovalarini ishlab chiqaman — muammoli kreditlar bo‘limi uchun «Unduruv» va «Monitoring».',
+'Bank ilovalari ichki tizimda ishlagani sababli **In-App Update**’ni joriy qildim — APK’ning yangi versiyalari o‘zimizning backend orqali tarqatiladi va o‘rnatiladi, Google Play’siz.',
+'Barcha asosiy arxitektura patternlarini bilaman, ishda esa eng dolzarblaridan — **MVI va MVVM** — **Clean Architecture** ustida foydalanaman. **«Farovon»** shaxsiy loyiham Google Play’da chop etilgan.',
+'Mobil dasturlashdan tashqari **full-stack loyihalar** qilaman: backend **Kotlin + Spring Boot**’da (PostgreSQL, Redis, WebSocket), frontend **Vue 3 / React**’da — masalan, **IQ School** maktab platformasi va **WedLink** taklifnomalar servisi. Har kuni **Claude, ChatGPT va Gemini**’dan dasturlash va code review’ni tezlashtirish uchun foydalanaman.'
+],
+skillsKicker: '// ko‘nikmalar', skillsTitle: 'Texnologiyalar steki',
+skillGroups: [{ k: 'android', title: 'Android', tag: 'asosiy' }, { k: 'ios', title: 'iOS', tag: 'asosiy' }, { k: 'arch', title: 'Arxitektura', tag: 'yondashuvlar' }, { k: 'data', title: 'Ma’lumotlar va tarmoq', tag: 'kutubxonalar' }, { k: 'web', title: 'Backend va Web', tag: 'qo‘shimcha' }, { k: 'tools', title: 'Vositalar va AI', tag: 'har kuni' }],
+expKicker: '// ish tajribasi', expTitle: '6 yillik tijoriy dasturlash',
+jobs: [
+{ period: 'Iyun 2023 — hozir', company: 'Ipotekabank (OTP Group)', sector: 'Bank', role: 'Android Developer', points: ['Undiruv xodimlari uchun **«Unduruv»** ilovasini ishlab chiqdim — prodakshnda ishlaydi va bankning HardCollection tizimiga integratsiya qilingan.', '**«Monitoring»** ilovasini ishlab chiqdim — kredit garovlarini monitoring qilish va joyida akt yaratish uchun, bankning **Prism** tizimiga ulangan; multi-module (12 modul), MVI, offline-first, WebRTC, Gemini AI.', '**In-App Update**’ni joriy qildim: ilovalar ichki bo‘lgani uchun APK’ning yangi versiyalari o‘zimizning backend orqali tarqatiladi, Google Play’siz.', 'Arxitektura — Clean Architecture ustida **MVI va MVVM**; boshqa patternlarni ham bilaman (MVP, MVC).', 'Bank servislari bilan REST API orqali integratsiya, Room, Google Maps API, Firebase.', 'Dasturlashni tezlashtirish uchun **Claude, ChatGPT va Gemini**’dan foydalanaman.'] },
+{ period: 'Sen 2022 — May 2023', company: 'OO IDEA CONCEPT GROUP', sector: 'Savdo', role: 'Android Developer', points: ['**«Idea Delivery»** ilovasini yaratdim — yetkazib berishni boshqarish va buyurtma holatlarini real vaqtda kuzatish.', '**60+ filial** xodimlari uchun tovarlarga onlayn muddatli to‘lov rasmiylashtirish ilovasini yaratdim.', 'Server bilan REST API orqali integratsiya, lokal ma’lumot saqlash, xaritalar bilan ishlash.'] },
+{ period: 'Noy 2020 — Dek 2022', company: 'E-Invoice', sector: 'Elektron hujjat aylanishi', role: 'Android Developer', points: ['Soliq va buxgalteriya hujjatlari uchun ilova: **hisob-fakturalar, dalolatnomalar, solishtirma dalolatnomalar**.', 'Hujjatlarni ko‘rish, yaratish va **ERI** orqali imzolash.', 'Qo‘llab-quvvatlash va Google Play’da muntazam relizlar.'] }
+],
+projKicker: '// loyihalar', projTitle: 'Men yaratgan loyihalar', featured: 'tanlangan loyiha', storeLabel: 'Google Play’da ochish →',
+caseBadge: 'Ipotekabank · prodakshnda', nda: '// bankning ichki ilovasi — kod va skrinshotlar NDA ostida',
+cases: [
+{ kind: 'kredit garovlari monitoringi', name: 'Monitoring', desc: 'Bank xodimlari uchun ilova: xodimlar joyiga chiqib kredit garovlarini monitoring qiladi — obyektni ko‘zdan kechiradi, xulosa yozadi va o‘sha yerning o‘zida akt yaratadi. Bankning Prism tizimiga ulangan.', features: ['Multi-module Clean Architecture: 12 ta feature-modul, MVI / UDF', 'Offline-first: Room-kesh va so‘rovlar navbati, fonda sinxronizatsiya', 'Monitoring aktlarini yaratish va PDF’ga generatsiya qilish', 'Yangi garov qo‘shish uchun bosqichma-bosqich master', 'Xodim joylashuvini real vaqtda uzatish (Foreground Service)', 'Xodimlar chati va WebRTC qo‘ng‘iroqlari', 'Gemini asosidagi AI-yordamchi', 'PIN va biometriya orqali kirish, JWT tokenni avtomatik yangilash', 'Telefon va planshet uchun moslashuvchan UI, 3 til'] },
+{ kind: 'muammoli kreditlarni undirish', name: 'Unduruv', desc: 'Muammoli kreditlar bo‘limi xodimlari uchun ilova: qarzdorlar bilan joyida ishlash. Prodakshnda ishlaydi va bankning HardCollection tizimiga integratsiya qilingan.', features: ['Qarzdorlar ro‘yxati pagination bilan (Paging 3) va kreditning batafsil kartasi', 'To‘lov va’dalari, kechiktirish, jarimalar va izohlarni qayd etish', 'Yuridik jarayonni bosqichma-bosqich yuritish', 'Xarita va geolokatsiya: qarzdor manzillari, marshrutlar, xodim trekingi', 'Audio yozuv va chat', 'Statistika va samaradorlik grafiklari', 'Oflayn sinxronizatsiya, push va realtime-bildirishnomalar', 'APK’ni o‘zimizning backend orqali yangilash (In-App Update)'] }
+],
+farovonDesc: 'AI bilan ishlaydigan shaxsiy moliya yordamchisi. Byudjet hisobi, xarajatlar nazorati, kredit kalkulyatori va sun’iy intellekt maslahatlari bitta zamonaviy interfeysda. Ma’lumotlar faqat qurilmada saqlanadi.',
+farovonFeatures: ['Xarajatlarni ovoz bilan kiritish — summa, kategoriya va tavsif avtomatik aniqlanadi', 'Gemini asosidagi AI-tahlilchi va chat-bot', 'Kredit kalkulyatori: annuitet va differensial, jadval PDF’da', 'Real vaqtdagi valyuta kurslari va konvertor', 'Oflayn ishlaydi, glassmorphism uslubidagi tungi dizayn'],
+projects: [
+{ kind: 'logistika', name: 'Idea Delivery', desc: 'Ichki nazorat uchun yetkazib berishni boshqarish va buyurtma holatlarini real vaqtda kuzatish.' },
+{ kind: 'savdo / fintech', name: 'Onlayn muddatli to‘lov', desc: '60+ filial xodimlari uchun ilova: tovarlarga onlayn muddatli to‘lov rasmiylashtirish.' },
+{ kind: 'elektron hujjat aylanishi', name: 'E-Invoice Mobile', desc: 'Elektron hisob-fakturalar, dalolatnomalar va ERI orqali imzolash.' }
+],
+fsKicker: '// full-stack loyihalar', fsTitle: 'Web-platformalar: frontend + backend', fsIntro: 'Mobil dasturlashdan tashqari to‘liq veb-platformalarni noldan yarataman — backend Kotlin/Spring Boot’da, frontend Vue 3 yoki React’da.',
+shotTeacher: 'O‘qituvchi', shotDirector: 'Direktor',
+iqDesc: 'Bir nechta filialli maktabni boshqarish uchun ko‘p rolli platforma: super-admin, direktor, administrator, o‘qituvchi, o‘quvchi va ota-ona — har bir rolning o‘z kabineti bor.',
+iqFeatures: ['RBAC: alohida kabinet va huquqlarga ega 7 ta rol', 'Maktab filiallari xaritada (Yandex Maps)', 'Davomat, baholash, uy vazifalari', 'Drag-and-drop dars jadvali: kun / hafta / oy', 'LiveKit’da onlayn darslar va live-sinflar', 'Real vaqtdagi chat (WebSocket / STOMP)', 'Darsliklarni AI bilan tahlil qilish va matematikani tekshirib test yaratish', 'Formulali test konstruktori (LaTeX / KaTeX) va eksport', 'Dars rejalari va hujjatlar PDF’da, hisobotlar Excel’da', 'Moliya: oyliklar, bonuslar, direktor hisobotlari', 'Xavfsizlik: JWT + refresh, Argon2, rate limiting, audit log', 'i18n: o‘zbek, rus, ingliz'],
+wedDesc: 'To‘y va tadbirlar uchun onlayn taklifnomalar platformasi: foydalanuvchi shablon asosida interaktiv taklifnomani o‘zi yig‘adi, musiqa, xaritadagi manzil qo‘shadi va mehmonlar javoblarini yig‘adi.',
+wedFeatures: ['Taklifnoma studiyasi: shablonlar, live-ko‘rinish, bo‘limlarni yoqish/o‘chirish', 'Musiqa tanlash va animatsiyalar (Framer Motion, konfetti)', 'To‘y manzili Yandex Maps’da', 'Mehmonlarning RSVP javoblari va QR-kodlar', 'Fayl va geolokatsiya yuboriladigan chat', 'Buyurtma rasmiylashtirish va admin orqali moderatsiya', 'Google OAuth2 orqali kirish, JWT (15 daq / 7 kun) Redis’da', 'Backend’da Hexagonal Architecture'],
+wedLink: 'wedlink.uz’ni ochish →',
+extraKicker: '// yana yordam bera olaman', extraTitle: 'Backend va veb',
+extras: [
+{ title: 'Spring Boot’da backend', desc: 'Kotlin/Java + Spring Boot’da server qismi va REST API: PostgreSQL, Redis, Spring Security, WebSocket — jumladan, o‘z mobil ilovam uchun backend.' },
+{ title: 'Veb-saytlar yaratish', desc: 'Saytlarni noldan ishlab chiqish: tuzilmadan tortib maketlash va ishga tushirishgacha.' },
+{ title: 'Saytlarni qo‘llab-quvvatlash', desc: 'Ishlab turgan saytlarni yuritish: xatolarni tuzatish, yangi funksiyalar, yangilanishlar.' }
+],
+eduKicker: '// ta’lim', eduTitle: 'Ta’lim va tillar', degree: 'Bakalavr',
+uni: 'Muhammad al-Xorazmiy nomidagi Toshkent axborot texnologiyalari universiteti (TATU)', faculty: 'Kompyuter injiniringi',
+langsTitle: 'Tillar', spoken: ['O‘zbek — ona tili', 'Rus tili', 'Ingliz tili', 'Tojik tili'],
+contactTitle: 'Loyihangizni muhokama qilamiz', contactText: 'Mobil dasturlash sohasidagi qiziqarli takliflarga ochiqman.', location: 'Toshkent, O‘zbekiston',
+footer: 'Kotlin fikrlashi bilan yaratilgan'
+}),
+en: build({
+first: 'Dostonbek', last: 'Eshmurodov',
+nav: [{ num: '01.', label: 'about', href: '#about' }, { num: '02.', label: 'experience', href: '#experience' }, { num: '03.', label: 'projects', href: '#projects' }, { num: '04.', label: 'full-stack', href: '#fullstack' }, { num: '05.', label: 'skills', href: '#skills' }, { num: '08.', label: 'contact', href: '#contact' }],
+themeLabel: 'Toggle light/dark theme',
+status: 'open to offers', city: 'Tashkent, UZ',
+heroText: 'For **6+ years** I have been building mobile apps for **banking, fintech and B2B** — from architecture to release and production support. I also build **full-stack web platforms** with Kotlin/Spring Boot and Vue/React.',
+ctaProjects: 'view projects →',
+codeComment: '// Mobile developer from Tashkent',
+stats: [{ key: 'experience', n: '6+', label: 'years in mobile development' }, { key: 'projects', n: '8', label: 'projects: mobile and full-stack web' }, { key: 'branches', n: '60+', label: 'IDEA branches use my apps' }, { key: 'google_play', n: '1', label: 'own app on Google Play' }],
+aboutKicker: '// about me', aboutTitle: 'Mobile development is my core specialization',
+aboutParas: [
+'I am an **Android and iOS developer** from Tashkent. I currently work at **Ipoteka Bank (OTP Group)**, building the bank’s internal apps — “Unduruv” for the problem-loans department and “Monitoring”.',
+'Because the bank’s apps run inside its internal network, I implemented **In-App Update** — new APK versions are distributed and installed through our own backend, without Google Play.',
+'I know all the major architecture patterns and work with today’s most relevant ones — **MVI and MVVM** — on top of **Clean Architecture**. My pet project **“Farovon”** is published on Google Play.',
+'Beyond mobile, I build **full-stack projects**: backends in **Kotlin + Spring Boot** (PostgreSQL, Redis, WebSocket) and frontends in **Vue 3 / React** — for example the **IQ School** platform and the **WedLink** invitation service. Every day I use **Claude, ChatGPT and Gemini** to speed up development and code review.'
+],
+skillsKicker: '// skills', skillsTitle: 'Tech stack',
+skillGroups: [{ k: 'android', title: 'Android', tag: 'core' }, { k: 'ios', title: 'iOS', tag: 'core' }, { k: 'arch', title: 'Architecture', tag: 'approaches' }, { k: 'data', title: 'Data & networking', tag: 'libraries' }, { k: 'web', title: 'Backend & Web', tag: 'additional' }, { k: 'tools', title: 'Tools & AI', tag: 'daily' }],
+expKicker: '// experience', expTitle: '6 years of commercial development',
+jobs: [
+{ period: 'Jun 2023 — present', company: 'Ipotekabank (OTP Group)', sector: 'Banking', role: 'Android Developer', points: ['Built **“Unduruv”** for collection officers — running in production and integrated with the bank’s HardCollection system.', 'Built **“Monitoring”** — a collateral-monitoring app with on-site act creation, integrated with the bank’s **Prism** system; multi-module (12 modules), MVI, offline-first, WebRTC, Gemini AI.', 'Implemented **In-App Update**: since the apps are internal, new APK versions ship through our own backend, without Google Play.', 'Architecture: **MVI and MVVM** on top of Clean Architecture; also fluent in MVP and MVC.', 'Integrations with banking services via REST API, Room, Google Maps API, Firebase.', 'Use **Claude, ChatGPT and Gemini** to speed up development and code review.'] },
+{ period: 'Sep 2022 — May 2023', company: 'OO IDEA CONCEPT GROUP', sector: 'Retail', role: 'Android Developer', points: ['Built **“Idea Delivery”** — delivery management and real-time order status tracking.', 'Created an app for staff of **60+ branches** to issue online installment plans for goods.', 'REST API integration, local data storage and maps.'] },
+{ period: 'Nov 2020 — Dec 2022', company: 'E-Invoice', sector: 'E-document management', role: 'Android Developer', points: ['App for tax and accounting documents: **invoices, acts and reconciliation statements**.', 'Viewing, creating and signing documents with **digital signature (EDS)** integration.', 'Maintenance and regular releases on Google Play.'] }
+],
+projKicker: '// projects', projTitle: 'What I have built', featured: 'featured project', storeLabel: 'Open on Google Play →',
+caseBadge: 'Ipotekabank · in production', nda: '// internal bank app — code and screenshots under NDA',
+cases: [
+{ kind: 'collateral monitoring', name: 'Monitoring', desc: 'An app for bank staff who go out into the field to monitor loan collateral: they inspect the asset, write a conclusion and create an act right on the spot. Integrated with the bank’s Prism system.', features: ['Multi-module Clean Architecture: 12 feature modules, MVI / UDF', 'Offline-first: Room cache and request queue with background sync', 'Monitoring acts created in-app and generated as PDF', 'Step-by-step wizard for adding new collateral', 'Real-time staff location (Foreground Service)', 'Staff chat and WebRTC calls', 'Gemini-powered AI assistant', 'PIN and biometric login, JWT with automatic token refresh', 'Adaptive UI for phones and tablets, 3 languages'] },
+{ kind: 'problem-loan collection', name: 'Unduruv', desc: 'An app for the problem-loans department to work with debtors in the field. Running in production and integrated with the bank’s HardCollection system.', features: ['Paginated debtor list (Paging 3) and detailed loan card', 'Logging payment promises, deferrals, penalties and comments', 'Step-by-step legal process tracking', 'Maps and geolocation: debtor addresses, routes, staff tracking', 'Audio recording and chat', 'Statistics and performance charts', 'Offline sync, push and real-time notifications', 'APK updates through our own backend (In-App Update)'] }
+],
+farovonDesc: 'An AI-powered personal finance assistant. Budget tracking, expense control, a loan calculator and AI advice in one modern interface. Data stays on the device.',
+farovonFeatures: ['Voice expense entry — amount, category and description recognized automatically', 'Gemini-powered AI analyst and chatbot', 'Loan calculator: annuity and differentiated, schedule exported to PDF', 'Real-time currency rates and converter', 'Works offline, dark theme with glassmorphism'],
+projects: [
+{ kind: 'logistics', name: 'Idea Delivery', desc: 'Delivery management and real-time order status tracking for internal control.' },
+{ kind: 'retail / fintech', name: 'Online installments', desc: 'App for staff of 60+ branches to issue online installment plans for goods.' },
+{ kind: 'e-document management', name: 'E-Invoice Mobile', desc: 'Electronic invoices, acts and reconciliation statements with EDS signing.' }
+],
+fsKicker: '// full-stack projects', fsTitle: 'Web platforms: frontend + backend', fsIntro: 'Beyond mobile, I build complete web platforms from scratch — backend in Kotlin/Spring Boot, frontend in Vue 3 or React.',
+shotTeacher: 'Teacher', shotDirector: 'Director',
+iqDesc: 'A multi-role management platform for a school with several branches: super admin, director, administrator, teacher, student and parent — each role has its own dashboard.',
+iqFeatures: ['RBAC: 7 roles with dedicated dashboards and permissions', 'School branches on a map (Yandex Maps)', 'Attendance, grading and homework', 'Drag-and-drop timetable: day / week / month', 'Online lessons and live classes on LiveKit', 'Real-time chat (WebSocket / STOMP)', 'AI textbook analysis and test generation with math validation', 'Test builder with formulas (LaTeX / KaTeX) and export', 'Lesson plans and documents as PDF, reports in Excel', 'Finance: payroll, bonuses, director reports', 'Security: JWT + refresh, Argon2, rate limiting, audit log', 'i18n: Uzbek, Russian, English'],
+wedDesc: 'An online invitation platform for weddings and events: users build an interactive invitation from a template, add music and a venue on the map, and collect guest responses.',
+wedFeatures: ['Invitation studio: templates, live preview, section toggles', 'Music picker and animations (Framer Motion, confetti)', 'Venue location on Yandex Maps', 'Guest RSVP responses and QR codes', 'Chat with files and location sharing', 'Order checkout and admin moderation', 'Google OAuth2 login, JWT (15 min / 7 days) in Redis', 'Hexagonal Architecture on the backend'],
+wedLink: 'Open wedlink.uz →',
+extraKicker: '// I can also help with', extraTitle: 'Backend & web',
+extras: [
+{ title: 'Spring Boot backend', desc: 'Server side and REST APIs in Kotlin/Java + Spring Boot: PostgreSQL, Redis, Spring Security, WebSocket — including the backend for my own mobile apps.' },
+{ title: 'Website development', desc: 'Building websites from scratch: from structure and layout to launch.' },
+{ title: 'Website support', desc: 'Maintaining live websites: bug fixes, new features and updates.' }
+],
+eduKicker: '// education', eduTitle: 'Education & languages', degree: 'Bachelor’s degree',
+uni: 'Tashkent University of Information Technologies named after Muhammad al-Khwarizmi (TUIT)', faculty: 'Computer Engineering',
+langsTitle: 'Languages', spoken: ['Uzbek — native', 'Russian', 'English', 'Tajik'],
+contactTitle: 'Let’s talk about your project', contactText: 'Open to interesting opportunities in mobile development.', location: 'Tashkent, Uzbekistan',
+footer: 'built with a Kotlin mindset'
+})
+};
+}
+}
+
+window.__dcStart(Component, {"defaultLang": "ru", "defaultDark": true});
+</script>
+</body>
+</html>
