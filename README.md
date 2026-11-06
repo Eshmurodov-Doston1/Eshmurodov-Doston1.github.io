@@ -2,7 +2,7 @@
 
 Mobile Developer (Android / iOS) · Kotlin · Jetpack Compose · Swift · Spring Boot
 
-🌐 **https://eshmurodov-doston1.github.io**
+🌐 **https://eshmurodov.uz**
 
 - 3 languages: UZ / RU / EN
 - Light & dark theme
