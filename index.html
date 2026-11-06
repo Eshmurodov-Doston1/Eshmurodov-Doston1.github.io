@@ -1,1160 +1,360 @@
 <!doctype html>
-<html lang="ru">
+<html lang="uz">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dostonbek Eshmurodov — Mobile Developer (Android / iOS)</title>
-<meta name="description" content="Android va iOS dasturchi, 6+ yillik tajriba: bank, fintech va B2B mobil ilovalar, Kotlin/Spring Boot va Vue/React full-stack loyihalar. Toshkent.">
-<meta name="author" content="Dostonbek Eshmurodov">
-<meta name="theme-color" content="#090C12">
-<link rel="canonical" href="https://eshmurodov.uz/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230D1117'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-weight='700' font-size='30' fill='%233DDC84'%3E~/%3C/text%3E%3C/svg%3E">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Dostonbek Eshmurodov — Mobile Developer (Android / iOS)">
-<meta property="og:description" content="Android va iOS dasturchi, 6+ yillik tajriba: bank, fintech va B2B mobil ilovalar, Kotlin/Spring Boot va Vue/React full-stack loyihalar. Toshkent.">
-<meta property="og:url" content="https://eshmurodov.uz/">
-<meta property="og:image" content="https://eshmurodov.uz/img/iq-landing.jpg">
-<meta name="twitter:card" content="summary_large_image">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dostonbek Eshmurodov — mobil ilovalar, server va veb-saytlar</title>
+<meta name="description" content="Android va iPhone ilovalar, server qismi va veb-saytlar. 6+ yillik tajriba: Ipoteka-bank, IDEA, E-Invoice.">
+<link rel="canonical" href="https://eshmurodov.uz/"><link rel="alternate" hreflang="uz" href="https://eshmurodov.uz/"><link rel="alternate" hreflang="ru" href="https://eshmurodov.uz/ru/"><link rel="alternate" hreflang="en" href="https://eshmurodov.uz/en/">
+<meta property="og:type" content="website"><meta property="og:url" content="https://eshmurodov.uz/"><meta property="og:title" content="Dostonbek Eshmurodov — mobil ilovalar, server va veb-saytlar"><meta property="og:description" content="Android va iPhone ilovalar, server qismi va veb-saytlar. 6+ yillik tajriba: Ipoteka-bank, IDEA, E-Invoice.">
+<meta name="theme-color" content="#F5F6FA">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23101326'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='26' fill='%23D7F75B' text-anchor='middle'%3EDE%3C/text%3E%3C/svg%3E">
+<script>(function(){try{var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-body{margin:0}
-a{color:#3DDC84}a:hover{color:#7EE8AE}
-html{scroll-behavior:smooth}
-@keyframes dcblink{0%,49%{opacity:1}50%,100%{opacity:0}}
-.dc-cursor{display:inline-block;width:10px;height:1.05em;vertical-align:-0.15em;margin-left:4px;animation:dcblink 1s steps(1) infinite}
-@keyframes dcline{from{opacity:0;transform:translateX(-6px)}to{opacity:1;transform:none}}
-.dc-line{opacity:0;animation:dcline .35s ease-out forwards}
-@keyframes dcup{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.dc-up{opacity:0;animation:dcup .7s cubic-bezier(.2,.7,.2,1) forwards}
-@keyframes dcfade{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
-@supports (animation-timeline: view()){.dc-reveal{animation:dcfade linear both;animation-timeline:view();animation-range:entry 0% entry 70%}}
-@keyframes dcmarq{to{transform:translateX(-50%)}}
-.dc-marquee{display:flex;width:max-content;animation:dcmarq 45s linear infinite}
-.dc-marquee-wrap:hover .dc-marquee{animation-play-state:paused}
-@keyframes dcpulse{0%{box-shadow:0 0 0 0 rgba(61,220,132,.55)}70%{box-shadow:0 0 0 10px rgba(61,220,132,0)}100%{box-shadow:0 0 0 0 rgba(61,220,132,0)}}
-.dc-pulse{animation:dcpulse 2s infinite}
-.dc-card{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
-.dc-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.28)}
-.dc-glow:hover{border-color:#3DDC84 !important}
-@keyframes dcrole{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-.dc-role{display:inline-block;animation:dcrole .45s ease-out}
-
-.dc-bnav{display:none}
-.dc-more>summary{list-style:none;cursor:pointer}
-.dc-more>summary::-webkit-details-marker{display:none}
-.dc-more[open]>summary .dc-more-open{display:none}
-.dc-more:not([open])>summary .dc-more-close{display:none}
-.dc-snap::-webkit-scrollbar{display:none}
-.dc-swipe-hint{display:none}
-@media (max-width:760px){
- .dc-toplink{display:none!important}
- .dc-bnav{display:flex;position:fixed;left:10px;right:10px;bottom:10px;z-index:40;justify-content:space-around;align-items:center;padding:6px;border-radius:22px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 12px 40px rgba(0,0,0,.45)}
- .dc-bnav a{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;min-height:52px;justify-content:center;border-radius:16px;text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700}
- .dc-page{padding-bottom:96px}
- section{padding-top:40px!important;padding-bottom:40px!important}
- #top{padding-top:36px!important;gap:28px!important}
- h1{font-size:50px!important}
- h2{font-size:30px!important}
- .dc-code{font-size:11.5px!important}
- .dc-stats{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
- .dc-stats>div{padding:16px!important}
- .dc-stats>div>span:nth-child(2){font-size:34px!important}
- .dc-snap{display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;align-items:stretch;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px!important;margin-left:-24px!important;margin-right:-24px!important;padding:4px 24px 12px!important;scrollbar-width:none;-webkit-overflow-scrolling:touch}
- .dc-snap>*{flex:0 0 86%!important;min-width:0;scroll-snap-align:center;margin-bottom:0!important}
- .dc-snap .dc-reveal{animation:none!important}
- .dc-swipe-hint{display:inline-flex}
- .dc-shot{height:300px!important}
- .dc-panel{border-left:0!important;border-top:1px solid #1F2A36;padding:20px!important}
- .dc-body{padding:22px!important}
- .dc-about{padding-left:16px!important;font-size:16px!important}
- .dc-bigtitle{font-size:36px!important}
- .dc-aud{display:flex!important;width:100%;flex-wrap:nowrap!important;box-sizing:border-box}
- .dc-aud>span{display:none}
- .dc-aud button{flex:1;justify-content:center;padding:0 8px!important;font-size:12px!important}
- .dc-term-out{height:260px!important}
+:root{--bg:#F5F6FA;--sf:#FFFFFF;--sf2:#F5F6FA;--ink:#101326;--mut:#4A5068;--line:#E4E6EE;--inv:#101326;--inv2:#1D2140;--invt:#C9CCDA;
+--pri:#4F46E5;--pri2:#6A62F0;--prit:#E0DEFF;--lime:#D7F75B;--coral:#FF7A59;
+--pv:#E3E1FF;--pvt:#312E81;--pp:#FFE4DB;--ppt:#9A2E12;--pg:#EEFBDA;--pgt:#3F6212;--pp2:#FFF3EF;--pv2:#EFEEFF;--link:#4338CA;--hdr:rgba(245,246,250,.86);--sh:rgba(16,19,38,.16)}
+[data-theme=dark]{--bg:#0B0E1C;--sf:#141833;--sf2:#1B2041;--ink:#EEF0F7;--mut:#A6ABC2;--line:#262B4A;--inv:#1F2450;--inv2:#2A3062;--invt:#C9CCDA;
+--pri:#6C64F5;--pri2:#7F78F7;--prit:#E7E5FF;--pv:#272566;--pvt:#CBC8FF;--pp:#3B2219;--ppt:#FFB59E;--pg:#1F2E12;--pgt:#C9EE8A;--pp2:#2B1A15;--pv2:#1E1D4A;--link:#A5A0FF;--hdr:rgba(11,14,28,.84);--sh:rgba(0,0,0,.45)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:clip;transition:background .3s,color .3s}
+a{color:var(--link)}img{max-width:100%}
+.d{font-family:Unbounded,system-ui,sans-serif}
+.w{max-width:1200px;margin:0 auto;padding:0 24px}
+section.s{padding:56px 0}
+.tag{display:inline-block;padding:6px 12px;border-radius:999px;font-weight:800;font-size:13px;letter-spacing:.02em}
+.t-v{background:var(--pv);color:var(--pvt)}.t-p{background:var(--pp);color:var(--ppt)}.t-g{background:var(--pg);color:var(--pgt)}.t-l{background:var(--lime);color:#101326}.t-i{background:var(--inv);color:var(--lime)}
+h1,h2,h3{margin:0}
+.h2{font-family:Unbounded,sans-serif;font-weight:700;font-size:clamp(28px,4vw,44px);line-height:1.1;letter-spacing:-.01em}
+.head{display:flex;flex-direction:column;gap:12px;max-width:760px;margin-bottom:28px}
+.head p{margin:0;font-size:17px;line-height:1.6;color:var(--mut)}
+.head.row{max-width:none;flex-direction:row;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px}
+.head.row>div{display:flex;flex-direction:column;gap:12px;max-width:720px}
+.card{border-radius:28px;background:var(--sf);border:1px solid var(--line)}
+.inv{background:var(--inv);color:#fff;border-color:var(--inv)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:14px 24px;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px var(--sh)}
+.btn svg,.ico svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.b-ink{background:var(--ink);color:var(--bg)}.b-out{background:var(--sf);border-color:var(--line);color:var(--ink)}.b-pri{background:var(--pri);color:#fff}.b-lime{background:var(--lime);color:#101326}
+/* header */
+header.top{position:sticky;top:0;z-index:20;background:var(--hdr);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+header.top nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;padding-bottom:12px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.logo b{width:40px;height:40px;border-radius:12px;background:#101326;color:var(--lime);display:flex;align-items:center;justify-content:center;font-family:Unbounded,sans-serif;font-weight:700;font-size:15px}
+[data-theme=dark] .logo b{background:var(--lime);color:#101326}
+.logo span{font-family:Unbounded,sans-serif;font-weight:600;font-size:17px}
+.links{display:flex;align-items:center;gap:2px}
+.links a.nl{padding:12px 13px;font-weight:600;font-size:15px;color:var(--mut);text-decoration:none;border-radius:12px}
+.links a.nl:hover{color:var(--ink);background:var(--sf)}
+.ctl{display:flex;align-items:center;gap:8px}
+.lng{display:flex;gap:2px;padding:3px;border-radius:999px;background:var(--sf);border:1px solid var(--line)}
+.lng a{min-width:40px;padding:9px 10px;border-radius:999px;font-size:13px;font-weight:700;text-align:center;color:var(--mut);text-decoration:none}
+.lng a.on{background:var(--ink);color:var(--bg)}
+.thm{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--sf);color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer}
+.thm svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+.i-sun{display:none}[data-theme=dark] .i-sun{display:block}[data-theme=dark] .i-moon{display:none}
+/* hero */
+.hero{display:flex;flex-wrap:wrap;align-items:center;gap:48px;padding-top:64px;padding-bottom:48px}
+.hero .txt{flex:999 1 520px;min-width:0;display:flex;flex-direction:column;gap:24px}
+.pill{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:var(--sf);border:1px solid var(--line);font-weight:600;font-size:14px}
+.dot{width:8px;height:8px;border-radius:50%;background:#16A34A;box-shadow:0 0 0 0 rgba(22,163,74,.5);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(22,163,74,0)}100%{box-shadow:0 0 0 0 rgba(22,163,74,0)}}
+.hero h1{font-family:Unbounded,sans-serif;font-weight:700;font-size:clamp(36px,5.4vw,64px);line-height:1.05;letter-spacing:-.02em}
+.mark{background:var(--lime);color:#101326;padding:0 10px;border-radius:14px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.hero .lead{margin:0;max-width:580px;font-size:clamp(17px,1.6vw,20px);line-height:1.6;color:var(--mut)}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.hst{display:flex;flex-wrap:wrap;gap:28px;padding-top:6px}
+.hst div{display:flex;flex-direction:column;gap:2px}.hst b{font-family:Unbounded,sans-serif;font-size:30px}.hst span{font-size:14px;color:var(--mut)}
+.hst i{width:1px;background:var(--line)}
+.vis{flex:1 1 420px;min-width:0;display:flex;justify-content:center;position:relative;padding:24px 0}
+.blob{position:absolute;width:420px;height:420px;max-width:100%;border-radius:50%;background:var(--pv);top:70px}
+.ph{position:relative;width:300px;height:610px;border-radius:48px;background:#101326;padding:12px;box-shadow:0 40px 80px var(--sh);animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-10px)}}
+.scr{width:100%;height:100%;border-radius:38px;background:#F7F7FB;color:#101326;overflow:hidden;display:flex;flex-direction:column}
+.isl{display:flex;justify-content:center;padding-top:10px}.isl i{width:90px;height:24px;border-radius:999px;background:#101326}
+.scb{padding:18px 20px 0;display:flex;flex-direction:column;gap:14px;flex:1}
+.ur{display:flex;justify-content:space-between;align-items:center}.ur small{display:block;font-size:12px;color:#6B7085}.ur b{font-size:17px}
+.av{width:36px;height:36px;border-radius:50%;background:var(--lime);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px}
+.bal{border-radius:22px;background:#4F46E5;color:#fff;padding:18px;display:flex;flex-direction:column;gap:6px}.bal small{font-size:12px;opacity:.85}.bal b{font-family:Unbounded,sans-serif;font-size:24px}
+.qb{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.qb span{border-radius:14px;background:#fff;padding:10px 6px;text-align:center;font-size:11px;font-weight:700}
+.rw{display:flex;align-items:center;gap:10px;background:#fff;border-radius:14px;padding:10px}.rw i{width:32px;height:32px;border-radius:10px;flex-shrink:0}
+.rw div{flex:1;display:flex;flex-direction:column;min-width:0}.rw b{font-size:12px}.rw small{font-size:11px;color:#6B7085}.rw em{font-style:normal;font-size:12px;font-weight:800}
+.tb{display:flex;justify-content:space-around;padding:12px 10px 18px;background:#fff;border-top:1px solid #ECEDF3}.tb i{width:22px;height:22px;border-radius:7px;background:#D9DBE6}.tb i:first-child{background:#4F46E5}
+.bdg{position:absolute;padding:14px 16px;border-radius:18px;box-shadow:0 16px 40px var(--sh);font-size:13px;font-weight:800;color:#101326}
+.bdg1{left:0;top:120px;background:var(--lime);transform:rotate(-4deg);display:flex;flex-direction:column}.bdg1 b{font-family:Unbounded,sans-serif;font-size:22px}
+.bdg2{right:0;top:260px;background:#fff;transform:rotate(3deg);display:flex;align-items:center;gap:10px;max-width:210px}
+.bdg2 i{width:34px;height:34px;flex-shrink:0;border-radius:10px;background:#DFF7EC;display:flex;align-items:center;justify-content:center}
+.bdg3{left:24px;bottom:60px;background:var(--coral);color:#2A0E05;border-radius:999px;transform:rotate(-2deg)}
+.chk{width:16px;height:16px;flex-shrink:0;margin-top:3px;fill:none;stroke:#16A34A;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+/* trust */
+.trust{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 28px;padding:22px 28px;border-radius:24px}
+.trust span{font-size:14px;font-weight:600;color:var(--mut)}.trust b{font-family:Unbounded,sans-serif;font-weight:600;font-size:clamp(15px,1.6vw,20px)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+.stats div{border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:4px}.stats b{font-family:Unbounded,sans-serif;font-size:clamp(28px,3vw,40px)}.stats span{font-size:14px}
+/* services */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.svc article{padding:30px;display:flex;flex-direction:column;gap:14px;min-height:320px}
+.svc .ico{width:56px;height:56px;border-radius:18px;display:flex;align-items:center;justify-content:center}.svc .ico svg{width:26px;height:26px}
+.svc h3{font-family:Unbounded,sans-serif;font-weight:600;font-size:24px}.svc p{margin:0;font-size:16px;line-height:1.6}
+.svc .fx{margin-top:auto;padding:14px 16px;border-radius:16px;font-size:14px;line-height:1.5}
+.s1 p{color:var(--invt)}.s1 .ico{background:var(--lime);color:#101326}.s1 .fx{background:var(--inv2)}.s1 .fx b{color:var(--lime)}
+.s2 p{color:var(--mut)}.s2 .ico{background:var(--pv);color:var(--pvt)}.s2 .fx{background:var(--sf2)}.s2 .fx b{color:var(--link)}
+.s3{background:var(--lime);color:#101326;border-color:var(--lime)}.s3 p{color:#2B3050}.s3 .ico{background:#101326;color:var(--lime)}.s3 .fx{background:rgba(16,19,38,.08)}
+.swh{display:none;font-size:13px;color:var(--mut);font-weight:600;margin-top:10px}
+/* why */
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.why div{padding:26px;display:flex;gap:16px;border-radius:24px}
+.why .n{width:44px;height:44px;flex-shrink:0;border-radius:14px;background:var(--sf2);color:var(--pri);display:flex;align-items:center;justify-content:center;font-family:Unbounded,sans-serif;font-weight:700}
+.why div:first-child .n{background:var(--inv);color:var(--lime)}
+.why p{margin:0;display:flex;flex-direction:column;gap:6px}.why b{font-size:18px}.why span{font-size:15px;line-height:1.55;color:var(--mut)}
+/* projects */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:6px 12px;border-radius:999px;font-weight:700;font-size:13px;background:var(--sf2);color:var(--mut)}
+.chip.k{background:var(--ink);color:var(--bg)}.chip.l{background:var(--lime);color:#101326}
+.feat{display:flex;flex-wrap:wrap;overflow:hidden;border-radius:32px}
+.feat .l{flex:999 1 520px;min-width:0;padding:40px;display:flex;flex-direction:column;gap:20px}
+.feat h3,.pc h3{font-family:Unbounded,sans-serif;font-weight:700;font-size:clamp(26px,3vw,36px)}
+.psr{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.psr div{border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.55}.psr b{font-size:13px}
+.p1{background:var(--pp2)}.p1 b{color:var(--ppt)}.p2{background:var(--pv2)}.p2 b{color:var(--pvt)}.p3{background:var(--pg)}.p3 b{color:var(--pgt)}
+.feat .r{flex:1 1 340px;min-width:0;background:var(--pv);display:flex;align-items:flex-end;justify-content:center;padding:40px 24px 0}
+.mini{width:220px;height:300px;border-radius:34px 34px 0 0;background:#101326;padding:10px 10px 0}
+.mini div{height:100%;border-radius:26px 26px 0 0;background:#fff;color:#101326;padding:18px 14px;display:flex;flex-direction:column;gap:10px}
+.mini i{display:block;border-radius:8px;background:#ECEDF3}.mini em{margin-top:auto;padding:10px;border-radius:12px;background:#4F46E5;color:#fff;font-style:normal;font-size:12px;font-weight:700;text-align:center}
+.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}
+.pc{border-radius:32px;padding:36px;display:flex;flex-direction:column;gap:16px}
+.pc p{margin:0;font-size:16px;line-height:1.6}
+.pc.inv p{color:var(--invt)}.pc.inv .chip{background:var(--inv2);color:#fff}.pc.inv .chip.l{background:var(--lime);color:#101326}
+.pc .card p,.pc:not(.inv) p{color:var(--mut)}
+.pc .tg{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}.pc .tg span{padding:8px 12px;border-radius:12px;background:var(--sf2);font-size:13px;font-weight:600}
+.pc.inv .tg span{background:var(--inv2)}
+.pi{padding:0;overflow:hidden}.pi .im{height:240px;overflow:hidden;background:var(--sf2);border-bottom:1px solid var(--line)}.pi .im img{display:block;width:100%;height:auto}
+.pi .bd{padding:30px;display:flex;flex-direction:column;gap:12px}
+.pw{background:var(--pp);border-color:var(--pp)}.pw .im{background:#FFD3C4;display:flex;align-items:center;justify-content:center;border:0}
+[data-theme=dark] .pw .im{background:#4A2A20}
+.pw p{color:var(--ink)!important;opacity:.85}
+.inv-card{width:200px;padding:22px;border-radius:20px;background:#fff;color:#101326;box-shadow:0 20px 40px rgba(154,46,18,.18);transform:rotate(-3deg);text-align:center;display:flex;flex-direction:column;gap:6px}
+.inv-card small{font-size:11px;font-weight:700;letter-spacing:.1em;color:#9A2E12}.inv-card b{font-family:Unbounded,sans-serif;font-size:18px}.inv-card span{font-size:12px;color:#4A5068}.inv-card em{margin-top:6px;padding:8px;border-radius:10px;background:#101326;color:#fff;font-style:normal;font-size:11px;font-weight:700}
+/* details */
+.det{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.det details{padding:0 26px;border-radius:28px}
+.det summary{list-style:none;cursor:pointer;padding:24px 0 16px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.det summary::-webkit-details-marker,.faq summary::-webkit-details-marker{display:none}
+.det summary b{font-family:Unbounded,sans-serif;font-size:22px}
+.det ul{margin:0;padding:0 0 26px;list-style:none;display:flex;flex-direction:column;gap:10px}
+.det li{display:flex;gap:10px;font-size:15px;line-height:1.5}
+.det .sm{padding:26px;display:flex;flex-direction:column;gap:12px;border-radius:28px}
+.det .sm>b{font-family:Unbounded,sans-serif;font-size:22px}
+.det .sm div{border-radius:18px;background:var(--inv2);padding:16px;display:flex;flex-direction:column;gap:4px;font-size:14px;line-height:1.5;color:var(--invt)}.det .sm div b{color:#fff;font-size:16px}
+/* skills */
+.gl{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gl div{padding:22px;display:flex;flex-direction:column;gap:8px;border-radius:22px}
+.gl b{font-size:17px}.gl span{font-size:14px;line-height:1.55;color:var(--mut)}.gl em{margin-top:auto;padding-top:6px;font-style:normal;font-size:13px;font-weight:700;color:var(--link)}
+.gl .inv span{color:var(--invt)}.gl .inv em{color:var(--lime)}
+.tools{margin-top:18px;padding:28px}.tools>b{display:block;font-size:13px;letter-spacing:.06em;color:var(--mut);margin-bottom:16px}
+.tools div{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.tools span{border-radius:16px;background:var(--sf2);padding:14px 16px;display:flex;flex-direction:column;gap:2px;font-size:13px;color:var(--mut)}.tools span b{font-size:15px;color:var(--ink)}
+/* resume */
+.cv{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-start}
+.tl{flex:999 1 560px;min-width:0;padding:36px 36px 10px;border-radius:32px}
+.lbl{display:block;font-weight:800;font-size:13px;letter-spacing:.06em;color:var(--mut)}
+.job{display:flex;gap:22px}
+.job .ax{display:flex;flex-direction:column;align-items:center}.job .ax i{width:18px;height:18px;border-radius:50%;background:var(--sf);border:3px solid var(--ink);flex-shrink:0}.job .ax em{flex:1;width:2px;background:var(--line)}
+.job.now .ax i{background:var(--lime)}
+.job .bd{flex:1;min-width:0;padding-bottom:26px;display:flex;flex-direction:column;gap:8px}
+.job .pr{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:14px;font-weight:700;color:var(--mut)}
+.job .pr span{padding:4px 10px;border-radius:999px;background:#DFF7EC;color:#15803D;font-size:12px;font-weight:800}
+.job h3{font-family:Unbounded,sans-serif;font-weight:700;font-size:22px}.job .ro{font-size:15px;font-weight:600;color:var(--link)}
+.job ul{margin:4px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.55}
+.side{flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:18px}
+.side>div{padding:28px;border-radius:28px;display:flex;flex-direction:column;gap:10px}
+.side .inv .lbl{color:var(--lime)}.side .inv p{margin:0;font-size:16px;line-height:1.6;color:#E8EAF3}
+.side .uni{font-family:Unbounded,sans-serif;font-weight:600;font-size:18px;line-height:1.3}.side .deg{font-size:15px;color:var(--mut)}
+.side .lm{background:var(--lime);color:#101326;border-color:var(--lime)}.side .lm .lbl{color:#101326}
+.side .lm div{display:flex;flex-wrap:wrap;gap:8px}.side .lm span{padding:8px 12px;border-radius:12px;background:rgba(16,19,38,.08);font-size:14px;font-weight:700}
+/* how */
+.how{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.how div{padding:26px;border-radius:24px;display:flex;flex-direction:column;gap:10px}
+.how b.d{font-size:36px;color:var(--pri)}.how strong{font-size:19px}.how span{font-size:15px;line-height:1.55;color:var(--mut)}
+.how .inv b.d{color:var(--lime)}.how .inv span{color:var(--invt)}
+/* faq */
+.faq{display:flex;flex-direction:column;gap:10px}
+.faq details{border-radius:20px;padding:0 24px}
+.faq summary{cursor:pointer;padding:20px 0;font-weight:800;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary i{font-style:normal;color:var(--pri);transition:transform .2s}.faq details[open] summary i{transform:rotate(45deg)}
+.faq p{margin:0;padding:0 0 20px;font-size:16px;line-height:1.6;color:var(--mut)}
+/* contact */
+.ct{border-radius:36px;background:var(--pri);color:#fff;padding:56px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:32px;position:relative;overflow:hidden}
+.ct:before{content:"";position:absolute;right:-80px;top:-80px;width:320px;height:320px;border-radius:50%;background:var(--pri2)}
+.ct .l{position:relative;flex:999 1 460px;min-width:0;display:flex;flex-direction:column;gap:14px}
+.ct h2{font-family:Unbounded,sans-serif;font-weight:700;font-size:clamp(30px,4vw,48px);line-height:1.05}.ct p{margin:0;font-size:18px;color:var(--prit)}
+.ct .r{position:relative;flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:10px}
+.ct .r a{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:56px;padding:16px 22px;border-radius:20px;font-weight:700;font-size:17px;text-decoration:none;overflow-wrap:anywhere;transition:transform .2s}
+.ct .r a:hover{transform:translateX(4px)}
+.c1{background:var(--lime);color:#101326}.c2{background:#fff;color:#101326}.c3{background:rgba(255,255,255,.14);color:#fff;font-size:15px!important}
+footer{border-top:1px solid var(--line)}
+footer .w{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:26px;padding-bottom:26px;font-size:14px;color:var(--mut)}
+footer a{color:var(--mut);font-weight:700}
+.bn{display:none}
+/* reveal */
+@supports (animation-timeline:view()){.rv{animation:rv linear both;animation-timeline:view();animation-range:entry 0% entry 60%}@keyframes rv{from{opacity:0;transform:translateY(28px)}}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+/* tablet */
+@media (max-width:1080px){.links a.nl{display:none}.gl{grid-template-columns:repeat(3,1fr)}.tools div{grid-template-columns:repeat(4,1fr)}.det,.why{grid-template-columns:repeat(2,1fr)}.how{grid-template-columns:repeat(2,1fr)}}
+/* mobile */
+@media (max-width:720px){
+.w{padding:0 18px}section.s{padding:36px 0}
+.hd-cta{display:none}.logo span{font-size:16px}.lng a{min-width:36px;padding:9px 8px}
+.hero{padding-top:28px;gap:8px}.hero .txt{gap:18px}.btns .btn{flex:1 1 100%}
+.hst{display:none}
+.vis{padding:12px 0 0;transform:scale(.8);margin:-50px 0 -70px}
+.trust{padding:18px;gap:10px 18px}.trust span{flex-basis:100%}
+.stats{grid-template-columns:repeat(2,1fr);gap:10px}.stats div{padding:18px}
+.svc,.gl{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -18px;padding:4px 18px 10px;gap:12px;scrollbar-width:none}
+.svc::-webkit-scrollbar,.gl::-webkit-scrollbar{display:none}
+.svc article{flex:0 0 82%;scroll-snap-align:start;min-height:0;padding:24px}.gl div{flex:0 0 74%;scroll-snap-align:start}
+.swh{display:block}
+.why{grid-template-columns:1fr;gap:0;border-radius:24px;overflow:hidden;border:1px solid var(--line)}.why div{border-radius:0;border:0;border-bottom:1px solid var(--line);padding:18px}.why div:last-child{border-bottom:0}.why b{font-size:16px}.why span{font-size:14px}
+.feat .l{padding:24px}.psr{grid-template-columns:1fr}.feat .r{display:none}
+.g2{grid-template-columns:1fr;gap:12px;margin-top:12px}.pc{padding:24px;border-radius:26px}.pi{padding:0}.pi .im{height:180px}.pi .bd{padding:22px}
+.det{grid-template-columns:1fr;gap:10px}.det details{padding:0 18px;border-radius:20px}.det summary{padding:16px 0}.det summary b{font-size:18px}.det ul{padding-bottom:18px}.det li{font-size:14px}
+.tools{padding:20px}.tools div{grid-template-columns:repeat(2,1fr)}
+.tl{padding:24px 20px 4px}.job{gap:14px}.job h3{font-size:18px}.job ul{font-size:14px}
+.how{grid-template-columns:1fr;gap:10px}.how div{padding:20px;flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:4px 14px}.how b.d{font-size:22px}.how span{flex-basis:100%}
+.faq details{padding:0 16px}.faq summary{font-size:15px;padding:16px 0}.faq p{font-size:14px}
+.ct{padding:28px 20px;border-radius:28px}
+footer .w{padding-bottom:110px}
+.bn{display:flex;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:30;justify-content:space-between;padding:6px;border-radius:999px;background:#101326;box-shadow:0 16px 40px rgba(16,19,38,.35)}
+[data-theme=dark] .bn{background:#1F2450;border:1px solid #2F3566}
+.bn a{flex:1;min-height:44px;display:flex;align-items:center;justify-content:center;border-radius:999px;color:#fff;font-weight:700;font-size:13px;text-decoration:none;transition:background .2s,color .2s}
+.bn a.on{background:var(--lime);color:#101326}
 }
-.dc-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;transform-origin:0 50%;transform:scaleX(0);pointer-events:none}
-@keyframes dcprog{to{transform:scaleX(1)}}
-@supports (animation-timeline: scroll()){.dc-progress{animation:dcprog linear both;animation-timeline:scroll(root)}}
-.dc-term-out{display:flex;flex-direction:column-reverse;overflow-y:auto}
-.dc-term input{outline:none}
-.dc-chipbtn:active{transform:scale(.97)}
-@media (prefers-reduced-motion: reduce){.dc-cursor,.dc-marquee,.dc-pulse,.dc-role{animation:none}.dc-line,.dc-up{animation:none;opacity:1}.dc-reveal{animation:none}.dc-card:hover{transform:none}}
 </style>
-
-<style>@media (max-width:760px){header{position:static!important}}@media (max-width:640px){h1{font-size:48px!important}h2{font-size:32px!important}}</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Dostonbek Eshmurodov","jobTitle":"Mobil dasturchi — Android va iOS","url":"https://eshmurodov.uz/","email":"mailto:eshmurodovdoston630@gmail.com","telephone":"+998774882708","sameAs":["https://github.com/Eshmurodov-Doston1","https://t.me/Programmer_2001"],"address":{"@type":"PostalAddress","addressLocality":"Tashkent","addressCountry":"UZ"}}</script>
 </head>
 <body>
-<div id="app"></div>
-<noscript><p style="padding:24px;font-family:sans-serif">Dostonbek Eshmurodov — Mobile Developer (Android / iOS). Email: eshmurodovdoston630@gmail.com · Telegram: @Programmer_2001</p></noscript>
-<template id="dc-template">
+<header class="top"><nav class="w">
+<a class="logo" href="#top"><b>DE</b><span>Dostonbek</span></a>
+<div class="links"><a class="nl" href="#services">Xizmatlar</a><a class="nl" href="#work">Loyihalar</a><a class="nl" href="#resume">Rezyume</a><a class="nl" href="#faq">Savollar</a></div>
+<div class="ctl"><div class="lng"><a href="/" data-l="uz" hreflang="uz" class="on" aria-current="page">UZ</a><a href="/ru/" data-l="ru" hreflang="ru" class="">RU</a><a href="/en/" data-l="en" hreflang="en" class="">EN</a></div>
+<button class="thm" id="thm" type="button" aria-label="Tungi/kunduzgi rejim" title="Tungi/kunduzgi rejim"><svg aria-hidden="true" class="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg aria-hidden="true" class="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+<a class="btn b-pri hd-cta" href="#contact">Bog‘lanish</a></div>
+</nav></header>
 
-<div class="dc-page" style="position: relative; overflow-x: clip; font-family: Inter, system-ui, sans-serif; color: {{c.text}}; background-color: {{c.bg}}; background-image: radial-gradient({{c.dot}} 1px, transparent 1px); background-size: 26px 26px; min-height: 100vh">
-
-<div class="dc-progress" aria-hidden="true" style="background: {{c.accent}}"></div>
-<div aria-hidden="true" style="position: absolute; top: -260px; right: -200px; width: 820px; height: 820px; border-radius: 50%; background: radial-gradient(circle, {{c.glow}} 0%, transparent 65%); pointer-events: none"></div>
-<div aria-hidden="true" style="position: absolute; top: 340px; left: -320px; width: 640px; height: 640px; border-radius: 50%; background: radial-gradient(circle, {{c.glow2}} 0%, transparent 65%); pointer-events: none"></div>
-
-<header style="position: sticky; top: 0; z-index: 20; background: {{c.headerBg}}; backdrop-filter: blur(12px); border-bottom: 1px solid {{c.border}}">
-<nav style="max-width: 1180px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
-<a href="#top" style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 17px; color: {{c.text}}; text-decoration: none"><span style="color: {{c.accentText}}">~/</span>dostonbek<span style="color: {{c.subtle}}">.dev</span></a>
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 2px">
-<sc-for list="{{t.nav}}" as="n" hint-placeholder-count="5">
-<a href="{{n.href}}" class="dc-toplink" style="padding: 12px 9px; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: {{c.muted}}; text-decoration: none"><span style="color: {{c.accentText}}">{{n.num}}</span>{{n.label}}</a>
-</sc-for>
-<div role="group" aria-label="Language" style="display: flex; gap: 2px; padding: 3px; border-radius: 10px; border: 1px solid {{c.border}}; background: {{c.surface}}; margin-left: 8px">
-<sc-for list="{{langs}}" as="l" hint-placeholder-count="3">
-<button type="button" onClick="{{l.pick}}" aria-pressed="{{l.active}}" style="min-width: 44px; height: 38px; padding: 0 8px; border: 0; border-radius: 7px; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; background: {{l.bg}}; color: {{l.fg}}">{{l.code}}</button>
-</sc-for>
+<main>
+<section id="top" class="w hero">
+<div class="txt">
+<span class="pill"><span class="dot"></span>Yangi takliflarga ochiqman · Toshkent</span>
+<h1>Telefoningizdagi <span class="mark">qulay</span> ilovalarni yarataman</h1>
+<p class="lead">Salom, men Dostonbek. 6 yildan beri banklar va kompaniyalar uchun Android va iPhone ilovalarini, ularning server qismini va veb-saytlarini yarataman.</p>
+<div class="btns"><a class="btn b-ink" href="#work">Loyihalarni ko‘rish →</a><a class="btn b-out" href="https://t.me/Programmer_2001" target="_blank" rel="noopener">Telegram’da yozish</a></div>
+<div class="hst"><div><b>6+</b><span>yillik tajriba</span></div><i></i><div><b>8</b><span>tayyor loyiha</span></div><i></i><div><b>60+</b><span>filialda ishlatiladi</span></div></div>
 </div>
-<button type="button" onClick="{{toggleTheme}}" aria-label="{{t.themeLabel}}" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 10px; border: 1px solid {{c.border}}; background: {{c.surface}}; color: {{c.text}}; cursor: pointer">
-<sc-if value="{{dark}}" hint-placeholder-val="{{ true }}">
-<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
-</sc-if>
-<sc-if value="{{light}}" hint-placeholder-val="{{ false }}">
-<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
-</sc-if>
-</button>
+<div class="vis" aria-hidden="true">
+<div class="blob"></div>
+<div class="ph"><div class="scr"><div class="isl"><i></i></div><div class="scb">
+<div class="ur"><div><small>Xayrli tong,</small><b>Aziza</b></div><span class="av">A</span></div>
+<div class="bal"><small>Umumiy balans</small><b>12 450 000</b><small>so‘m · bu oy +8%</small></div>
+<div class="qb"><span>Kirim</span><span>Chiqim</span><span>Kredit</span></div>
+<b style="font-size:14px">So‘nggi amallar</b>
+<div style="display:flex;flex-direction:column;gap:8px"><div class="rw"><i style="background:#FFE4DB"></i><div><b>Taksi</b><small>ovoz bilan kiritildi</small></div><em style="color:#101326">−28 000</em></div><div class="rw"><i style="background:#DFF7EC"></i><div><b>Oylik</b><small>kirim</small></div><em style="color:#15803D">+9 500 000</em></div><div class="rw"><i style="background:#E3E1FF"></i><div><b>AI maslahat</b><small>kafeda 12% tejash mumkin</small></div><em style="color:#101326"></em></div></div>
+</div><div class="tb"><i></i><i></i><i></i><i></i></div></div></div>
+<div class="bdg bdg1"><b>60+</b>filialda ishlaydi</div>
+<div class="bdg bdg2"><i><svg aria-hidden="true" class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></i>Internetsiz ham ishlaydi</div>
+<div class="bdg bdg3">Google Play’da bor</div>
 </div>
-</nav>
-</header>
+</section>
 
-<section id="top" style="position: relative; max-width: 1180px; margin: 0 auto; padding: 96px 24px 72px; display: flex; flex-wrap: wrap; align-items: center; gap: 56px">
-<div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
-<div class="dc-up" style="animation-delay: 0.05s; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 14px">
-<span style="display: inline-flex; align-items: center; gap: 8px; padding: 7px 13px; border-radius: 999px; border: 1px solid {{c.border}}; background: {{c.surface}}; color: {{c.text}}"><span class="dc-pulse" style="width: 8px; height: 8px; border-radius: 50%; background: #3DDC84"></span>{{t.status}}</span>
-<span style="color: {{c.subtle}}">{{t.city}}</span>
+<section class="w" style="padding-bottom:24px">
+<div class="trust card rv"><span>Men ishlagan joylar</span><b>Ipoteka-bank · OTP Group</b><b>IDEA</b><b>E-Invoice</b><b>Google Play</b></div>
+<div class="stats rv"><div class="inv" style=""><b style="color:var(--lime)">6+</b><span style="color:var(--invt)">yillik tajriba</span></div><div class="card" style=""><b style="">8</b><span style="color:var(--mut)">tayyor loyiha</span></div><div class="card" style=""><b style="">60+</b><span style="color:var(--mut)">bank va do‘kon filiali</span></div><div class="card" style="background:var(--lime);color:#101326;border:0"><b style="">2</b><span style="">platforma: Android + iPhone</span></div></div>
+</section>
+
+<section id="services" class="s"><div class="w">
+<div class="head rv"><span class="tag t-v" style="align-self:flex-start">NIMA QILA OLAMAN</span><h2 class="h2">G‘oyangizni tayyor mahsulotga aylantiraman</h2><p>Dasturlashni bilishingiz shart emas — men texnik qismini o‘z zimmamga olaman va natijani oddiy tilda tushuntiraman.</p></div>
+<div class="svc rv"><article class="card inv s1"><span class="ico"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span><h3>Mobil ilovalar</h3><p>Android va iPhone uchun ilovalarni noldan yarataman — dizayndan Google Play va App Store’ga chiqarishgacha.</p><div class="fx"><b>Siz uchun foydasi:</b> mijozlaringiz xizmatingizdan telefonidan, istalgan joyda foydalanadi.</div></article><article class="card s2"><span class="ico"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span><h3>Server qismi</h3><p>Ilova ortida turadigan tizimni ham yozaman: ma’lumotlar bazasi, foydalanuvchilar, xavfsizlik.</p><div class="fx"><b>Siz uchun foydasi:</b> butun loyihani bitta mutaxassisga topshirasiz — tezroq va arzonroq.</div></article><article class="card s3"><span class="ico"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></span><h3>Veb-saytlar</h3><p>Kompaniya saytlari, boshqaruv panellari va onlayn xizmatlar. Ishlab turgan saytlarni ham qo‘llab-quvvatlayman.</p><div class="fx"><b>Siz uchun foydasi:</b> biznesingiz internetda ishonchli va zamonaviy ko‘rinadi.</div></article></div><span class="swh">← surib ko‘ring →</span>
+</div></section>
+
+<section class="s"><div class="w">
+<div class="head rv"><span class="tag t-l" style="align-self:flex-start">NEGA AYNAN MEN</span><h2 class="h2">Men bilan ishlashning 6 sababi</h2></div>
+<div class="why rv"><div class="card"><span class="n">1</span><p><b>Bankda sinalgan</b><span>Ilovalarim har kuni Ipoteka-bank xodimlari tomonidan real ishda ishlatiladi.</span></p></div><div class="card"><span class="n">2</span><p><b>Boshidan oxirigacha</b><span>Ilova, server va sayt — hammasini bitta odam qiladi, ortiqcha vositachi yo‘q.</span></p></div><div class="card"><span class="n">3</span><p><b>Internetsiz ham</b><span>Ilova aloqa yo‘q joyda ham to‘xtamaydi — ma’lumot yo‘qolmaydi.</span></p></div><div class="card"><span class="n">4</span><p><b>AI bilan tezroq</b><span>Claude, ChatGPT, Gemini yordamida ishni tezroq va sifatli bajaraman.</span></p></div><div class="card"><span class="n">5</span><p><b>Ochiq muloqot</b><span>Har hafta natijani ko‘rsataman, texnik narsalarni oddiy tilda tushuntiraman.</span></p></div><div class="card"><span class="n">6</span><p><b>Ishga tushgandan keyin ham</b><span>Ilovani yangilab, xatolarni tuzatib, qo‘llab-quvvatlab boraman.</span></p></div></div>
+</div></section>
+
+<section id="work" class="s"><div class="w">
+<div class="head row rv"><div><span class="tag t-p" style="align-self:flex-start">LOYIHALAR</span><h2 class="h2">Real odamlar har kuni foydalanadi</h2></div><p style="max-width:360px">Har bir loyiha — qaysi muammo bor edi, men nima qildim va natija nima bo‘ldi.</p></div>
+<article class="feat card rv"><div class="l">
+<div class="chips"><span class="chip k">Ipoteka-bank</span><span class="chip">Mobil ilova · ishlab turibdi</span></div>
+<h3>Monitoring</h3>
+<div class="psr"><div class="p1"><b>MUAMMO</b>Bank xodimlari kredit garovlarini qog‘ozda tekshirib, hisobotni ofisda qayta yozishardi.</div><div class="p2"><b>YECHIM</b>Telefon ilovasi: xodim joyida obyektni ko‘radi, xulosa yozadi va aktni o‘sha yerda tuzadi.</div><div class="p3"><b>NATIJA</b>Internetsiz ham ishlaydi, ma’lumot bank tizimiga o‘zi tushadi — qog‘ozbozlik yo‘q.</div></div>
+</div><div class="r" aria-hidden="true"><div class="mini"><div><b style="font-size:14px">Garov #2048</b><i style="height:80px"></i><i style="height:10px;width:80%"></i><i style="height:10px;width:60%"></i><em>Akt yaratish</em></div></div></div></article>
+<div class="g2">
+<article class="pc inv rv"><div class="chips"><span class="chip l">Google Play</span><span class="chip">Shaxsiy loyiham</span></div><h3>Farovon</h3><p>Pulingizni nazorat qilish uchun ilova. Xarajatni shunchaki ovoz bilan aytasiz — ilova o‘zi yozib qo‘yadi. Sun’iy intellekt qayerda tejash mumkinligini maslahat beradi.</p>
+<div class="tg"><span>Ovoz bilan kiritish</span><span>AI maslahatchi</span><span>Kredit kalkulyatori</span></div>
+<a class="btn b-lime" style="align-self:flex-start" href="https://play.google.com/store/apps/details?id=uz.dostonbek.cleancomposelayers" target="_blank" rel="noopener">Google Play’da ochish →</a></article>
+<article class="pc card rv"><div class="chips"><span class="chip k">Ipoteka-bank</span><span class="chip">Mobil ilova</span></div><h3>Unduruv</h3><p>Muammoli kreditlar bilan ishlaydigan xodimlar uchun ilova: qarzdorlar ro‘yxati, xaritada manzillar, to‘lov va’dalari va statistika — hammasi bitta telefonda.</p>
+<div class="tg"><span>Xarita va marshrut</span><span>Statistika</span><span>Internetsiz rejim</span></div></article>
+<article class="pc pi card rv"><div class="im"><img src="/img/iq-teacher.jpg" alt="IQ School o‘qituvchi kabineti" width="1280" height="800"></div><div class="bd"><span class="chip" style="align-self:flex-start;background:var(--pv);color:var(--pvt)">Veb-platforma</span><h3>IQ School</h3><p>Maktabni boshqarish tizimi: o‘qituvchi, direktor, o‘quvchi va ota-onaning har birining o‘z kabineti. Dars jadvali, davomat, baholar va onlayn darslar.</p></div></article>
+<article class="pc pi pw card rv"><div class="im" aria-hidden="true"><div class="inv-card"><small>TAKLIFNOMA</small><b>Aziz &amp; Malika</b><span>24-avgust · 18:00</span><em>Kelaman</em></div></div><div class="bd"><span class="chip" style="align-self:flex-start;background:var(--sf);color:var(--ppt)">wedlink.uz · ishlab turibdi</span><h3>WedLink</h3><p>To‘y uchun onlayn taklifnoma: musiqa, xaritadagi manzil va mehmonlar “kelaman” deb javob beradigan tugma.</p></div></article>
 </div>
-<div class="dc-up" style="animation-delay: 0.1s; display: flex"><div role="group" class="dc-aud" aria-label="{{t.audLabel}}" style="display: inline-flex; align-items: center; gap: 4px; padding: 4px; border-radius: 12px; border: 1px solid {{c.border}}; background: {{c.surface}}; align-self: flex-start; flex-wrap: wrap">
-<span style="padding: 0 8px 0 6px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: {{c.subtle}}">{{t.audLabel}}</span>
-<sc-for list="{{auds}}" as="a" hint-placeholder-count="2">
-<button type="button" onClick="{{a.pick}}" aria-pressed="{{a.active}}" style="display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 14px; border: 0; border-radius: 9px; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; background: {{a.bg}}; color: {{a.fg}}"><span aria-hidden="true">{{a.icon}}</span>{{a.label}}</button>
-</sc-for>
+</div></section>
+
+<section class="s"><div class="w">
+<div class="head rv"><span class="tag t-v" style="align-self:flex-start">BATAFSIL</span><h2 class="h2">Har bir loyiha ichida nimalar bor</h2><p>Foydalanuvchi ko‘radigan imkoniyatlar — texnik atamalarsiz.</p></div>
+<div class="det"><details class="card" open><summary><b>Monitoring</b><span class="chip" style="background:var(--pv);color:var(--ink)">Ipoteka-bank</span></summary><ul><li><svg aria-hidden="true" class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span>Obyektni joyida tekshirib, akt tuzadi va PDF qiladi</span></li><li><svg aria-hidden="true" class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span>Yangi garovni bosqichma-bosqich qo‘shish</span></li><li><svg aria-hidden="true" class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span>Xodim joylashuvi real vaqtda ko‘rinadi</span></li><li><svg aria-hidden="true" class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span>Ilova ichida chat va video qo‘ng‘iroq</span></li><li><svg aria-hidden="true" class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span>AI yordamchi (Gemini)</span></li><li><svg aria-hidden="true" class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span>Barmoq izi yoki PIN bilan kirish</span></li><li><svg aria-hidden="true" class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span>Telefon va planshetda, 3 tilda ishlaydi</span></li></ul></details><details class="card"><summary><b>Unduruv</b><span class="chip" style="background:var(--pp);color:var(--ink)">Ipoteka-bank</span></summary><ul><li><svg aria-hidden="true" class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span>Qarzdorlar ro‘yxati va har bir kreditning to‘liq kartasi</span></li><li><svg aria-hidden="true" class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span>To‘lov va’dalari, jarima va izohlarni yozish</span></li><li><svg aria-hidden="true" class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span>Sud jarayonini bosqichma-bosqich yuritish</span></li><li><svg aria-hidden="true" class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span>Xaritada manzil va marshrut</span></li><li><svg aria-hidden="true" class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span>Audio yozuv va chat</span></li><li><svg aria-hidden="true" class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span>Statistika va samaradorlik grafiklari</span></li><li><svg aria-hidden="true" class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span>Yangi versiya xodim telefoniga o‘zi yetib boradi</span></li></ul></details><details class="card"><summary><b>Farovon</b><span class="chip" style="background:var(--pg);color:var(--ink)">Google Play</span></summary><ul><li><svg aria-hidden="true" class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span>Xarajatni ovoz bilan aytasiz — summa va turi o‘zi aniqlanadi</span></li><li><svg aria-hidden="true" class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span>AI tahlilchi va suhbatdosh bot</span></li><li><svg aria-hidden="true" class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span>Kredit kalkulyatori, to‘lov jadvali PDF’da</span></li><li><svg aria-hidden="true" class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span>Valyuta kurslari va konvertor</span></li><li><svg aria-hidden="true" class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span>Internetsiz ishlaydi, chiroyli tungi dizayn</span></li></ul></details><details class="card"><summary><b>IQ School</b><span class="chip" style="background:var(--pv);color:var(--ink)">Veb-platforma</span></summary><ul><li><svg aria-hidden="true" class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span>7 xil rol: direktor, o‘qituvchi, o‘quvchi, ota-ona va boshqalar</span></li><li><svg aria-hidden="true" class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span>Davomat, baholar, uy vazifalari</span></li><li><svg aria-hidden="true" class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span>Dars jadvalini sichqoncha bilan surib tuzish</span></li><li><svg aria-hidden="true" class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span>Onlayn darslar va jonli sinflar</span></li><li><svg aria-hidden="true" class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span>AI darslikni tahlil qilib test tuzadi</span></li><li><svg aria-hidden="true" class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span>Oylik, bonus va direktor hisobotlari</span></li><li><svg aria-hidden="true" class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span>O‘zbek, rus, ingliz tillarida</span></li></ul></details><details class="card"><summary><b>WedLink</b><span class="chip" style="background:var(--pp);color:var(--ink)">wedlink.uz</span></summary><ul><li><svg aria-hidden="true" class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span>Shablon tanlab taklifnomani o‘zingiz yig‘asiz</span></li><li><svg aria-hidden="true" class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span>Musiqa, animatsiya va konfetti</span></li><li><svg aria-hidden="true" class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span>To‘yxona manzili xaritada</span></li><li><svg aria-hidden="true" class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span>Mehmonlar javobi va QR-kod</span></li><li><svg aria-hidden="true" class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span>Google orqali bir bosishda kirish</span></li></ul></details><div class="sm inv"><b>Yana 3 ta ilova</b><div><b>Idea Delivery</b>Yetkazib berishni boshqarish va buyurtma qayerdaligini real vaqtda kuzatish.</div><div><b>Onlayn muddatli to‘lov</b>60+ filial xodimlari tovarlarga muddatli to‘lovni shu ilovada rasmiylashtiradi.</div><div><b>E-Invoice Mobile</b>Hisob-faktura va dalolatnomalarni telefonda yaratish va elektron imzolash.</div></div></div>
+</div></section>
+
+<section id="skills" class="s"><div class="w">
+<div class="head rv"><span class="tag t-g" style="align-self:flex-start">BILIMLARIM</span><h2 class="h2">Nimalarni bilaman — oddiy tilda</h2><p>Har bir bilim nima ekani va qaysi loyihada ishlatilgani.</p></div>
+<div class="gl rv"><div class="inv"><b>Mobil ilovalar — Android va iPhone</b><span>Telefon uchun ilovalarni noldan yarataman: Android (Samsung, Xiaomi va boshqalar) va iPhone uchun.</span><em>Qayerda: Ipoteka-bank, IDEA, E-Invoice, Farovon</em></div><div class="card"><b>Zamonaviy ekran dizayni</b><span>Tugmalar, ro‘yxatlar, animatsiyalar — tez ishlaydi, chiroyli ko‘rinadi, planshetga ham moslashadi.</span><em>Qayerda: Monitoring, Farovon</em></div><div class="card"><b>Tartibli kod</b><span>Kodni qismlarga ajratib quraman: xato kam, yangi funksiya qo‘shish tez va arzon.</span><em>Qayerda: Monitoring (12 modul), Unduruv</em></div><div class="card"><b>Internetsiz ishlash</b><span>Internet yo‘q joyda ham ishlaydi, internet chiqqanda hammasini o‘zi yuboradi.</span><em>Qayerda: Monitoring, Unduruv, Farovon</em></div><div class="card"><b>Server bilan aloqa</b><span>Ilova bank yoki kompaniya serveri bilan xavfsiz va darhol ma’lumot almashadi.</span><em>Qayerda: Barcha loyihalar</em></div><div class="inv"><b>Server qismi (backend)</b><span>Ilova ortidagi serverni ham o‘zim yozaman — loyihani boshidan oxirigacha bir o‘zim qila olaman.</span><em>Qayerda: IQ School, WedLink</em></div><div class="card"><b>Veb-saytlar</b><span>Saytlar va boshqaruv panellari: maktab tizimi, to‘y taklifnomalari, shu sayt.</span><em>Qayerda: IQ School, WedLink</em></div><div class="card"><b>Xavfsizlik</b><span>Barmoq izi yoki PIN bilan kirish, parollarni shifrlash. Bank ilovalari uchun majburiy.</span><em>Qayerda: Monitoring, IQ School</em></div><div class="card"><b>Xarita va joylashuv</b><span>Xarita, manzil, marshrut va xodim joylashuvini real vaqtda kuzatish.</span><em>Qayerda: Unduruv, Monitoring, IDEA</em></div><div class="card"><b>Qo‘ng‘iroq, chat, xabarnomalar</b><span>Ilova ichida video/audio qo‘ng‘iroq, chat va telefonga keladigan xabarlar.</span><em>Qayerda: Monitoring, IQ School</em></div><div class="inv"><b>Sun’iy intellekt (AI)</b><span>AI’ni ilovaga qo‘shaman va ishni tezlashtirish uchun har kuni ishlataman.</span><em>Qayerda: Farovon, Monitoring, IQ School</em></div><div class="card"><b>Jamoa va relizlar</b><span>Jamoada ishlayman, Google Play’ga chiqaraman, Play Market’siz yangilash tizimini qurganman.</span><em>Qayerda: Ipoteka-bank, Farovon</em></div></div><span class="swh">← surib ko‘ring →</span>
+<div class="tools card rv"><b>ISHLATADIGAN VOSITALARIM</b><div><span><b>Kotlin</b>Android ilovalar tili</span><span><b>Swift</b>iPhone ilovalar tili</span><span><b>Jetpack Compose</b>Android ekranlari</span><span><b>Spring Boot</b>server qismi</span><span><b>PostgreSQL</b>ma’lumotlar bazasi</span><span><b>Redis</b>tezkor xotira</span><span><b>Vue · React</b>veb-saytlar</span><span><b>Firebase</b>xabarnomalar</span><span><b>Google Maps</b>xaritalar</span><span><b>Claude · ChatGPT · Gemini</b>sun’iy intellekt</span><span><b>Git · GitHub</b>kod va jamoa</span><span><b>Google Play</b>ilova do‘koni</span></div></div>
+</div></section>
+
+<section id="resume" class="s"><div class="w">
+<div class="head row rv"><div><span class="tag t-i" style="align-self:flex-start">REZYUME</span><h2 class="h2">6 yillik ish tajribasi — qisqa va tushunarli</h2></div>
+<div class="btns"><a class="btn b-pri" href="/cv/Dostonbek-Eshmurodov-CV-UZ.pdf" download><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Rezyumeni yuklab olish (PDF)</a><a class="btn b-out" href="https://github.com/Eshmurodov-Doston1" target="_blank" rel="noopener">GitHub’da ko‘rish</a></div></div>
+<div class="cv">
+<div class="tl card rv"><span class="lbl" style="margin-bottom:22px">ISH TAJRIBASI</span><div class="job now"><div class="ax"><i></i><em></em></div><div class="bd"><div class="pr">Iyun 2023 — hozir<span>hozir shu yerda</span></div><h3>Ipoteka-bank (OTP Group)</h3><div class="ro">Mobil dasturchi · Bank</div><ul><li>Bank xodimlari uchun 2 ta ilova yaratdim: kredit garovlarini tekshirish (Monitoring) va muammoli kreditlar bilan ishlash (Unduruv).</li><li>Ilovalar bank tizimlariga ulangan va internet bo‘lmaganda ham ishlaydi.</li><li>Yangi versiyalar xodimlar telefoniga avtomatik yetib boradi.</li></ul></div></div><div class="job"><div class="ax"><i></i><em></em></div><div class="bd"><div class="pr">Sentabr 2022 — May 2023</div><h3>IDEA</h3><div class="ro">Mobil dasturchi · Savdo tarmog‘i</div><ul><li>Yetkazib berishni kuzatish ilovasini yaratdim.</li><li>60+ filial xodimlari mijozlarga muddatli to‘lovni shu ilova orqali rasmiylashtiradi.</li></ul></div></div><div class="job"><div class="ax"><i></i><em></em></div><div class="bd"><div class="pr">Noyabr 2020 — Dekabr 2022</div><h3>E-Invoice</h3><div class="ro">Mobil dasturchi · Elektron hujjatlar</div><ul><li>Hisob-faktura va dalolatnomalarni telefonda yaratish va elektron imzo bilan imzolash ilovasi.</li><li>Google Play’da muntazam yangilab bordim.</li></ul></div></div></div>
+<div class="side">
+<div class="inv rv"><span class="lbl">MAQSADIM</span><p>Mobil dasturchi (Android va iPhone). Ofis, gibrid yoki masofaviy ish. Hozir ishlayapman, yaxshi takliflarni ko‘rib chiqaman.</p></div>
+<div class="card rv"><span class="lbl">TA’LIM</span><span class="uni">Toshkent axborot texnologiyalari universiteti (TATU)</span><span class="deg">Bakalavr · Kompyuter injiniringi</span></div>
+<div class="lm card rv"><span class="lbl">TILLAR</span><div><span>O‘zbek — ona tili</span><span>Rus</span><span>Ingliz</span><span>Tojik</span></div></div>
 </div></div>
-<p class="dc-up" style="animation-delay: 0.15s; margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 18px; color: {{c.muted}}"><span style="color: {{c.accentText}}">$</span> whoami<span class="dc-cursor" style="background: {{c.accentText}}"></span></p>
-<h1 class="dc-up" style="animation-delay: 0.25s; margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 72px; line-height: 0.98; letter-spacing: -0.03em">{{t.first}}<br><span style="color: {{c.accentText}}">{{t.last}}</span></h1>
-<p class="dc-up" style="animation-delay: 0.35s; margin: 0; min-height: 34px; font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 24px; line-height: 1.35; color: {{c.subtle}}">&gt; <span class="dc-role" key="{{roleKey}}" style="color: {{roleColor}}">{{role}}</span></p>
-<p class="dc-up" style="animation-delay: 0.45s; margin: 0; max-width: 600px; font-size: 18px; line-height: 1.65; color: {{c.muted}}"><sc-for list="{{heroSegs}}" as="sg" hint-placeholder-count="3"><sc-if value="{{sg.b}}" hint-placeholder-val="{{ false }}"><strong style="color: {{c.text}}; font-weight: 600">{{sg.t}}</strong></sc-if><sc-if value="{{sg.n}}" hint-placeholder-val="{{ true }}">{{sg.t}}</sc-if></sc-for></p>
-<div class="dc-up" style="animation-delay: 0.55s; display: flex; flex-wrap: wrap; gap: 12px; padding-top: 6px">
-<a href="#contact" style="padding: 14px 22px; border-radius: 10px; background: {{c.accent}}; color: {{c.onAccent}}; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 15px; text-decoration: none">./hire_me.sh</a>
-<a href="#projects" style="padding: 14px 22px; border-radius: 10px; border: 1px solid {{c.chipBorder}}; background: {{c.surface}}; color: {{c.text}}; font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 15px; text-decoration: none">{{t.ctaProjects}}</a>
-</div>
-<div class="dc-up" style="animation-delay: 0.65s; display: flex; gap: 10px; padding-top: 4px">
-<a href="https://github.com/Eshmurodov-Doston1" aria-label="GitHub" class="dc-glow" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 12px; border: 1px solid {{c.border}}; background: {{c.surface}}; color: {{c.text}}"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"></path></svg></a>
-<a href="https://t.me/Programmer_2001" aria-label="Telegram" class="dc-glow" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 12px; border: 1px solid {{c.border}}; background: {{c.surface}}; color: {{c.text}}"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 4 3 11l6 2 2 6 3-4 5 4z"></path><path d="m9 13 8-6"></path></svg></a>
-<a href="mailto:eshmurodovdoston630@gmail.com" aria-label="Email" class="dc-glow" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 12px; border: 1px solid {{c.border}}; background: {{c.surface}}; color: {{c.text}}"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg></a>
-<a href="tel:+998774882708" aria-label="Phone" class="dc-glow" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 12px; border: 1px solid {{c.border}}; background: {{c.surface}}; color: {{c.text}}"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg></a>
-<a href="https://play.google.com/store/apps/details?id=uz.dostonbek.cleancomposelayers" aria-label="Google Play" class="dc-glow" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 12px; border: 1px solid {{c.border}}; background: {{c.surface}}; color: {{c.text}}"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v18l15-9z"></path><path d="m5 3 9 9-9 9"></path></svg></a>
-</div>
-</div>
+</div></section>
 
-<div class="dc-up" style="animation-delay: 0.3s; flex: 1 1 440px; min-width: 0">
-<sc-if value="{{audDev}}" hint-placeholder-val="{{ true }}">
-<div style="border-radius: 16px; overflow: hidden; border: 1px solid #30363D; background: #0D1117; box-shadow: 0 30px 80px rgba(0,0,0,0.45)">
-<div style="display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: #161B22; border-bottom: 1px solid #30363D">
-<span style="width: 12px; height: 12px; border-radius: 50%; background: #FF5F57"></span>
-<span style="width: 12px; height: 12px; border-radius: 50%; background: #FEBC2E"></span>
-<span style="width: 12px; height: 12px; border-radius: 50%; background: #28C840"></span>
-<span style="margin-left: 12px; padding: 4px 10px; border-radius: 6px; background: #0D1117; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #E6EDF3">Developer.kt</span>
-<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #8B949E">Backend.kt</span>
-</div>
-<div class="dc-code" style="padding: 20px 0; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.75; overflow-x: auto">
-<sc-for list="{{code}}" as="ln" hint-placeholder-count="13">
-<div class="dc-line" style="animation-delay: {{ln.delay}}; display: flex; white-space: pre; padding-right: 20px">
-<span style="display: inline-block; width: 44px; flex-shrink: 0; text-align: right; padding-right: 16px; color: #6E7681; user-select: none">{{ln.no}}</span>
-<span><sc-for list="{{ln.tokens}}" as="tk" hint-placeholder-count="3"><span style="color: {{tk.color}}">{{tk.text}}</span></sc-for></span>
-</div>
-</sc-for>
-</div>
-<div style="display: flex; justify-content: space-between; gap: 8px; padding: 8px 16px; border-top: 1px solid #30363D; background: #161B22; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #8B949E">
-<span><span style="color: #3DDC84">●</span> BUILD SUCCESSFUL</span>
-<span>Kotlin · UTF-8</span>
-</div>
-</div>
-</sc-if>
-<sc-if value="{{audHr}}" hint-placeholder-val="{{ false }}">
-<div style="border-radius: 20px; border: 1px solid {{c.border}}; background: {{c.surface}}; box-shadow: 0 30px 80px rgba(0,0,0,0.25); overflow: hidden">
-<div style="padding: 22px 24px; border-bottom: 1px solid {{c.border}}; display: flex; align-items: center; gap: 14px">
-<div aria-hidden="true" style="width: 52px; height: 52px; flex-shrink: 0; border-radius: 14px; background: {{c.accent}}; color: {{c.onAccent}}; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px">DE</div>
-<div style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
-<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px">{{t.plainTitle}}</span>
-<span style="font-size: 14px; color: {{c.subtle}}">{{t.plainSub}}</span>
-</div>
-</div>
-<div style="display: flex; flex-direction: column">
-<sc-for list="{{t.plainRows}}" as="r" hint-placeholder-count="5">
-<div style="display: flex; gap: 14px; padding: 16px 24px; border-bottom: 1px solid {{c.border}}">
-<span style="width: 108px; flex-shrink: 0; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: {{c.accentText}}">{{r.k}}</span>
-<span style="font-size: 16px; line-height: 1.55; color: {{c.text}}">{{r.v}}</span>
-</div>
-</sc-for>
-</div>
-<a href="#skills" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; min-height: 52px; box-sizing: border-box; text-decoration: none; font-weight: 600; font-size: 15px; color: {{c.accentText}}">{{t.plainCta}}<span aria-hidden="true">→</span></a>
-</div>
-</sc-if>
-</div>
-</section>
+<section class="s"><div class="w">
+<div class="head rv"><span class="tag t-g" style="align-self:flex-start">QANDAY ISHLAYMAN</span><h2 class="h2">To‘rt oddiy qadam</h2></div>
+<div class="how rv"><div class="card"><b class="d">01</b><strong>Tinglayman</strong><span>Sizning maqsadingiz va mijozlaringiz ehtiyojini tushunib olaman.</span></div><div class="card"><b class="d">02</b><strong>Reja tuzaman</strong><span>Ekranlar, muddat va narxni oldindan aniq kelishib olamiz.</span></div><div class="card"><b class="d">03</b><strong>Quraman</strong><span>Har hafta natijani ko‘rsatib boraman — siz jarayonni ko‘rib turasiz.</span></div><div class="inv"><b class="d">04</b><strong>Qo‘llab-quvvatlayman</strong><span>Ishga tushirgandan keyin ham yangilab, xatolarni tuzatib boraman.</span></div></div>
+</div></section>
 
-<div class="dc-marquee-wrap" aria-hidden="true" style="position: relative; border-top: 1px solid {{c.border}}; border-bottom: 1px solid {{c.border}}; background: {{c.surface}}; overflow: hidden; padding: 18px 0">
-<div class="dc-marquee">
-<sc-for list="{{marquee}}" as="m" hint-placeholder-count="12">
-<span style="display: inline-flex; align-items: center; gap: 14px; padding: 0 22px; font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 500; color: {{c.muted}}; white-space: nowrap"><span style="color: {{m.color}}">◆</span>{{m.t}}</span>
-</sc-for>
-</div>
-</div>
+<section id="faq" class="s"><div class="w">
+<div class="head rv"><span class="tag t-p" style="align-self:flex-start">SAVOLLAR</span><h2 class="h2">Ko‘p beriladigan savollar</h2></div>
+<div class="faq rv"><details class="card" open><summary>Narxi qancha turadi?<i>+</i></summary><p>Loyiha hajmiga bog‘liq. Birinchi suhbatda nimalar kerakligini aniqlab, reja bosqichida aniq narx va muddatni aytaman.</p></details><details class="card"><summary>Qancha vaqtda tayyor bo‘ladi?<i>+</i></summary><p>Kichik sayt — bir necha hafta, to‘liq mobil ilova — bir necha oy. Aniq muddat reja bosqichida kelishiladi.</p></details><details class="card"><summary>Ham Android, ham iPhone uchun qila olasizmi?<i>+</i></summary><p>Ha. Ikkala platforma uchun ham ilova yarataman, server qismini ham o‘zim yozaman.</p></details><details class="card"><summary>Tayyor bo‘lgandan keyin kim qo‘llab-quvvatlaydi?<i>+</i></summary><p>Men. Ishga tushirgandan keyin ham yangilanishlar, xatolarni tuzatish va yangi funksiyalarni qo‘shib boraman.</p></details><details class="card"><summary>Hozir ishlayapsizmi?<i>+</i></summary><p>Ha, Ipoteka-bankda ishlayman. Yaxshi ish takliflari va qiziqarli loyihalarni ko‘rib chiqaman.</p></details></div>
+</div></section>
 
-<section style="position: relative; max-width: 1180px; margin: 0 auto; padding: 64px 24px 24px">
-<div class="dc-stats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px">
-<sc-for list="{{t.stats}}" as="s" hint-placeholder-count="4">
-<div class="dc-reveal dc-card" style="background: {{c.surface}}; border: 1px solid {{c.border}}; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 6px">
-<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: {{c.subtle}}">{{s.key}}</span>
-<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 46px; line-height: 1; color: {{c.accentText}}">{{s.n}}</span>
-<span style="font-size: 15px; color: {{c.muted}}">{{s.label}}</span>
-</div>
-</sc-for>
-</div>
-</section>
+<section id="contact" class="s" style="padding-bottom:88px"><div class="w">
+<div class="ct rv"><div class="l"><h2>Loyihangiz bormi? Keling, gaplashamiz</h2><p>Odatda bir kun ichida javob beraman.</p></div>
+<div class="r"><a class="c1" href="https://t.me/Programmer_2001" target="_blank" rel="noopener">Telegram’da yozish <span aria-hidden="true">→</span></a>
+<a class="c2" href="tel:+998774882708">+998 77 488-27-08 <span aria-hidden="true">→</span></a>
+<a class="c3" href="mailto:eshmurodovdoston630@gmail.com">eshmurodovdoston630@gmail.com <span aria-hidden="true">→</span></a></div></div>
+</div></section>
+</main>
 
-<section id="about" style="position: relative; max-width: 1180px; margin: 0 auto; padding: 72px 24px; display: flex; flex-wrap: wrap; gap: 48px">
-<div class="dc-reveal" style="flex: 1 1 280px; display: flex; flex-direction: column; gap: 12px">
-<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 15px; color: {{c.accentText}}">01. <span style="color: {{c.subtle}}">{{t.aboutKicker}}</span></p>
-<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 42px; line-height: 1.08">{{t.aboutTitle}}</h2>
-</div>
-<div class="dc-reveal" style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 18px; font-size: 17px; line-height: 1.8; color: {{c.muted}}; border-left: 2px solid {{c.border}}; padding-left: 28px" class="dc-about">
-<sc-for list="{{about}}" as="p" hint-placeholder-count="4">
-<p style="margin: 0"><sc-for list="{{p.segs}}" as="sg" hint-placeholder-count="3"><sc-if value="{{sg.b}}" hint-placeholder-val="{{ false }}"><strong style="color: {{c.text}}; font-weight: 600">{{sg.t}}</strong></sc-if><sc-if value="{{sg.n}}" hint-placeholder-val="{{ true }}">{{sg.t}}</sc-if></sc-for></p>
-</sc-for>
-</div>
-</section>
-
-<section id="experience" style="position: relative; max-width: 1180px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 36px">
-<div class="dc-reveal" style="display: flex; flex-direction: column; gap: 12px">
-<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 15px; color: {{c.accentText}}">02. <span style="color: {{c.subtle}}">{{t.expKicker}}</span></p>
-<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 42px; line-height: 1.08">{{t.expTitle}}</h2>
-<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: {{c.subtle}}"><span style="color: {{c.accentText}}">$</span> git log --career --graph</p>
-</div>
-<div style="display: flex; flex-direction: column">
-<sc-for list="{{t.jobs}}" as="j" hint-placeholder-count="3">
-<div style="display: flex; gap: 20px">
-<div style="display: flex; flex-direction: column; align-items: center; width: 20px; flex-shrink: 0">
-<span style="width: 16px; height: 16px; border-radius: 50%; border: 3px solid {{j.dot}}; background: {{c.bg}}; margin-top: 30px; flex-shrink: 0"></span>
-<span style="flex: 1; width: 2px; background: {{c.border}}"></span>
-</div>
-<article class="dc-reveal dc-card" style="flex: 1; min-width: 0; margin-bottom: 20px; background: {{c.surface}}; border: 1px solid {{c.border}}; border-radius: 14px; padding: 26px 28px; display: flex; flex-direction: column; gap: 14px">
-<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px">
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 13px">
-<span style="color: {{c.swift}}">commit {{j.hash}}</span>
-<sc-if value="{{j.head}}" hint-placeholder-val="{{ false }}">
-<span style="padding: 2px 8px; border-radius: 6px; border: 1px solid {{c.accentText}}; color: {{c.accentText}}">HEAD -&gt; main</span>
-</sc-if>
-</div>
-<span style="padding: 5px 12px; border-radius: 999px; background: {{c.surface2}}; border: 1px solid {{c.border}}; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: {{c.muted}}">{{j.period}}</span>
-</div>
-<div style="display: flex; flex-direction: column; gap: 4px">
-<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 24px">{{j.role}}</h3>
-<span style="font-size: 15px; color: {{c.accentText}}; font-weight: 600">{{j.company}} <span style="color: {{c.subtle}}; font-weight: 400">· {{j.sector}}</span></span>
-</div>
-<div style="display: flex; flex-direction: column; gap: 8px">
-<sc-for list="{{j.pts.top}}" as="p" hint-placeholder-count="3">
-<div style="display: flex; gap: 10px; font-size: 16px; line-height: 1.6; color: {{c.muted}}"><span style="font-family: 'JetBrains Mono', monospace; color: {{c.accentText}}; flex-shrink: 0">+</span><span><sc-for list="{{p}}" as="sg" hint-placeholder-count="2"><sc-if value="{{sg.b}}" hint-placeholder-val="{{ false }}"><strong style="color: {{c.text}}; font-weight: 600">{{sg.t}}</strong></sc-if><sc-if value="{{sg.n}}" hint-placeholder-val="{{ true }}">{{sg.t}}</sc-if></sc-for></span></div>
-</sc-for>
-<sc-if value="{{j.pts.hasRest}}" hint-placeholder-val="{{ false }}"><details class="dc-more"><summary style="display: inline-flex; align-items: center; gap: 8px; margin-top: 4px; padding: 10px 14px; min-height: 44px; box-sizing: border-box; border-radius: 10px; border: 1px dashed {{c.accentText}}; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; color: {{c.accentText}}"><span class="dc-more-open">{{j.pts.more}}</span><span class="dc-more-close">{{t.lessLabel}}</span></summary><div style="display: flex; flex-direction: column; gap: 8px; padding-top: 10px"><sc-for list="{{j.pts.rest}}" as="p" hint-placeholder-count="2">
-<div style="display: flex; gap: 10px; font-size: 16px; line-height: 1.6; color: {{c.muted}}"><span style="font-family: 'JetBrains Mono', monospace; color: {{c.accentText}}; flex-shrink: 0">+</span><span><sc-for list="{{p}}" as="sg" hint-placeholder-count="2"><sc-if value="{{sg.b}}" hint-placeholder-val="{{ false }}"><strong style="color: {{c.text}}; font-weight: 600">{{sg.t}}</strong></sc-if><sc-if value="{{sg.n}}" hint-placeholder-val="{{ true }}">{{sg.t}}</sc-if></sc-for></span></div>
-</sc-for></div></details></sc-if>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: 4px">
-<sc-for list="{{j.stack}}" as="s" hint-placeholder-count="5">
-<span style="padding: 4px 9px; border-radius: 6px; background: {{c.tagBg}}; border: 1px solid {{c.tagBorder}}; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: {{c.tagText}}">{{s}}</span>
-</sc-for>
-</div>
-</article>
-</div>
-</sc-for>
-</div>
-</section>
-
-<section id="projects" style="position: relative; max-width: 1180px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 36px">
-<div class="dc-reveal" style="display: flex; flex-direction: column; gap: 12px">
-<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 15px; color: {{c.accentText}}">03. <span style="color: {{c.subtle}}">{{t.projKicker}}</span></p>
-<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 42px; line-height: 1.08">{{t.projTitle}}</h2>
-</div>
-
-<p class="dc-swipe-hint" style="margin: 0; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: {{c.subtle}}">{{t.swipe}} →</p>
-<div class="dc-snap" style="display: flex; flex-direction: column; gap: 28px">
-<sc-for list="{{t.cases}}" as="cs" hint-placeholder-count="2">
-<article class="dc-reveal dc-card" style="border-radius: 18px; overflow: hidden; border: 1px solid #30363D; background: #0D1117; display: flex; flex-wrap: wrap">
-<div class="dc-body" style="flex: 999 1 460px; min-width: 0; padding: 36px; display: flex; flex-direction: column; gap: 16px">
-<div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px">
-<span style="padding: 5px 10px; border-radius: 999px; background: #1F6FEB; color: #FFFFFF; font-weight: 700">{{cs.badge}}</span>
-<span style="padding: 5px 10px; border-radius: 999px; border: 1px solid #30363D; color: #C9D1D9">{{cs.kind}}</span>
-</div>
-<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #8B949E">{{cs.module}}</p>
-<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 44px; line-height: 1; color: #FFFFFF" class="dc-bigtitle">{{cs.name}}</h3>
-<p style="margin: 0; font-size: 17px; line-height: 1.65; color: #C9D1D9">{{cs.desc}}</p>
-<div style="display: flex; flex-wrap: wrap; gap: 6px">
-<sc-for list="{{cs.tags}}" as="tg" hint-placeholder-count="6">
-<span style="padding: 4px 9px; border-radius: 6px; border: 1px solid #30363D; color: #A5D6FF; font-family: 'JetBrains Mono', monospace; font-size: 12px">{{tg}}</span>
-</sc-for>
-</div>
-<p style="margin: 4px 0 0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #8B949E">{{t.nda}}</p>
-</div>
-<div class="dc-panel" style="flex: 1 1 360px; min-width: 0; padding: 32px; background: #111821; border-left: 1px solid #1F2A36; display: flex; flex-direction: column; gap: 10px">
-<p style="margin: 0 0 4px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #8B949E">features.kt</p>
-<sc-for list="{{cs.feat.top}}" as="f" hint-placeholder-count="4">
-<div style="display: flex; gap: 12px; align-items: flex-start; padding: 11px 14px; border-radius: 10px; border: 1px solid #1F2A36; background: #0D1117">
-<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #79C0FF; flex-shrink: 0">{{f.n}}</span>
-<span style="font-size: 15px; line-height: 1.5; color: #E6EDF3">{{f.t}}</span>
-</div>
-</sc-for>
-<sc-if value="{{cs.feat.hasRest}}" hint-placeholder-val="{{ false }}"><details class="dc-more"><summary style="display: inline-flex; align-items: center; gap: 8px; margin-top: 4px; padding: 10px 14px; min-height: 44px; box-sizing: border-box; border-radius: 10px; border: 1px dashed #79C0FF; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; color: #79C0FF"><span class="dc-more-open">{{cs.feat.more}}</span><span class="dc-more-close">{{t.lessLabel}}</span></summary><div style="display: flex; flex-direction: column; gap: 10px; padding-top: 10px"><sc-for list="{{cs.feat.rest}}" as="f" hint-placeholder-count="3">
-<div style="display: flex; gap: 12px; align-items: flex-start; padding: 11px 14px; border-radius: 10px; border: 1px solid #1F2A36; background: #0D1117">
-<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #79C0FF; flex-shrink: 0">{{f.n}}</span>
-<span style="font-size: 15px; line-height: 1.5; color: #E6EDF3">{{f.t}}</span>
-</div>
-</sc-for></div></details></sc-if>
-</div>
-</article>
-</sc-for>
-
-<article class="dc-reveal dc-card" style="border-radius: 18px; overflow: hidden; border: 1px solid #2B4A39; background: #0D1117; display: flex; flex-wrap: wrap">
-<div class="dc-body" style="flex: 999 1 460px; min-width: 0; padding: 36px; display: flex; flex-direction: column; gap: 16px">
-<div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px">
-<span style="padding: 5px 10px; border-radius: 999px; background: #3DDC84; color: #04130A; font-weight: 700">{{t.featured}}</span>
-<span style="padding: 5px 10px; border-radius: 999px; border: 1px solid #30363D; color: #C9D1D9">Google Play</span>
-</div>
-<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 44px; line-height: 1; color: #FFFFFF" class="dc-bigtitle">Farovon</h3>
-<p style="margin: 0; font-size: 17px; line-height: 1.65; color: #C9D1D9">{{t.farovonDesc}}</p>
-<div style="display: flex; flex-wrap: wrap; gap: 6px">
-<sc-for list="{{farovonTags}}" as="tg" hint-placeholder-count="5">
-<span style="padding: 4px 9px; border-radius: 6px; border: 1px solid #30363D; color: #A5D6FF; font-family: 'JetBrains Mono', monospace; font-size: 12px">{{tg}}</span>
-</sc-for>
-</div>
-<a href="https://play.google.com/store/apps/details?id=uz.dostonbek.cleancomposelayers" style="align-self: flex-start; margin-top: 6px; padding: 13px 18px; border-radius: 10px; background: #3DDC84; color: #04130A; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; text-decoration: none">{{t.storeLabel}}</a>
-</div>
-<div class="dc-panel" style="flex: 1 1 320px; min-width: 0; padding: 36px; background: #111821; border-left: 1px solid #1F2A36; display: flex; flex-direction: column; gap: 12px">
-<p style="margin: 0 0 4px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #8B949E">features.kt</p>
-<sc-for list="{{fvFeat.top}}" as="f" hint-placeholder-count="4">
-<div style="display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; border-radius: 10px; border: 1px solid #1F2A36; background: #0D1117">
-<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #3DDC84; flex-shrink: 0">{{f.n}}</span>
-<span style="font-size: 15px; line-height: 1.5; color: #E6EDF3">{{f.t}}</span>
-</div>
-</sc-for>
-<sc-if value="{{fvFeat.hasRest}}" hint-placeholder-val="{{ false }}"><details class="dc-more"><summary style="display: inline-flex; align-items: center; gap: 8px; margin-top: 4px; padding: 10px 14px; min-height: 44px; box-sizing: border-box; border-radius: 10px; border: 1px dashed #3DDC84; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; color: #3DDC84"><span class="dc-more-open">{{fvFeat.more}}</span><span class="dc-more-close">{{t.lessLabel}}</span></summary><div style="display: flex; flex-direction: column; gap: 10px; padding-top: 10px"><sc-for list="{{fvFeat.rest}}" as="f" hint-placeholder-count="3">
-<div style="display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; border-radius: 10px; border: 1px solid #1F2A36; background: #0D1117">
-<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #3DDC84; flex-shrink: 0">{{f.n}}</span>
-<span style="font-size: 15px; line-height: 1.5; color: #E6EDF3">{{f.t}}</span>
-</div>
-</sc-for></div></details></sc-if>
-</div>
-</article>
-
-</div>
-<div class="dc-snap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px">
-<sc-for list="{{t.projects}}" as="pr" hint-placeholder-count="5">
-<article class="dc-reveal dc-card" style="border-radius: 14px; overflow: hidden; border: 1px solid #30363D; background: #0D1117; display: flex; flex-direction: column">
-<div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 14px; background: #161B22; border-bottom: 1px solid #30363D; font-family: 'JetBrains Mono', monospace; font-size: 13px">
-<span style="display: flex; align-items: center; gap: 8px; color: #E6EDF3"><span style="width: 10px; height: 10px; border-radius: 50%; background: {{pr.dot}}"></span>{{pr.file}}</span>
-<span style="color: #8B949E">{{pr.client}}</span>
-</div>
-<div style="padding: 24px; display: flex; flex-direction: column; gap: 12px; flex: 1">
-<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #8B949E">/** {{pr.kind}} */</p>
-<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 25px; color: #FFFFFF">{{pr.name}}</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C9D1D9">{{pr.desc}}</p>
-<div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 8px">
-<sc-for list="{{pr.tags}}" as="tg" hint-placeholder-count="3">
-<span style="padding: 4px 8px; border-radius: 6px; border: 1px solid #30363D; color: #A5D6FF; font-family: 'JetBrains Mono', monospace; font-size: 12px">{{tg}}</span>
-</sc-for>
-</div>
-</div>
-</article>
-</sc-for>
-</div>
-</section>
-
-<section id="fullstack" style="position: relative; max-width: 1180px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 28px">
-<div class="dc-reveal" style="display: flex; flex-direction: column; gap: 12px">
-<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 15px; color: {{c.accentText}}">04. <span style="color: {{c.subtle}}">{{t.fsKicker}}</span></p>
-<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 42px; line-height: 1.08">{{t.fsTitle}}</h2>
-<p style="margin: 0; max-width: 760px; font-size: 17px; line-height: 1.65; color: {{c.muted}}">{{t.fsIntro}}</p>
-</div>
-
-<article class="dc-reveal" style="border-radius: 18px; overflow: hidden; border: 1px solid {{c.border}}; background: {{c.surface}}">
-<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 28px 32px; border-bottom: 1px solid {{c.border}}">
-<div style="display: flex; flex-direction: column; gap: 8px; min-width: 0">
-<div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px">
-<span style="padding: 5px 10px; border-radius: 999px; background: {{c.accent}}; color: {{c.onAccent}}; font-weight: 700">full-stack</span>
-<span style="padding: 5px 10px; border-radius: 999px; border: 1px solid {{c.border}}; color: {{c.muted}}">EdTech · SaaS</span>
-</div>
-<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 40px; line-height: 1" class="dc-bigtitle">IQ School Portal</h3>
-<p style="margin: 0; max-width: 700px; font-size: 17px; line-height: 1.6; color: {{c.muted}}">{{t.iqDesc}}</p>
-</div>
-<div role="group" aria-label="Screenshots" style="display: flex; gap: 4px; padding: 4px; border-radius: 12px; border: 1px solid {{c.border}}; background: {{c.surface2}}">
-<sc-for list="{{shots}}" as="sh" hint-placeholder-count="3">
-<button type="button" onClick="{{sh.pick}}" aria-pressed="{{sh.active}}" style="height: 44px; padding: 0 14px; border: 0; border-radius: 9px; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; background: {{sh.bg}}; color: {{sh.fg}}">{{sh.label}}</button>
-</sc-for>
-</div>
-</div>
-<div style="background: #0D1117; padding: 22px 22px 0">
-<div style="border-radius: 12px 12px 0 0; overflow: hidden; border: 1px solid #30363D; border-bottom: 0; background: #161B22">
-<div style="display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-bottom: 1px solid #30363D">
-<span style="width: 10px; height: 10px; border-radius: 50%; background: #FF5F57"></span>
-<span style="width: 10px; height: 10px; border-radius: 50%; background: #FEBC2E"></span>
-<span style="width: 10px; height: 10px; border-radius: 50%; background: #28C840"></span>
-<span style="margin-left: 10px; flex: 1; max-width: 420px; padding: 4px 12px; border-radius: 6px; background: #0D1117; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #8B949E">iqschool · {{shotPath}}</span>
-</div>
-<div class="dc-shot" style="height: 520px; overflow-y: auto; background: #FFFFFF">
-<sc-if value="{{shot0}}" hint-placeholder-val="{{ true }}"><img src="img/iq-landing.jpg" alt="IQ School landing page" style="display: block; width: 100%; height: auto"></sc-if>
-<sc-if value="{{shot1}}" hint-placeholder-val="{{ false }}"><img src="img/iq-teacher.jpg" alt="IQ School teacher dashboard" style="display: block; width: 100%; height: auto"></sc-if>
-<sc-if value="{{shot2}}" hint-placeholder-val="{{ false }}"><img src="img/iq-director.jpg" alt="IQ School director dashboard" style="display: block; width: 100%; height: auto"></sc-if>
-</div>
-</div>
-</div>
-<div style="display: flex; flex-wrap: wrap; border-top: 1px solid {{c.border}}">
-<div style="flex: 999 1 460px; min-width: 0; padding: 28px 32px; display: flex; flex-direction: column; gap: 10px">
-<p style="margin: 0 0 4px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: {{c.subtle}}">features.kt</p>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px">
-<sc-for list="{{iqFeat.top}}" as="f" hint-placeholder-count="4">
-<div style="display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: 10px; border: 1px solid {{c.border}}; background: {{c.surface2}}">
-<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: {{c.accentText}}; flex-shrink: 0">{{f.n}}</span>
-<span style="font-size: 15px; line-height: 1.5; color: {{c.text}}">{{f.t}}</span>
-</div>
-</sc-for>
-<sc-if value="{{iqFeat.hasRest}}" hint-placeholder-val="{{ false }}"><details class="dc-more" style="grid-column: 1 / -1"><summary style="display: inline-flex; align-items: center; gap: 8px; margin-top: 4px; padding: 10px 14px; min-height: 44px; box-sizing: border-box; border-radius: 10px; border: 1px dashed {{c.accentText}}; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; color: {{c.accentText}}"><span class="dc-more-open">{{iqFeat.more}}</span><span class="dc-more-close">{{t.lessLabel}}</span></summary><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; padding-top: 10px"><sc-for list="{{iqFeat.rest}}" as="f" hint-placeholder-count="3">
-<div style="display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: 10px; border: 1px solid {{c.border}}; background: {{c.surface2}}">
-<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: {{c.accentText}}; flex-shrink: 0">{{f.n}}</span>
-<span style="font-size: 15px; line-height: 1.5; color: {{c.text}}">{{f.t}}</span>
-</div>
-</sc-for></div></details></sc-if>
-</div>
-</div>
-<div style="flex: 1 1 320px; min-width: 0; padding: 28px 32px; border-left: 1px solid {{c.border}}; display: flex; flex-direction: column; gap: 18px">
-<sc-for list="{{iqStack}}" as="g" hint-placeholder-count="2">
-<div style="display: flex; flex-direction: column; gap: 10px">
-<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; color: {{g.color}}">{{g.title}}</span>
-<div style="display: flex; flex-wrap: wrap; gap: 6px">
-<sc-for list="{{g.items}}" as="s" hint-placeholder-count="6">
-<span style="padding: 4px 9px; border-radius: 6px; background: {{c.chipBg}}; border: 1px solid {{c.chipBorder}}; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: {{c.text}}">{{s}}</span>
-</sc-for>
-</div>
-</div>
-</sc-for>
-</div>
-</div>
-</article>
-
-<article class="dc-reveal dc-card" style="border-radius: 18px; overflow: hidden; border: 1px solid #3A2E44; background: #110D16; display: flex; flex-wrap: wrap">
-<div class="dc-body" style="flex: 999 1 460px; min-width: 0; padding: 36px; display: flex; flex-direction: column; gap: 16px">
-<div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px">
-<span style="padding: 5px 10px; border-radius: 999px; background: #F4C2D7; color: #2A0F1C; font-weight: 700">full-stack · live</span>
-<span style="padding: 5px 10px; border-radius: 999px; border: 1px solid #3A2E44; color: #D8CCE0">wedlink.uz</span>
-</div>
-<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 44px; line-height: 1; color: #FFFFFF" class="dc-bigtitle">WedLink</h3>
-<p style="margin: 0; font-size: 17px; line-height: 1.65; color: #D8CCE0">{{t.wedDesc}}</p>
-<sc-for list="{{wedStack}}" as="g" hint-placeholder-count="2">
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px">
-<span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; color: {{g.color}}; margin-right: 4px">{{g.title}}</span>
-<sc-for list="{{g.items}}" as="s" hint-placeholder-count="5">
-<span style="padding: 4px 9px; border-radius: 6px; border: 1px solid #3A2E44; color: #F1E6F5; font-family: 'JetBrains Mono', monospace; font-size: 12px">{{s}}</span>
-</sc-for>
-</div>
-</sc-for>
-<a href="https://wedlink.uz" style="align-self: flex-start; margin-top: 6px; padding: 13px 18px; border-radius: 10px; background: #F4C2D7; color: #2A0F1C; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; text-decoration: none">{{t.wedLink}}</a>
-</div>
-<div class="dc-panel" style="flex: 1 1 340px; min-width: 0; padding: 32px; background: #17111D; border-left: 1px solid #2A2131; display: flex; flex-direction: column; gap: 10px">
-<p style="margin: 0 0 4px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #A895B5">features.kt</p>
-<sc-for list="{{wdFeat.top}}" as="f" hint-placeholder-count="4">
-<div style="display: flex; gap: 12px; align-items: flex-start; padding: 11px 14px; border-radius: 10px; border: 1px solid #2A2131; background: #110D16">
-<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #F4C2D7; flex-shrink: 0">{{f.n}}</span>
-<span style="font-size: 15px; line-height: 1.5; color: #F1E6F5">{{f.t}}</span>
-</div>
-</sc-for>
-<sc-if value="{{wdFeat.hasRest}}" hint-placeholder-val="{{ false }}"><details class="dc-more"><summary style="display: inline-flex; align-items: center; gap: 8px; margin-top: 4px; padding: 10px 14px; min-height: 44px; box-sizing: border-box; border-radius: 10px; border: 1px dashed #F4C2D7; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; color: #F4C2D7"><span class="dc-more-open">{{wdFeat.more}}</span><span class="dc-more-close">{{t.lessLabel}}</span></summary><div style="display: flex; flex-direction: column; gap: 10px; padding-top: 10px"><sc-for list="{{wdFeat.rest}}" as="f" hint-placeholder-count="3">
-<div style="display: flex; gap: 12px; align-items: flex-start; padding: 11px 14px; border-radius: 10px; border: 1px solid #2A2131; background: #110D16">
-<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #F4C2D7; flex-shrink: 0">{{f.n}}</span>
-<span style="font-size: 15px; line-height: 1.5; color: #F1E6F5">{{f.t}}</span>
-</div>
-</sc-for></div></details></sc-if>
-</div>
-</article>
-</section>
-
-<section id="skills" style="position: relative; max-width: 1180px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 36px">
-<div class="dc-reveal" style="display: flex; flex-direction: column; gap: 12px">
-<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 15px; color: {{c.accentText}}">05. <span style="color: {{c.subtle}}">{{t.skillsKicker}}</span></p>
-<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 42px; line-height: 1.08">{{skillsTitle}}</h2>
-<p style="margin: 0; max-width: 720px; font-size: 17px; line-height: 1.6; color: {{c.muted}}">{{skillsIntro}}</p>
-<div role="group" class="dc-aud" aria-label="{{t.audLabel}}" style="display: inline-flex; align-items: center; gap: 4px; padding: 4px; border-radius: 12px; border: 1px solid {{c.border}}; background: {{c.surface}}; align-self: flex-start; flex-wrap: wrap">
-<span style="padding: 0 8px 0 6px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: {{c.subtle}}">{{t.audLabel}}</span>
-<sc-for list="{{auds}}" as="a" hint-placeholder-count="2">
-<button type="button" onClick="{{a.pick}}" aria-pressed="{{a.active}}" style="display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 14px; border: 0; border-radius: 9px; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; background: {{a.bg}}; color: {{a.fg}}"><span aria-hidden="true">{{a.icon}}</span>{{a.label}}</button>
-</sc-for>
-</div>
-</div>
-<sc-if value="{{audDev}}" hint-placeholder-val="{{ true }}">
-<div class="dc-snap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px">
-<sc-for list="{{t.skillGroups}}" as="g" hint-placeholder-count="6">
-<div class="dc-reveal dc-card" style="border: 1px solid {{c.border}}; border-radius: 14px; background: {{c.surface}}; overflow: hidden">
-<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 20px; border-bottom: 1px solid {{c.border}}; background: {{c.surface2}}; font-family: 'JetBrains Mono', monospace; font-size: 14px">
-<span style="color: {{c.text}}; font-weight: 700"><span style="color: {{c.accentText}}">import</span> {{g.pkg}}</span>
-<span style="color: {{c.subtle}}">{{g.tag}}</span>
-</div>
-<div style="padding: 18px 20px; display: flex; flex-direction: column; gap: 12px">
-<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 20px">{{g.title}}</h3>
-<div style="display: flex; flex-wrap: wrap; gap: 8px">
-<sc-for list="{{g.items}}" as="s" hint-placeholder-count="5">
-<span style="padding: 6px 10px; border-radius: 6px; background: {{c.chipBg}}; border: 1px solid {{c.chipBorder}}; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: {{c.text}}">{{s}}</span>
-</sc-for>
-</div>
-</div>
-</div>
-</sc-for>
-</div>
-</sc-if>
-<sc-if value="{{audHr}}" hint-placeholder-val="{{ false }}">
-<div class="dc-snap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px">
-<sc-for list="{{t.gloss}}" as="g" hint-placeholder-count="6">
-<article class="dc-card" style="border: 1px solid {{c.border}}; border-radius: 16px; background: {{c.surface}}; padding: 24px; display: flex; flex-direction: column; gap: 12px">
-<div style="display: flex; align-items: center; gap: 12px">
-<span aria-hidden="true" style="width: 40px; height: 40px; flex-shrink: 0; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: {{c.tagBg}}; border: 1px solid {{c.tagBorder}}; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; color: {{c.tagText}}">{{g.n}}</span>
-<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; line-height: 1.25">{{g.title}}</h3>
-</div>
-<p style="margin: 0; font-size: 16px; line-height: 1.65; color: {{c.muted}}">{{g.plain}}</p>
-<div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 4px">
-<sc-for list="{{g.tech}}" as="tc" hint-placeholder-count="4">
-<span style="padding: 4px 9px; border-radius: 6px; background: {{c.chipBg}}; border: 1px solid {{c.chipBorder}}; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: {{c.text}}">{{tc}}</span>
-</sc-for>
-</div>
-<p style="margin: 0; font-size: 13px; color: {{c.subtle}}"><span style="font-weight: 600; color: {{c.accentText}}">{{t.usedIn}}</span> {{g.where}}</p>
-</article>
-</sc-for>
-</div>
-</sc-if>
-</section>
-
-<section style="position: relative; max-width: 1180px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 36px">
-<div class="dc-reveal" style="display: flex; flex-direction: column; gap: 12px">
-<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 15px; color: {{c.accentText}}">06. <span style="color: {{c.subtle}}">{{t.extraKicker}}</span></p>
-<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 42px; line-height: 1.08">{{t.extraTitle}}</h2>
-</div>
-<div class="dc-snap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px">
-<sc-for list="{{t.extras}}" as="x" hint-placeholder-count="3">
-<div class="dc-reveal dc-card" style="background: {{c.surface}}; border: 1px solid {{c.border}}; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
-<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: {{c.swift}}">{{x.endpoint}}</span>
-<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 21px">{{x.title}}</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: {{c.muted}}">{{x.desc}}</p>
-</div>
-</sc-for>
-</div>
-</section>
-
-<section id="terminal" style="position: relative; max-width: 1180px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 24px">
-<div class="dc-reveal" style="display: flex; flex-direction: column; gap: 12px">
-<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 15px; color: {{c.accentText}}">07. <span style="color: {{c.subtle}}">{{t.termKicker}}</span></p>
-<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 42px; line-height: 1.08">{{t.termTitle}}</h2>
-<p style="margin: 0; max-width: 720px; font-size: 17px; line-height: 1.6; color: {{c.muted}}">{{t.termIntro}}</p>
-</div>
-<div class="dc-term" style="border-radius: 16px; overflow: hidden; border: 1px solid #30363D; background: #0D1117; box-shadow: 0 30px 80px rgba(0,0,0,0.35)">
-<div style="display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: #161B22; border-bottom: 1px solid #30363D">
-<span style="width: 12px; height: 12px; border-radius: 50%; background: #FF5F57"></span>
-<span style="width: 12px; height: 12px; border-radius: 50%; background: #FEBC2E"></span>
-<span style="width: 12px; height: 12px; border-radius: 50%; background: #28C840"></span>
-<span style="margin-left: 12px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #8B949E">dostonbek@portfolio: ~</span>
-</div>
-<div class="dc-term-out" style="height: 340px; padding: 16px 18px; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.65">
-<div>
-<sc-for list="{{termLines}}" as="tl" hint-placeholder-count="4">
-<div style="white-space: pre-wrap; overflow-wrap: anywhere; color: {{tl.color}}">{{tl.text}}</div>
-</sc-for>
-</div>
-</div>
-<form onSubmit="{{onTermSubmit}}" style="display: flex; align-items: center; gap: 10px; padding: 12px 18px; border-top: 1px solid #30363D; background: #0B0F14">
-<label for="dc-term-input" style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #3DDC84; white-space: nowrap">~ $</label>
-<input id="dc-term-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" value="{{termInput}}" onChange="{{onTermChange}}" placeholder="{{t.termPlaceholder}}" style="flex: 1; min-width: 0; min-height: 40px; border: 0; background: transparent; color: #E6EDF3; font-family: 'JetBrains Mono', monospace; font-size: 16px">
-<button type="submit" style="min-height: 40px; padding: 0 14px; border: 0; border-radius: 8px; cursor: pointer; background: #3DDC84; color: #04130A; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 13px">{{t.termRun}}</button>
-</form>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 8px">
-<sc-for list="{{termChips}}" as="ch" hint-placeholder-count="6">
-<button type="button" class="dc-chipbtn" onClick="{{ch.run}}" style="min-height: 44px; padding: 0 14px; border-radius: 10px; border: 1px solid {{c.chipBorder}}; background: {{c.surface}}; color: {{c.text}}; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 13px"><span style="color: {{c.accentText}}">$</span> {{ch.cmd}}</button>
-</sc-for>
-</div>
-</section>
-
-<section id="education" style="position: relative; max-width: 1180px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 36px">
-<div class="dc-reveal" style="display: flex; flex-direction: column; gap: 12px">
-<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 15px; color: {{c.accentText}}">08. <span style="color: {{c.subtle}}">{{t.eduKicker}}</span></p>
-<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 42px; line-height: 1.08">{{t.eduTitle}}</h2>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 16px">
-<div class="dc-reveal dc-card" style="flex: 999 1 460px; min-width: 0; background: {{c.surface}}; border: 1px solid {{c.border}}; border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
-<span style="align-self: flex-start; padding: 5px 12px; border-radius: 999px; background: {{c.surface2}}; border: 1px solid {{c.border}}; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: {{c.muted}}">2024 · {{t.degree}}</span>
-<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 22px; line-height: 1.3">{{t.uni}}</h3>
-<p style="margin: 0; font-size: 16px; color: {{c.muted}}">{{t.faculty}}</p>
-</div>
-<div class="dc-reveal dc-card" style="flex: 1 1 320px; min-width: 0; background: {{c.surface}}; border: 1px solid {{c.border}}; border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
-<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 22px">{{t.langsTitle}}</h3>
-<div style="display: flex; flex-wrap: wrap; gap: 8px">
-<sc-for list="{{t.spoken}}" as="sp" hint-placeholder-count="4">
-<span style="padding: 7px 12px; border-radius: 8px; background: {{c.chipBg}}; border: 1px solid {{c.chipBorder}}; font-size: 14px; color: {{c.text}}">{{sp}}</span>
-</sc-for>
-</div>
-</div>
-</div>
-</section>
-
-<section id="contact" style="position: relative; max-width: 1180px; margin: 0 auto; padding: 48px 24px 96px">
-<div class="dc-reveal" style="border-radius: 18px; overflow: hidden; border: 1px solid #30363D; background: #0D1117; box-shadow: 0 30px 80px rgba(0,0,0,0.35)">
-<div style="display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: #161B22; border-bottom: 1px solid #30363D">
-<span style="width: 12px; height: 12px; border-radius: 50%; background: #FF5F57"></span>
-<span style="width: 12px; height: 12px; border-radius: 50%; background: #FEBC2E"></span>
-<span style="width: 12px; height: 12px; border-radius: 50%; background: #28C840"></span>
-<span style="margin-left: 12px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #8B949E">bash — contact</span>
-</div>
-<div style="padding: 44px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center; justify-content: space-between">
-<div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
-<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 15px; color: #8B949E"><span style="color: #3DDC84">$</span> ./contact --dostonbek</p>
-<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 46px; line-height: 1.04; color: #FFFFFF">{{t.contactTitle}}</h2>
-<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #C9D1D9">{{t.contactText}}</p>
-</div>
-<div style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 15px">
-<a href="tel:+998774882708" class="dc-glow" style="display: flex; gap: 12px; padding: 14px 18px; border-radius: 10px; border: 1px solid #30363D; background: #161B22; color: #E6EDF3; text-decoration: none"><span style="color: #D2A8FF">phone:</span> +998 77 488-27-08</a>
-<a href="mailto:eshmurodovdoston630@gmail.com" class="dc-glow" style="display: flex; flex-wrap: wrap; gap: 12px; padding: 14px 18px; border-radius: 10px; border: 1px solid #30363D; background: #161B22; color: #E6EDF3; text-decoration: none; overflow-wrap: anywhere"><span style="color: #D2A8FF">email:</span> eshmurodovdoston630@gmail.com</a>
-<a href="https://t.me/Programmer_2001" class="dc-glow" style="display: flex; gap: 12px; padding: 14px 18px; border-radius: 10px; border: 1px solid #30363D; background: #161B22; color: #E6EDF3; text-decoration: none"><span style="color: #D2A8FF">telegram:</span> @Programmer_2001</a>
-<a href="https://github.com/Eshmurodov-Doston1" class="dc-glow" style="display: flex; gap: 12px; padding: 14px 18px; border-radius: 10px; border: 1px solid #30363D; background: #161B22; color: #E6EDF3; text-decoration: none"><span style="color: #D2A8FF">github:</span> Eshmurodov-Doston1</a>
-<div style="display: flex; gap: 12px; padding: 14px 18px; border-radius: 10px; border: 1px dashed #30363D; color: #8B949E"><span style="color: #D2A8FF">location:</span> {{t.location}}</div>
-</div>
-</div>
-</div>
-</section>
-
-<nav class="dc-bnav" aria-label="Mobile navigation" style="background: {{c.bnavBg}}; border: 1px solid {{c.border}}">
-<sc-for list="{{bnav}}" as="b" hint-placeholder-count="5">
-<a href="{{b.href}}" style="color: {{b.color}}; background: {{b.bg}}"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="{{b.d}}"></path></svg>{{b.label}}</a>
-</sc-for>
-</nav>
-<footer style="position: relative; border-top: 1px solid {{c.border}}; background: {{c.headerBg}}">
-<div style="max-width: 1180px; margin: 0 auto; padding: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: {{c.subtle}}">
-<span>© 2026 {{t.first}} {{t.last}}</span>
-<span>{{t.footer}}</span>
-</div>
-</footer>
-
-</div>
-</template>
+<footer><div class="w"><span>© 2026 Dostonbek Eshmurodov · Toshkent, O‘zbekiston</span><span><a href="https://github.com/Eshmurodov-Doston1" target="_blank" rel="noopener">GitHub</a> · <a href="/dev/">Dasturchilar uchun versiya →</a></span></div></footer>
+<nav class="bn" aria-label="Menu"><a href="#top" class="on">Bosh</a><a href="#work" class="">Loyiha</a><a href="#resume" class="">Rezyume</a><a href="#contact" class="">Aloqa</a></nav>
 <script>
 (function(){
-var SVGNS='http://www.w3.org/2000/svg';
-var STORE='dostonbek.dev.prefs';
-function load(){try{return JSON.parse(localStorage.getItem(STORE))||{}}catch(e){return {}}}
-function save(o){try{localStorage.setItem(STORE,JSON.stringify(o))}catch(e){}}
-var comp, app, tpl, mounted=false, queued=false;
-window.DCLogic=function DCLogic(props){this.props=props||{};this.state={};};
-DCLogic.prototype.setState=function(u){var n=typeof u==='function'?u(this.state):u;this.state=Object.assign({},this.state,n);schedule();};
-DCLogic.prototype.forceUpdate=function(){schedule();};
-function schedule(){if(queued)return;queued=true;requestAnimationFrame(function(){queued=false;render();});}
-function lit(p){if(p==='true')return true;if(p==='false')return false;if(p==='null')return null;if(/^-?\d+(\.\d+)?$/.test(p))return Number(p);var q=p.match(/^['"](.*)['"]$/);if(q)return q[1];return undefined;}
-function get(sc,p){p=p.trim();var l=lit(p);if(l!==undefined||p==='null')return l;var parts=p.split('.'),v=sc;for(var i=0;i<parts.length;i++){if(v==null)return undefined;v=v[parts[i]];}return v;}
-var WHOLE=/^\s*\{\{\s*([^}]+?)\s*\}\}\s*$/;
-function interp(str,sc){var w=str.match(WHOLE);if(w)return get(sc,w[1]);return str.replace(/\{\{\s*([^}]+?)\s*\}\}/g,function(_,p){var v=get(sc,p);return v==null?'':String(v);});}
-function build(node,sc,ns,out){
- if(node.nodeType===3){out.push(document.createTextNode(interp(node.data,sc)));return;}
- if(node.nodeType!==1)return;
- var tag=node.nodeName.toLowerCase();
- if(tag==='sc-for'){var list=interp(node.getAttribute('list'),sc)||[];var as=node.getAttribute('as')||'item';
-  for(var i=0;i<list.length;i++){var s2=Object.create(sc);s2[as]=list[i];s2.$index=i;kids(node,s2,ns,out);}return;}
- if(tag==='sc-if'){if(interp(node.getAttribute('value'),sc))kids(node,sc,ns,out);return;}
- var nns=(tag==='svg'||ns)?SVGNS:null;
- var el=nns?document.createElementNS(nns,tag):document.createElement(tag);
- el.__h={};
- for(var a=0;a<node.attributes.length;a++){var at=node.attributes[a],n=at.name;
-  if(n.indexOf('hint-')===0)continue;
-  var v=interp(at.value,sc);
-  if(/^on[a-z]+$/i.test(n)){if(typeof v==='function')el.__h[n.slice(2).toLowerCase()]=v;continue;}
-  if(n==='key'){el.setAttribute('data-key',String(v));continue;}
-  if(v===false||v==null)continue;
-  el.setAttribute(n,v===true?'':String(v));}
- var c=[];kids(node,sc,nns,c);for(var j=0;j<c.length;j++)el.appendChild(c[j]);
- out.push(el);}
-function kids(node,sc,ns,out){var ch=node.childNodes;for(var i=0;i<ch.length;i++)build(ch[i],sc,ns,out);}
-function same(a,b){if(a.nodeType!==b.nodeType||a.nodeName!==b.nodeName)return false;if(a.nodeType===1&&a.getAttribute('data-key')!==b.getAttribute('data-key'))return false;return true;}
-function patchKids(parent,nk){var i;for(i=0;i<nk.length;i++){var o=parent.childNodes[i];if(!o)parent.appendChild(nk[i]);else if(same(o,nk[i]))patch(o,nk[i]);else parent.replaceChild(nk[i],o);}
- while(parent.childNodes.length>nk.length)parent.removeChild(parent.lastChild);}
-function patch(o,n){if(o.nodeType===3){if(o.data!==n.data)o.data=n.data;return;}
- var i,oa=o.attributes,na=n.attributes;
- for(i=oa.length-1;i>=0;i--)if(!n.hasAttribute(oa[i].name)&&!(o.nodeName==='DETAILS'&&oa[i].name==='open'))o.removeAttribute(oa[i].name);
- for(i=0;i<na.length;i++)if(o.getAttribute(na[i].name)!==na[i].value)o.setAttribute(na[i].name,na[i].value);
- o.__h=n.__h;if(o.nodeName==='INPUT'&&n.hasAttribute('value')&&o.value!==n.getAttribute('value'))o.value=n.getAttribute('value');patchKids(o,Array.prototype.slice.call(n.childNodes));}
-function render(){var vals=comp.renderVals();var out=[];kids(tpl,vals,null,out);patchKids(app,out);
- var st=comp.state;document.documentElement.lang=(st.lang||comp.props.defaultLang||'ru');
- save({lang:st.lang,dark:st.dark,aud:st.aud});
- if(!mounted){mounted=true;if(comp.componentDidMount)comp.componentDidMount();}}
-function deleg(type,keys){document.addEventListener(type,function(e){var t=e.target;while(t&&t!==document){if(t.__h){for(var i=0;i<keys.length;i++){if(t.__h[keys[i]]){t.__h[keys[i]](e);return;}}}t=t.parentNode;}},true);}
-deleg('click',['click']);deleg('input',['change','input']);deleg('submit',['submit']);
-window.__dcStart=function(Component,defaults){
- app=document.getElementById('app');tpl=document.getElementById('dc-template').content;
- comp=new Component(defaults);var p=load();
- if(p.lang)comp.state.lang=p.lang;
- if(typeof p.dark==='boolean')comp.state.dark=p.dark;
- if(p.aud)comp.state.aud=p.aud;
- render();};
+var r=document.documentElement,b=document.getElementById('thm');
+b&&b.addEventListener('click',function(){var d=r.getAttribute('data-theme')==='dark'?'light':'dark';r.setAttribute('data-theme',d);try{localStorage.setItem('theme',d)}catch(e){}});
+document.querySelectorAll('.lng a').forEach(function(a){a.addEventListener('click',function(){try{localStorage.setItem('lang',a.dataset.l)}catch(e){}})});
+var mq=window.matchMedia('(min-width:721px)');
+function od(){document.querySelectorAll('.det details').forEach(function(d,i){if(mq.matches)d.open=true;else if(!d.dataset.t)d.open=i===0})}
+od();mq.addEventListener&&mq.addEventListener('change',od);
+document.querySelectorAll('.det summary').forEach(function(s){s.addEventListener('click',function(){s.parentNode.dataset.t=1})});
+var ids=['top','work','resume','contact'],links=document.querySelectorAll('.bn a');
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){var i=ids.indexOf(en.target.id);links.forEach(function(l,j){l.classList.toggle('on',j===i)})}})},{rootMargin:'-45% 0px -50% 0px'});
+ids.forEach(function(id){var el=document.getElementById(id);el&&io.observe(el)})}
 })();
-</script>
-<script>
-
-class Component extends DCLogic {
-constructor(props) {
-super(props);
-this.state = { lang: null, dark: null, roleIdx: 0, shot: 0, sec: 'home', aud: null, term: null, termInput: '' };
-}
-componentDidMount() {
-this.timer = setInterval(() => this.setState((s) => ({ roleIdx: (s.roleIdx + 1) % 4 })), 2600);
-this.onScroll = () => {
-if (this.raf) return;
-this.raf = requestAnimationFrame(() => {
-this.raf = null;
-const map = [['contact', 'contact'], ['skills', 'skills'], ['projects', 'proj'], ['fullstack', 'proj'], ['experience', 'exp'], ['about', 'home'], ['top', 'home']];
-const order = ['top', 'about', 'experience', 'projects', 'fullstack', 'skills', 'contact'];
-let cur = 'home';
-for (const id of order) { const el = document.getElementById(id); if (el && el.getBoundingClientRect().top < window.innerHeight * 0.45) { cur = (map.find((m) => m[0] === id) || [0, 'home'])[1]; } }
-if (cur !== this.state.sec) this.setState({ sec: cur });
-});
-};
-window.addEventListener('scroll', this.onScroll, { passive: true });
-}
-componentWillUnmount() {
-clearInterval(this.timer); window.removeEventListener('scroll', this.onScroll);
-}
-plainText(str) { return String(str).split('**').join(''); }
-runCmd(raw, t) {
-const cmd = String(raw || '').trim();
-const prev = this.state.term || this.termWelcome(t);
-if (!cmd) return;
-const out = [{ k: 'cmd', text: '~ $ ' + cmd }];
-const [name, ...args] = cmd.toLowerCase().split(/\s+/);
-const push = (k, text) => out.push({ k, text });
-if (name === 'clear') { this.setState({ term: [], termInput: '' }); return; }
-if (name === 'help') { t.termHelp.forEach((h) => push('out', h)); }
-else if (name === 'whoami') { push('ok', t.first + ' ' + t.last + ' — Mobile Developer (Android / iOS)'); push('out', this.plainText(t.heroText)); push('out', t.location); }
-else if (name === 'skills') { t.skillGroups.forEach((g) => push('out', (g.pkg + '            ').slice(0, 16) + g.items.join(', '))); }
-else if (name === 'experience' || name === 'exp') { t.jobs.forEach((j) => push('out', j.period + ' · ' + j.company + ' · ' + j.role)); }
-else if (name === 'projects') { t.cases.forEach((c) => push('out', '• ' + c.name + ' — ' + c.kind)); push('out', '• Farovon — Google Play'); t.projects.forEach((p) => push('out', '• ' + p.name + ' — ' + p.kind)); push('out', '• IQ School Portal — full-stack'); push('out', '• WedLink — full-stack · wedlink.uz'); }
-else if (name === 'contact') { ['phone:    +998 77 488-27-08', 'email:    eshmurodovdoston630@gmail.com', 'telegram: @Programmer_2001', 'github:   Eshmurodov-Doston1', 'site:     eshmurodov.uz'].forEach((l) => push('out', l)); }
-else if (name === 'hire' || (name === 'sudo' && args[0] === 'hire')) { push('ok', t.termHire); push('out', 'eshmurodovdoston630@gmail.com · @Programmer_2001'); }
-else if (name === 'lang' && ['uz', 'ru', 'en'].includes(args[0])) { push('ok', 'lang → ' + args[0]); this.setState({ lang: args[0] }); }
-else if (name === 'theme') { push('ok', 'theme → ' + (this.isDark() ? 'light' : 'dark')); this.setState({ dark: !this.isDark() }); }
-else if (name === 'mode' && ['dev', 'hr'].includes(args[0])) { push('ok', 'mode → ' + args[0]); this.setState({ aud: args[0] }); }
-else { push('err', t.termNotFound.replace('{c}', name)); }
-this.setState({ term: prev.concat(out).slice(-80), termInput: '' });
-}
-termWelcome(t) { return [{ k: 'ok', text: t.termWelcome }, { k: 'out', text: t.termWelcome2 }]; }
-isDark() { return this.state.dark ?? this.props.defaultDark ?? true; }
-split(list, n, moreTpl) {
-const top = list.slice(0, n), rest = list.slice(n);
-return { top, rest, hasRest: rest.length > 0, more: moreTpl.replace('{n}', String(rest.length)) };
-}
-segs(str) {
-return String(str).split('**').map((t, i) => ({ t, b: i % 2 === 1, n: i % 2 === 0 })).filter((s) => s.t.length > 0);
-}
-renderVals() {
-const lang = this.state.lang ?? this.props.defaultLang ?? 'ru';
-const dark = this.state.dark ?? this.props.defaultDark ?? true;
-const night = {
-bg: '#090C12', surface: '#0F141B', surface2: '#131A23', border: '#1F2833',
-text: '#E6EDF3', muted: '#B3BECB', subtle: '#8B97A6', dot: 'rgba(255,255,255,0.06)',
-glow: 'rgba(61,220,132,0.16)', glow2: 'rgba(255,138,101,0.09)',
-accent: '#3DDC84', accentText: '#3DDC84', onAccent: '#04130A', swift: '#FF8A65',
-chipBg: '#131A23', chipBorder: '#2A3542', headerBg: 'rgba(9,12,18,0.82)',
-tagBg: 'rgba(61,220,132,0.08)', tagBorder: 'rgba(61,220,132,0.28)', tagText: '#8EF0B9', bnavBg: 'rgba(15,20,27,0.86)'
-};
-const day = {
-bg: '#F7F8FA', surface: '#FFFFFF', surface2: '#F2F4F7', border: '#E1E5EB',
-text: '#0D1117', muted: '#2F3A47', subtle: '#4B5563', dot: 'rgba(13,17,23,0.07)',
-glow: 'rgba(21,128,61,0.12)', glow2: 'rgba(194,65,12,0.07)',
-accent: '#15803D', accentText: '#15803D', onAccent: '#FFFFFF', swift: '#C2410C',
-chipBg: '#FFFFFF', chipBorder: '#CBD3DD', headerBg: 'rgba(247,248,250,0.86)',
-tagBg: '#ECFDF3', tagBorder: '#B7E4C7', tagText: '#14532D', bnavBg: 'rgba(255,255,255,0.9)'
-};
-const c = dark ? night : day;
-const T = this.texts();
-const t0 = T[lang] || T.ru;
-const roles = [
-['Android Developer', c.accentText], ['iOS Developer', c.swift], ['Spring Boot Backend', dark ? '#79C0FF' : '#1D4ED8'], ['AI-powered Engineer', dark ? '#D2A8FF' : '#7C3AED']
-];
-const r = roles[this.state.roleIdx % roles.length];
-const langs = ['uz', 'ru', 'en'].map((code) => ({
-code: code.toUpperCase(),
-active: code === lang ? 'true' : 'false',
-bg: code === lang ? c.accent : 'transparent',
-fg: code === lang ? c.onAccent : c.muted,
-pick: () => this.setState({ lang: code })
-}));
-const K = '#FF7B72', S = '#A5D6FF', P = '#D2A8FF', F = '#79C0FF', C = '#8B949E', W = '#E6EDF3', N = '#FFA657';
-const raw = [
-[[t0.codeComment, C]],
-[['data class ', K], ['Developer', N], ['(', W]],
-[['  val ', K], ['name', P], [': ', W], ['String', N], [' = ', W], ['"Dostonbek"', S], [',', W]],
-[['  val ', K], ['platforms', P], [' = ', W], ['listOf', F], ['(', W], ['"Android"', S], [', ', W], ['"iOS"', S], ['),', W]],
-[['  val ', K], ['architecture', P], [' = ', W], ['listOf', F], ['(', W], ['"MVI"', S], [', ', W], ['"MVVM"', S], ['),', W]],
-[['  val ', K], ['experience', P], [': ', W], ['Int', N], [' = ', W], ['6', N], [',', W]],
-[['  val ', K], ['stack', P], [' = ', W], ['listOf', F], ['(', W], ['"Kotlin"', S], [', ', W], ['"Compose"', S], [', ', W], ['"Swift"', S], ['),', W]],
-[['  val ', K], ['backend', P], [' = ', W], ['Backend', N], ['(', W]],
-[['    language', P], [' = ', W], ['"Kotlin"', S], [',', W]],
-[['    framework', P], [' = ', W], ['"Spring Boot 3"', S], [',', W]],
-[['    database', P], [' = ', W], ['"PostgreSQL"', S], [' + ', W], ['"Flyway"', S], [',', W]],
-[['    cache', P], [' = ', W], ['"Redis"', S], [',', W]],
-[['    auth', P], [' = ', W], ['"JWT + OAuth2"', S], [',', W]],
-[['    realtime', P], [' = ', W], ['"WebSocket"', S]],
-[['  ),', W]],
-[['  val ', K], ['frontend', P], [' = ', W], ['listOf', F], ['(', W], ['"Vue 3"', S], [', ', W], ['"React"', S], [', ', W], ['"TypeScript"', S], ['),', W]],
-[['  val ', K], ['ai', P], [' = ', W], ['listOf', F], ['(', W], ['"Claude"', S], [', ', W], ['"Gemini"', S], [', ', W], ['"GPT"', S], [')', W]],
-[[') {', W]],
-[['  fun ', K], ['hire', F], ['() = ', W], ['"eshmurodovdoston630@gmail.com"', S]],
-[['}', W]]
-];
-const code = raw.map((toks, i) => ({ no: String(i + 1), delay: (0.6 + i * 0.09).toFixed(2) + 's', tokens: toks.map(([text, color]) => ({ text, color })) }));
-const mItems = ['Kotlin', 'Jetpack Compose', 'Swift', 'MVI', 'MVVM', 'Clean Architecture', 'Spring Boot', 'PostgreSQL', 'Redis', 'Vue 3', 'React', 'TypeScript', 'Docker', 'In-App Update', 'Multi-module', 'Coroutines', 'WebRTC', 'Retrofit', 'Room', 'Hilt', 'Firebase', 'Gemini API', 'Claude', 'REST API', 'Git'];
-const mColors = [c.accentText, c.swift, dark ? '#79C0FF' : '#1D4ED8', dark ? '#D2A8FF' : '#7C3AED'];
-const half = mItems.map((m, i) => ({ t: m, color: mColors[i % 4] }));
-const marquee = half.concat(half);
-const shotPaths = ['/', '/teacher/dashboard', '/director/dashboard'];
-const shotLabels = ['Landing', t0.shotTeacher, t0.shotDirector];
-const shots = shotLabels.map((label, i) => ({ label, active: i === this.state.shot ? 'true' : 'false', bg: i === this.state.shot ? c.accent : 'transparent', fg: i === this.state.shot ? c.onAccent : c.muted, pick: () => this.setState({ shot: i }) }));
-const iqStack = [
-{ title: '// frontend', color: dark ? '#79C0FF' : '#1D4ED8', items: ['Vue 3', 'TypeScript', 'Pinia', 'Vue Router', 'Tailwind CSS', 'Vite', 'LiveKit', 'STOMP / WebSocket', 'KaTeX', 'Clean Architecture'] },
-{ title: '// backend', color: c.accentText, items: ['Kotlin', 'Spring Boot 3', 'Spring Security', 'PostgreSQL', 'Flyway', 'Spring Data JPA', 'Redis', 'WebSocket', 'JWT', 'Argon2', 'Bucket4j', 'PDFBox', 'Apache POI', 'OpenAPI / Swagger', 'Actuator', 'Docker'] }
-];
-const wedStack = [
-{ title: 'front:', color: '#F4C2D7', items: ['React 18', 'Vite', 'Tailwind CSS', 'Framer Motion', 'Node.js / Express', 'WebSocket'] },
-{ title: 'back:', color: '#3DDC84', items: ['Kotlin', 'Spring Boot 3', 'Spring Security 6', 'Google OAuth2', 'JWT', 'PostgreSQL', 'Redis', 'Hexagonal', 'Swagger', 'Docker'] }
-];
-const jobs = t0.jobs.map((j, i) => ({ ...j, dot: i === 0 ? c.accentText : c.subtle, pts: this.split(j.points.map((p) => this.segs(p)), 3, t0.moreLabel) }));
-const cases = t0.cases.map((cs) => ({ ...cs, feat: this.split(cs.features, 4, t0.moreLabel) }));
-const aud = this.state.aud ?? 'dev';
-const auds = [['dev', '</>', t0.audDev], ['hr', 'Aa', t0.audHr]].map(([k, icon, label]) => ({ icon, label, active: k === aud ? 'true' : 'false', bg: k === aud ? c.accent : 'transparent', fg: k === aud ? c.onAccent : c.muted, pick: () => this.setState({ aud: k }) }));
-const tc = { cmd: '#E6EDF3', out: '#9DA7B3', ok: '#3DDC84', err: '#FF7B72' };
-const termLines = (this.state.term || this.termWelcome(t0)).map((l) => ({ text: l.text, color: tc[l.k] }));
-const termChips = ['help', 'whoami', 'skills', 'experience', 'projects', 'contact', 'hire', 'clear'].map((cmd) => ({ cmd, run: () => this.runCmd(cmd, t0) }));
-const icons = { home: 'M3 11l9-8 9 8M5 10v10h14V10', exp: 'M4 7h16v12H4zM9 7V4h6v3', proj: 'M8 9l-4 3 4 3M16 9l4 3-4 3M13 6l-2 12', skills: 'M12 2l3 7h7l-5.5 4.5L18.5 21 12 16.5 5.5 21l2-7.5L2 9h7z', contact: 'M4 5h16v12H8l-4 4z' };
-const bnav = t0.bnav.map((b) => ({ ...b, d: icons[b.k], color: b.k === this.state.sec ? c.onAccent : c.muted, bg: b.k === this.state.sec ? c.accent : 'transparent' }));
-return {
-c, t: { ...t0, jobs, cases }, langs, bnav, auds, audDev: aud === 'dev', audHr: aud === 'hr',
-skillsTitle: aud === 'hr' ? t0.skillsTitleHr : t0.skillsTitle, skillsIntro: aud === 'hr' ? t0.skillsIntroHr : t0.skillsIntroDev,
-termLines, termChips, termInput: this.state.termInput,
-onTermChange: (e) => this.setState({ termInput: e.target.value }),
-onTermSubmit: (e) => { if (e && e.preventDefault) e.preventDefault(); this.runCmd(this.state.termInput, t0); }, fvFeat: this.split(t0.farovonFeatures, 3, t0.moreLabel), iqFeat: this.split(t0.iqFeatures, 6, t0.moreLabel), wdFeat: this.split(t0.wedFeatures, 4, t0.moreLabel), shots, iqStack, wedStack, shotPath: shotPaths[this.state.shot], shot0: this.state.shot === 0, shot1: this.state.shot === 1, shot2: this.state.shot === 2, code, marquee, dark, light: !dark,
-role: r[0], roleColor: r[1], roleKey: 'r' + this.state.roleIdx,
-heroSegs: this.segs(t0.heroText),
-about: t0.aboutParas.map((p) => ({ segs: this.segs(p) })),
-farovonTags: ['Kotlin', 'Jetpack Compose', 'Clean Architecture', 'Gemini AI', 'Offline-first', 'PDF'],
-toggleTheme: () => this.setState({ dark: !dark })
-};
-}
-texts() {
-const si = {
-android: ['Kotlin', 'Java', 'Jetpack Compose', 'XML / Fragments', 'Coroutines & Flow', 'Multi-module', 'Navigation', 'Foreground Service', 'WebRTC', 'Biometric', 'In-App Update', 'ViewBinding'],
-ios: ['Swift', 'Xcode', 'iOS'],
-arch: ['MVI', 'MVVM', 'MVP', 'MVC', 'Clean Architecture', 'SOLID'],
-data: ['Retrofit', 'OkHttp', 'REST API', 'JWT', 'Room', 'DataStore', 'Paging 3', 'SQLite', 'Realm', 'RxJava', 'Dagger 2', 'Hilt', 'Firebase', 'Firestore', 'Google Maps API'],
-web: ['Kotlin', 'Spring Boot 3', 'Spring Security', 'PostgreSQL', 'Flyway', 'Spring Data JPA', 'Redis', 'WebSocket / STOMP', 'JWT / OAuth2', 'Swagger', 'Docker', 'Vue 3', 'React', 'TypeScript', 'Tailwind CSS', 'Vite'],
-tools: ['Git', 'GitLab', 'Claude', 'ChatGPT', 'Gemini', 'Gemini API']
-};
-const pk = ['android.*', 'ios.*', 'architecture.*', 'data.network.*', 'backend.web.*', 'tools.ai.*'];
-const st = [
-['Kotlin', 'Jetpack Compose', 'MVI', 'MVVM', 'Clean Architecture', 'In-App Update', 'Hilt', 'Retrofit', 'Room', 'Firebase', 'GitLab'],
-['Kotlin', 'Java', 'MVVM', 'Retrofit', 'Room', 'RxJava', 'Dagger 2', 'Google Maps API'],
-['Kotlin', 'Java', 'MVP/MVVM', 'Retrofit', 'RxJava', 'SQLite/Realm', 'Dagger 2']
-];
-const hs = [['a3f9c21', true], ['7be04d8', false], ['1c52e9f', false]];
-const cm = [
-{ module: ':app :core :network :navigation :common-ui :feature:* (12)', tags: ['Kotlin', 'Jetpack Compose', 'MVI / UDF', 'Multi-module', 'Clean Architecture', 'Hilt', 'Coroutines & Flow', 'Room', 'DataStore', 'Retrofit', 'WebRTC', 'Firebase', 'Gemini AI', 'Navigation 3'] },
-{ module: 'uz.otpgroup.problemloans', tags: ['Kotlin', 'MVVM', 'Hilt', 'Retrofit', 'OkHttp', 'Room', 'Paging 3', 'Coroutines', 'Google Maps', 'osmdroid', 'Firebase', 'Pusher', 'MPAndroidChart'] }
-];
-const pr = [
-{ file: 'IdeaDelivery.kt', client: 'IDEA', dot: '#3DDC84', tags: ['Kotlin', 'Google Maps', 'REST API'] },
-{ file: 'Installments.kt', client: 'IDEA', dot: '#3DDC84', tags: ['Kotlin', 'MVVM', 'Firebase'] },
-{ file: 'EInvoice.java', client: 'E-Invoice', dot: '#FFA657', tags: ['Java', 'Kotlin', 'RxJava'] }
-];
-const ep = ['POST /api/backend', 'GET /web/new-site', 'PATCH /web/support'];
-const gt = [
-['Kotlin', 'Java', 'Swift', 'Android SDK', 'Xcode'],
-['Jetpack Compose', 'XML / Fragments', 'Material 3'],
-['MVI', 'MVVM', 'Clean Architecture', 'SOLID', 'Multi-module'],
-['Room', 'SQLite', 'DataStore', 'Offline-first'],
-['REST API', 'Retrofit', 'OkHttp', 'WebSocket'],
-['Kotlin', 'Spring Boot', 'PostgreSQL', 'Redis', 'Docker'],
-['Vue 3', 'React', 'TypeScript', 'Tailwind CSS'],
-['JWT', 'Biometric', 'Spring Security', 'Argon2'],
-['Google Maps', 'Yandex Maps', 'Foreground Service'],
-['WebRTC', 'LiveKit', 'Firebase'],
-['Gemini API', 'Claude', 'ChatGPT'],
-['Git', 'GitLab', 'Google Play', 'In-App Update']
-];
-const build = (L) => ({
-...L,
-skillGroups: L.skillGroups.map((g, i) => ({ ...g, pkg: pk[i], items: si[g.k] })),
-jobs: L.jobs.map((j, i) => ({ ...j, hash: hs[i][0], head: hs[i][1], stack: st[i] })),
-projects: L.projects.map((p, i) => ({ ...p, ...pr[i] })),
-cases: L.cases.map((cs, i) => ({ ...cs, ...cm[i], badge: L.caseBadge, features: cs.features.map((f, k) => ({ t: f, n: String(k + 1).padStart(2, '0') })) })),
-extras: L.extras.map((x, i) => ({ ...x, endpoint: ep[i] })),
-farovonFeatures: L.farovonFeatures.map((f, i) => ({ t: f, n: String(i + 1).padStart(2, '0') })),
-gloss: L.gloss.map((g, i) => ({ title: g[0], plain: g[1], where: g[2], tech: gt[i], n: String(i + 1).padStart(2, '0') })),
-iqFeatures: L.iqFeatures.map((f, i) => ({ t: f, n: String(i + 1).padStart(2, '0') })),
-wedFeatures: L.wedFeatures.map((f, i) => ({ t: f, n: String(i + 1).padStart(2, '0') }))
-});
-return {
-ru: build({
-first: 'Достонбек', last: 'Эшмуродов',
-nav: [{ num: '01.', label: 'обо_мне', href: '#about' }, { num: '02.', label: 'опыт', href: '#experience' }, { num: '03.', label: 'проекты', href: '#projects' }, { num: '04.', label: 'full-stack', href: '#fullstack' }, { num: '05.', label: 'навыки', href: '#skills' }, { num: '08.', label: 'контакты', href: '#contact' }],
-themeLabel: 'Переключить светлую/тёмную тему',
-status: 'открыт к предложениям', city: 'Ташкент, UZ',
-heroText: 'Более **6 лет** создаю мобильные приложения для **банковской, финтех- и B2B-сферы** — от архитектуры до релиза и поддержки в продакшене. Также создаю **full-stack веб-платформы** на Kotlin/Spring Boot и Vue/React.',
-ctaProjects: 'смотреть проекты →',
-codeComment: '// Мобильный разработчик из Ташкента',
-stats: [{ key: 'experience', n: '6+', label: 'лет в мобильной разработке' }, { key: 'projects', n: '8', label: 'проектов: mobile и full-stack web' }, { key: 'branches', n: '60+', label: 'филиалов IDEA используют мои приложения' }, { key: 'google_play', n: '1', label: 'собственное приложение в Google Play' }],
-aboutKicker: '// обо мне', aboutTitle: 'Мобильная разработка — моя основная специализация',
-aboutParas: [
-'Я **Android- и iOS-разработчик** из Ташкента. Сейчас работаю в **Ипотека-банке (OTP Group)**: разрабатываю внутренние приложения банка — «Unduruv» для отдела проблемных кредитов и «Monitoring».',
-'Так как приложения банка работают во внутреннем контуре, я внедрил **In-App Update** — новые версии APK раздаются и устанавливаются через собственный backend, без Google Play.',
-'Знаю все основные архитектурные паттерны, а в работе использую самые актуальные — **MVI и MVVM** — поверх **Clean Architecture**. Мой pet-проект **«Farovon»** опубликован в Google Play.',
-'Помимо мобильной разработки делаю **full-stack проекты**: backend на **Kotlin + Spring Boot** (PostgreSQL, Redis, WebSocket) и frontend на **Vue 3 / React** — например, школьную платформу **IQ School** и сервис приглашений **WedLink**. Каждый день использую **Claude, ChatGPT и Gemini** для ускорения разработки и code review.'
-],
-skillsKicker: '// навыки', skillsTitle: 'Технологический стек',
-skillGroups: [{ k: 'android', title: 'Android', tag: 'основное' }, { k: 'ios', title: 'iOS', tag: 'основное' }, { k: 'arch', title: 'Архитектура', tag: 'подходы' }, { k: 'data', title: 'Данные и сеть', tag: 'библиотеки' }, { k: 'web', title: 'Backend и Web', tag: 'дополнительно' }, { k: 'tools', title: 'Инструменты и AI', tag: 'каждый день' }],
-expKicker: '// опыт работы', expTitle: '6 лет коммерческой разработки',
-jobs: [
-{ period: 'Июнь 2023 — сейчас', company: 'Ipotekabank (OTP Group)', sector: 'Банк', role: 'Android Developer', points: ['Разработал **«Unduruv»** для сотрудников взыскания — работает в продакшене и интегрировано с системой HardCollection банка.', 'Разработал **«Monitoring»** — приложение для мониторинга кредитных залогов с созданием актов на месте, интегрированное с системой **Prism**; multi-module (12 модулей), MVI, offline-first, WebRTC, Gemini AI.', 'Внедрил **In-App Update**: так как приложения внутренние, новые версии APK раздаются через собственный backend, без Google Play.', 'Архитектура — **MVI и MVVM** поверх Clean Architecture; владею и другими паттернами (MVP, MVC).', 'Интеграция с банковскими сервисами через REST API, Room, Google Maps API, Firebase.', 'Использую **Claude, ChatGPT и Gemini** для ускорения разработки и code review.'] },
-{ period: 'Сен 2022 — Май 2023', company: 'OO IDEA CONCEPT GROUP', sector: 'Ритейл', role: 'Android Developer', points: ['Разработал **«Idea Delivery»** — управление доставкой и отслеживание статусов заказов в реальном времени.', 'Создал приложение для сотрудников **60+ филиалов** по оформлению онлайн-рассрочки на товары.', 'Интеграция с сервером через REST API, локальное хранение данных, работа с картами.'] },
-{ period: 'Ноя 2020 — Дек 2022', company: 'E-Invoice', sector: 'Электронный документооборот', role: 'Android Developer', points: ['Приложение для налоговых и бухгалтерских документов: **счета-фактуры, акты, акты сверки**.', 'Просмотр, создание и подписание документов с интеграцией **ЭЦП**.', 'Поддержка и регулярные релизы в Google Play.'] }
-],
-projKicker: '// проекты', projTitle: 'Что я создал', featured: 'избранный проект', storeLabel: 'Открыть в Google Play →',
-caseBadge: 'Ipotekabank · в продакшене', nda: '// внутреннее приложение банка — код и скриншоты под NDA',
-cases: [
-{ kind: 'мониторинг залогов', name: 'Monitoring', desc: 'Приложение для сотрудников банка, которые выезжают на места и проводят мониторинг кредитных залогов: осматривают объект, пишут заключение и формируют акт прямо на месте. Интегрировано с банковской системой Prism.', features: ['Multi-module Clean Architecture: 12 feature-модулей, MVI / UDF', 'Offline-first: Room-кеш и очередь запросов с фоновой синхронизацией', 'Создание актов мониторинга и их генерация в PDF', 'Пошаговый мастер добавления нового залога', 'Геопозиция сотрудника в реальном времени (Foreground Service)', 'Чат сотрудников и звонки на WebRTC', 'AI-ассистент на Gemini', 'Вход по PIN и биометрии, JWT с авто-обновлением токена', 'Адаптивный UI для телефонов и планшетов, 3 языка'] },
-{ kind: 'взыскание проблемных кредитов', name: 'Unduruv', desc: 'Приложение для сотрудников отдела проблемных кредитов: работа с должниками в поле. Работает в продакшене и интегрировано с системой HardCollection банка.', features: ['Список должников с пагинацией (Paging 3) и детальная карточка кредита', 'Фиксация обещаний оплаты, отсрочек, штрафов и комментариев', 'Пошаговое сопровождение юридического процесса', 'Карты и геолокация: адреса должников, маршруты, трекинг сотрудника', 'Аудиозапись и чат', 'Статистика и графики эффективности', 'Офлайн-синхронизация, push и realtime-уведомления', 'Обновление APK через собственный backend (In-App Update)'] }
-],
-farovonDesc: 'Личный финансовый помощник с AI. Учёт бюджета, контроль расходов, кредитный калькулятор и советы от искусственного интеллекта в одном современном интерфейсе. Данные хранятся только на устройстве.',
-farovonFeatures: ['Голосовой ввод трат — сумма, категория и описание распознаются автоматически', 'AI-аналитик и чат-бот на Gemini', 'Кредитный калькулятор: аннуитет и дифференцированный, график в PDF', 'Курсы валют в реальном времени и конвертер', 'Работает офлайн, тёмная тема с glassmorphism'],
-projects: [
-{ kind: 'логистика', name: 'Idea Delivery', desc: 'Управление доставкой и отслеживание статусов заказов в реальном времени для внутреннего контроля.' },
-{ kind: 'ритейл / финтех', name: 'Онлайн-рассрочка', desc: 'Приложение для сотрудников 60+ филиалов: оформление онлайн-рассрочки на товары.' },
-{ kind: 'электронный документооборот', name: 'E-Invoice Mobile', desc: 'Электронные счета-фактуры, акты и акты сверки с подписанием через ЭЦП.' }
-],
-fsKicker: '// full-stack проекты', fsTitle: 'Web-платформы: frontend + backend', fsIntro: 'Помимо мобильной разработки создаю полноценные веб-платформы с нуля — backend на Kotlin/Spring Boot и frontend на Vue 3 или React.',
-shotTeacher: 'Учитель', shotDirector: 'Директор',
-iqDesc: 'Многоролевая платформа управления школой с несколькими филиалами: супер-админ, директор, администратор, учитель, ученик и родитель — у каждой роли свой кабинет.',
-iqFeatures: ['RBAC: 7 ролей с отдельными кабинетами и правами доступа', 'Филиалы школ на карте (Yandex Maps)', 'Посещаемость, оценки, домашние задания', 'Расписание с drag-and-drop: день / неделя / месяц', 'Онлайн-уроки и live-классы на LiveKit', 'Чат в реальном времени (WebSocket / STOMP)', 'AI-анализ учебников и генерация тестов с проверкой математики', 'Конструктор тестов с формулами (LaTeX / KaTeX) и экспортом', 'Поурочные планы и документы в PDF, отчёты в Excel', 'Финансы: зарплаты, бонусы, отчёты директора', 'Безопасность: JWT + refresh, Argon2, rate limiting, audit log', 'i18n: узбекский, русский, английский'],
-wedDesc: 'Платформа онлайн-приглашений на свадьбы и мероприятия: пользователь сам собирает интерактивное приглашение по шаблону, добавляет музыку, место на карте и собирает ответы гостей.',
-wedFeatures: ['Студия приглашений: шаблоны, live-превью, включение секций', 'Выбор музыки и анимации (Framer Motion, конфетти)', 'Место проведения на Yandex Maps', 'RSVP-ответы гостей и QR-коды', 'Чат с файлами и геолокацией', 'Оформление заказа и модерация через админку', 'Вход через Google OAuth2, JWT (15 мин / 7 дней) в Redis', 'Hexagonal Architecture на backend'],
-wedLink: 'Открыть wedlink.uz →',
-extraKicker: '// также могу помочь', extraTitle: 'Backend и веб',
-extras: [
-{ title: 'Backend на Spring Boot', desc: 'Серверная часть и REST API на Kotlin/Java + Spring Boot: PostgreSQL, Redis, Spring Security, WebSocket — в том числе бэкенд для собственного мобильного приложения.' },
-{ title: 'Создание веб-сайтов', desc: 'Разработка сайтов с нуля: от структуры и вёрстки до запуска.' },
-{ title: 'Поддержка сайтов', desc: 'Сопровождение работающих сайтов: исправление ошибок, новый функционал, обновления.' }
-],
-eduKicker: '// образование', eduTitle: 'Образование и языки', degree: 'Бакалавр',
-uni: 'Ташкентский университет информационных технологий им. Мухаммада аль-Хорезми (ТУИТ)', faculty: 'Компьютерный инжиниринг',
-langsTitle: 'Языки', spoken: ['Узбекский — родной', 'Русский', 'Английский', 'Таджикский'],
-contactTitle: 'Давайте обсудим ваш проект', contactText: 'Открыт к интересным предложениям в мобильной разработке.', location: 'Ташкент, Узбекистан',
-footer: 'сделано с Kotlin-мышлением',
-audLabel: 'вид:', audDev: 'для разработчика', audHr: 'простым языком',
-plainTitle: 'Коротко — простым языком', plainSub: 'Понятно, даже если вы не программист',
-plainRows: [{ k: 'Кто?', v: 'Разработчик мобильных приложений — для Android и iPhone. Опыт более 6 лет.' }, { k: 'Что делает?', v: 'Мобильные приложения для банков и компаний, их серверную часть и веб-сайты.' }, { k: 'Где?', v: 'Ипотека-банк (сейчас), сеть магазинов IDEA, сервис электронных документов E-Invoice.' }, { k: 'Результат', v: '8 проектов, приложения используются в 60+ филиалах, собственное приложение в Google Play.' }, { k: 'Связь', v: '+998 77 488-27-08 · Telegram @Programmer_2001' }],
-plainCta: 'Навыки простым языком',
-skillsTitleHr: 'Мои навыки — простым языком', skillsIntroDev: 'Технологический стек. Если вы не разработчик — выберите «простым языком», и я объясню, что означает каждый навык и какую пользу он даёт.', skillsIntroHr: 'Что означает каждый навык и какую пользу он приносит работодателю. Ниже — технические термины из этой области.',
-usedIn: 'Где применял:',
-gloss: [
-['Мобильные приложения — Android и iPhone', 'Создаю приложения для телефонов с нуля: для Android (Samsung, Xiaomi и др.) и для iPhone. Kotlin и Swift — основные языки, на которых пишутся такие приложения.', 'Ипотека-банк, IDEA, E-Invoice, Farovon'],
-['Современный дизайн экранов', 'Строю экраны приложения — кнопки, списки, анимации — современным способом: быстро работает, красиво выглядит, подстраивается под телефон и планшет.', 'Monitoring, Farovon'],
-['Аккуратная архитектура кода', 'Делю код на части и строю по чётким правилам. В итоге даже в большом приложении мало ошибок, новые функции добавляются быстро и дёшево, а другим разработчикам легко разобраться.', 'Monitoring (12 модулей), Unduruv'],
-['Работа без интернета', 'Приложение хранит данные на телефоне: работает даже без интернета, а когда связь появляется — само отправляет всё на сервер. Это критично для сотрудников банка, работающих «в поле».', 'Monitoring, Unduruv, Farovon'],
-['Связь с сервером', 'Приложение безопасно обменивается данными с сервером банка или компании: списки, документы, платежи. WebSocket — мгновенная доставка сообщений в реальном времени.', 'Все проекты'],
-['Серверная часть (backend)', 'Сам пишу и сервер, который стоит за приложением: база данных, пользователи, права доступа. То есть могу сделать проект от начала до конца в одиночку.', 'IQ School, WedLink'],
-['Веб-сайты', 'Создаю сайты и панели управления, работающие в браузере — например, систему управления школой или сервис свадебных приглашений.', 'IQ School, WedLink, этот сайт'],
-['Безопасность', 'Защищаю данные пользователей: вход по отпечатку пальца или PIN, безопасные токены, шифрование паролей. Для банковских приложений это обязательно.', 'Monitoring, IQ School'],
-['Карты и геолокация', 'Показываю в приложении карты, адреса и маршруты; делал систему отслеживания местоположения сотрудника в реальном времени.', 'Unduruv, Monitoring, IDEA'],
-['Звонки, чат, уведомления', 'Делаю видео/аудиозвонки и чат внутри приложения, а также push-уведомления на телефон.', 'Monitoring, IQ School'],
-['Искусственный интеллект (AI)', 'Встраиваю AI в приложения — например, финансовый помощник в Farovon. Каждый день использую AI-инструменты, чтобы работать быстрее.', 'Farovon, Monitoring, IQ School'],
-['Командная работа и релизы', 'Безопасно работаю с командой над одним кодом, публикую приложения в Google Play. Построил и систему обновления приложений без Play Market — через собственный сервер.', 'Ипотека-банк, Farovon']
-],
-termKicker: '// терминал', termTitle: 'Изучите сайт с помощью команд', termIntro: 'Как настоящий терминал: введите команду или нажмите одну из кнопок ниже. Например, help.',
-termPlaceholder: 'введите help…', termRun: 'run', termWelcome: 'Добро пожаловать в терминал портфолио Достонбека!', termWelcome2: "Введите 'help', чтобы увидеть список команд.",
-termHelp: ['whoami       — кто я', 'skills       — мои навыки', 'experience   — опыт работы', 'projects     — мои проекты', 'contact      — контакты', 'hire         — пригласить на работу', 'lang uz|ru|en — сменить язык', 'theme        — светлая/тёмная тема', 'mode dev|hr  — для разработчика / простым языком', 'clear        — очистить'],
-termNotFound: "команда не найдена: {c}. Попробуйте 'help'.", termHire: 'Отличный выбор! Напишите мне — отвечу быстро.',
-moreLabel: '+ ещё {n}', lessLabel: '− свернуть', swipe: 'листайте',
-bnav: [{ k: 'home', label: 'главная', href: '#top' }, { k: 'exp', label: 'опыт', href: '#experience' }, { k: 'proj', label: 'проекты', href: '#projects' }, { k: 'skills', label: 'стек', href: '#skills' }, { k: 'contact', label: 'связь', href: '#contact' }]
-}),
-uz: build({
-first: 'Dostonbek', last: 'Eshmurodov',
-nav: [{ num: '01.', label: 'men_haqimda', href: '#about' }, { num: '02.', label: 'tajriba', href: '#experience' }, { num: '03.', label: 'loyihalar', href: '#projects' }, { num: '04.', label: 'full-stack', href: '#fullstack' }, { num: '05.', label: 'ko‘nikmalar', href: '#skills' }, { num: '08.', label: 'aloqa', href: '#contact' }],
-themeLabel: 'Kunduzgi/tungi rejimni almashtirish',
-status: 'takliflarni ko‘rib chiqaman', city: 'Toshkent, UZ',
-heroText: '**6 yildan ortiq** vaqtdan beri **bank, fintech va B2B** sohalari uchun mobil ilovalar yarataman — arxitekturadan tortib relizgacha va prodakshnda qo‘llab-quvvatlashgacha. Shuningdek, Kotlin/Spring Boot va Vue/React’da **full-stack veb-platformalar** yarataman.',
-ctaProjects: 'loyihalarni ko‘rish →',
-codeComment: '// Toshkentlik mobil dasturchi',
-stats: [{ key: 'experience', n: '6+', label: 'yil mobil dasturlashda' }, { key: 'projects', n: '8', label: 'loyiha: mobil va full-stack web' }, { key: 'branches', n: '60+', label: 'IDEA filiallarida ilovalarim ishlatiladi' }, { key: 'google_play', n: '1', label: 'o‘z ilovam Google Play’da' }],
-aboutKicker: '// men haqimda', aboutTitle: 'Mobil dasturlash — asosiy mutaxassisligim',
-aboutParas: [
-'Men Toshkentlik **Android va iOS dasturchiman**. Hozir **Ipoteka-bankda (OTP Group)** ishlayman: bankning ichki ilovalarini ishlab chiqaman — muammoli kreditlar bo‘limi uchun «Unduruv» va «Monitoring».',
-'Bank ilovalari ichki tizimda ishlagani sababli **In-App Update**’ni joriy qildim — APK’ning yangi versiyalari o‘zimizning backend orqali tarqatiladi va o‘rnatiladi, Google Play’siz.',
-'Barcha asosiy arxitektura patternlarini bilaman, ishda esa eng dolzarblaridan — **MVI va MVVM** — **Clean Architecture** ustida foydalanaman. **«Farovon»** shaxsiy loyiham Google Play’da chop etilgan.',
-'Mobil dasturlashdan tashqari **full-stack loyihalar** qilaman: backend **Kotlin + Spring Boot**’da (PostgreSQL, Redis, WebSocket), frontend **Vue 3 / React**’da — masalan, **IQ School** maktab platformasi va **WedLink** taklifnomalar servisi. Har kuni **Claude, ChatGPT va Gemini**’dan dasturlash va code review’ni tezlashtirish uchun foydalanaman.'
-],
-skillsKicker: '// ko‘nikmalar', skillsTitle: 'Texnologiyalar steki',
-skillGroups: [{ k: 'android', title: 'Android', tag: 'asosiy' }, { k: 'ios', title: 'iOS', tag: 'asosiy' }, { k: 'arch', title: 'Arxitektura', tag: 'yondashuvlar' }, { k: 'data', title: 'Ma’lumotlar va tarmoq', tag: 'kutubxonalar' }, { k: 'web', title: 'Backend va Web', tag: 'qo‘shimcha' }, { k: 'tools', title: 'Vositalar va AI', tag: 'har kuni' }],
-expKicker: '// ish tajribasi', expTitle: '6 yillik tijoriy dasturlash',
-jobs: [
-{ period: 'Iyun 2023 — hozir', company: 'Ipotekabank (OTP Group)', sector: 'Bank', role: 'Android Developer', points: ['Undiruv xodimlari uchun **«Unduruv»** ilovasini ishlab chiqdim — prodakshnda ishlaydi va bankning HardCollection tizimiga integratsiya qilingan.', '**«Monitoring»** ilovasini ishlab chiqdim — kredit garovlarini monitoring qilish va joyida akt yaratish uchun, bankning **Prism** tizimiga ulangan; multi-module (12 modul), MVI, offline-first, WebRTC, Gemini AI.', '**In-App Update**’ni joriy qildim: ilovalar ichki bo‘lgani uchun APK’ning yangi versiyalari o‘zimizning backend orqali tarqatiladi, Google Play’siz.', 'Arxitektura — Clean Architecture ustida **MVI va MVVM**; boshqa patternlarni ham bilaman (MVP, MVC).', 'Bank servislari bilan REST API orqali integratsiya, Room, Google Maps API, Firebase.', 'Dasturlashni tezlashtirish uchun **Claude, ChatGPT va Gemini**’dan foydalanaman.'] },
-{ period: 'Sen 2022 — May 2023', company: 'OO IDEA CONCEPT GROUP', sector: 'Savdo', role: 'Android Developer', points: ['**«Idea Delivery»** ilovasini yaratdim — yetkazib berishni boshqarish va buyurtma holatlarini real vaqtda kuzatish.', '**60+ filial** xodimlari uchun tovarlarga onlayn muddatli to‘lov rasmiylashtirish ilovasini yaratdim.', 'Server bilan REST API orqali integratsiya, lokal ma’lumot saqlash, xaritalar bilan ishlash.'] },
-{ period: 'Noy 2020 — Dek 2022', company: 'E-Invoice', sector: 'Elektron hujjat aylanishi', role: 'Android Developer', points: ['Soliq va buxgalteriya hujjatlari uchun ilova: **hisob-fakturalar, dalolatnomalar, solishtirma dalolatnomalar**.', 'Hujjatlarni ko‘rish, yaratish va **ERI** orqali imzolash.', 'Qo‘llab-quvvatlash va Google Play’da muntazam relizlar.'] }
-],
-projKicker: '// loyihalar', projTitle: 'Men yaratgan loyihalar', featured: 'tanlangan loyiha', storeLabel: 'Google Play’da ochish →',
-caseBadge: 'Ipotekabank · prodakshnda', nda: '// bankning ichki ilovasi — kod va skrinshotlar NDA ostida',
-cases: [
-{ kind: 'kredit garovlari monitoringi', name: 'Monitoring', desc: 'Bank xodimlari uchun ilova: xodimlar joyiga chiqib kredit garovlarini monitoring qiladi — obyektni ko‘zdan kechiradi, xulosa yozadi va o‘sha yerning o‘zida akt yaratadi. Bankning Prism tizimiga ulangan.', features: ['Multi-module Clean Architecture: 12 ta feature-modul, MVI / UDF', 'Offline-first: Room-kesh va so‘rovlar navbati, fonda sinxronizatsiya', 'Monitoring aktlarini yaratish va PDF’ga generatsiya qilish', 'Yangi garov qo‘shish uchun bosqichma-bosqich master', 'Xodim joylashuvini real vaqtda uzatish (Foreground Service)', 'Xodimlar chati va WebRTC qo‘ng‘iroqlari', 'Gemini asosidagi AI-yordamchi', 'PIN va biometriya orqali kirish, JWT tokenni avtomatik yangilash', 'Telefon va planshet uchun moslashuvchan UI, 3 til'] },
-{ kind: 'muammoli kreditlarni undirish', name: 'Unduruv', desc: 'Muammoli kreditlar bo‘limi xodimlari uchun ilova: qarzdorlar bilan joyida ishlash. Prodakshnda ishlaydi va bankning HardCollection tizimiga integratsiya qilingan.', features: ['Qarzdorlar ro‘yxati pagination bilan (Paging 3) va kreditning batafsil kartasi', 'To‘lov va’dalari, kechiktirish, jarimalar va izohlarni qayd etish', 'Yuridik jarayonni bosqichma-bosqich yuritish', 'Xarita va geolokatsiya: qarzdor manzillari, marshrutlar, xodim trekingi', 'Audio yozuv va chat', 'Statistika va samaradorlik grafiklari', 'Oflayn sinxronizatsiya, push va realtime-bildirishnomalar', 'APK’ni o‘zimizning backend orqali yangilash (In-App Update)'] }
-],
-farovonDesc: 'AI bilan ishlaydigan shaxsiy moliya yordamchisi. Byudjet hisobi, xarajatlar nazorati, kredit kalkulyatori va sun’iy intellekt maslahatlari bitta zamonaviy interfeysda. Ma’lumotlar faqat qurilmada saqlanadi.',
-farovonFeatures: ['Xarajatlarni ovoz bilan kiritish — summa, kategoriya va tavsif avtomatik aniqlanadi', 'Gemini asosidagi AI-tahlilchi va chat-bot', 'Kredit kalkulyatori: annuitet va differensial, jadval PDF’da', 'Real vaqtdagi valyuta kurslari va konvertor', 'Oflayn ishlaydi, glassmorphism uslubidagi tungi dizayn'],
-projects: [
-{ kind: 'logistika', name: 'Idea Delivery', desc: 'Ichki nazorat uchun yetkazib berishni boshqarish va buyurtma holatlarini real vaqtda kuzatish.' },
-{ kind: 'savdo / fintech', name: 'Onlayn muddatli to‘lov', desc: '60+ filial xodimlari uchun ilova: tovarlarga onlayn muddatli to‘lov rasmiylashtirish.' },
-{ kind: 'elektron hujjat aylanishi', name: 'E-Invoice Mobile', desc: 'Elektron hisob-fakturalar, dalolatnomalar va ERI orqali imzolash.' }
-],
-fsKicker: '// full-stack loyihalar', fsTitle: 'Web-platformalar: frontend + backend', fsIntro: 'Mobil dasturlashdan tashqari to‘liq veb-platformalarni noldan yarataman — backend Kotlin/Spring Boot’da, frontend Vue 3 yoki React’da.',
-shotTeacher: 'O‘qituvchi', shotDirector: 'Direktor',
-iqDesc: 'Bir nechta filialli maktabni boshqarish uchun ko‘p rolli platforma: super-admin, direktor, administrator, o‘qituvchi, o‘quvchi va ota-ona — har bir rolning o‘z kabineti bor.',
-iqFeatures: ['RBAC: alohida kabinet va huquqlarga ega 7 ta rol', 'Maktab filiallari xaritada (Yandex Maps)', 'Davomat, baholash, uy vazifalari', 'Drag-and-drop dars jadvali: kun / hafta / oy', 'LiveKit’da onlayn darslar va live-sinflar', 'Real vaqtdagi chat (WebSocket / STOMP)', 'Darsliklarni AI bilan tahlil qilish va matematikani tekshirib test yaratish', 'Formulali test konstruktori (LaTeX / KaTeX) va eksport', 'Dars rejalari va hujjatlar PDF’da, hisobotlar Excel’da', 'Moliya: oyliklar, bonuslar, direktor hisobotlari', 'Xavfsizlik: JWT + refresh, Argon2, rate limiting, audit log', 'i18n: o‘zbek, rus, ingliz'],
-wedDesc: 'To‘y va tadbirlar uchun onlayn taklifnomalar platformasi: foydalanuvchi shablon asosida interaktiv taklifnomani o‘zi yig‘adi, musiqa, xaritadagi manzil qo‘shadi va mehmonlar javoblarini yig‘adi.',
-wedFeatures: ['Taklifnoma studiyasi: shablonlar, live-ko‘rinish, bo‘limlarni yoqish/o‘chirish', 'Musiqa tanlash va animatsiyalar (Framer Motion, konfetti)', 'To‘y manzili Yandex Maps’da', 'Mehmonlarning RSVP javoblari va QR-kodlar', 'Fayl va geolokatsiya yuboriladigan chat', 'Buyurtma rasmiylashtirish va admin orqali moderatsiya', 'Google OAuth2 orqali kirish, JWT (15 daq / 7 kun) Redis’da', 'Backend’da Hexagonal Architecture'],
-wedLink: 'wedlink.uz’ni ochish →',
-extraKicker: '// yana yordam bera olaman', extraTitle: 'Backend va veb',
-extras: [
-{ title: 'Spring Boot’da backend', desc: 'Kotlin/Java + Spring Boot’da server qismi va REST API: PostgreSQL, Redis, Spring Security, WebSocket — jumladan, o‘z mobil ilovam uchun backend.' },
-{ title: 'Veb-saytlar yaratish', desc: 'Saytlarni noldan ishlab chiqish: tuzilmadan tortib maketlash va ishga tushirishgacha.' },
-{ title: 'Saytlarni qo‘llab-quvvatlash', desc: 'Ishlab turgan saytlarni yuritish: xatolarni tuzatish, yangi funksiyalar, yangilanishlar.' }
-],
-eduKicker: '// ta’lim', eduTitle: 'Ta’lim va tillar', degree: 'Bakalavr',
-uni: 'Muhammad al-Xorazmiy nomidagi Toshkent axborot texnologiyalari universiteti (TATU)', faculty: 'Kompyuter injiniringi',
-langsTitle: 'Tillar', spoken: ['O‘zbek — ona tili', 'Rus tili', 'Ingliz tili', 'Tojik tili'],
-contactTitle: 'Loyihangizni muhokama qilamiz', contactText: 'Mobil dasturlash sohasidagi qiziqarli takliflarga ochiqman.', location: 'Toshkent, O‘zbekiston',
-footer: 'Kotlin fikrlashi bilan yaratilgan',
-audLabel: 'ko‘rinish:', audDev: 'dasturchi uchun', audHr: 'oddiy tilda',
-plainTitle: 'Qisqacha — oddiy tilda', plainSub: 'Dasturlashni bilmasangiz ham tushunarli',
-plainRows: [{ k: 'Kim?', v: 'Telefon ilovalarini yaratadigan dasturchi — Android va iPhone uchun. 6 yildan ortiq tajriba.' }, { k: 'Nima qiladi?', v: 'Banklar va kompaniyalar uchun mobil ilovalar, ularning server qismi hamda veb-saytlar.' }, { k: 'Qayerda?', v: 'Ipoteka-bank (hozir), IDEA do‘konlar tarmog‘i, E-Invoice elektron hujjatlar xizmati.' }, { k: 'Natija', v: '8 ta loyiha, ilovalari 60+ filialda ishlatiladi, o‘z ilovasi Google Play’da.' }, { k: 'Aloqa', v: '+998 77 488-27-08 · Telegram @Programmer_2001' }],
-plainCta: 'Bilimlari oddiy tilda',
-skillsTitleHr: 'Bilimlarim — oddiy tilda', skillsIntroDev: 'Texnologiyalar steki. Dasturchi bo‘lmasangiz, «oddiy tilda» ni tanlang — har bir bilim nima ekanini va qanday foyda berishini tushuntirib beraman.', skillsIntroHr: 'Har bir bilim nima ekani va ish beruvchiga qanday foyda berishi. Pastda — shu sohadagi texnik atamalar.',
-usedIn: 'Qayerda ishlatganman:',
-gloss: [
-['Mobil ilovalar — Android va iPhone', 'Telefon uchun ilovalarni noldan yarataman: Android (Samsung, Xiaomi va boshqalar) va iPhone uchun. Kotlin va Swift — shu ilovalar yoziladigan asosiy dasturlash tillari.', 'Ipoteka-bank, IDEA, E-Invoice, Farovon'],
-['Zamonaviy ekran dizayni', 'Ilova ekranlarini — tugmalar, ro‘yxatlar, animatsiyalar — zamonaviy usulda quraman: tez ishlaydi, chiroyli ko‘rinadi, telefon va planshetga moslashadi.', 'Monitoring, Farovon'],
-['Tartibli kod arxitekturasi', 'Kodni qismlarga ajratib, aniq qoidalar asosida quraman. Natijada ilova katta bo‘lsa ham xato kam, yangi funksiya qo‘shish tez va arzon, boshqa dasturchilar ham oson tushunadi.', 'Monitoring (12 modul), Unduruv'],
-['Internetsiz ishlash', 'Ilova ma’lumotni telefonda saqlaydi: internet yo‘q joyda ham ishlayveradi, internet paydo bo‘lganda hammasini serverga o‘zi yuboradi. Ko‘chada ishlaydigan bank xodimlari uchun juda muhim.', 'Monitoring, Unduruv, Farovon'],
-['Server bilan aloqa', 'Ilova bank yoki kompaniya serveri bilan xavfsiz ma’lumot almashadi: ro‘yxatlar, hujjatlar, to‘lovlar. WebSocket — xabarlarni darhol, real vaqtda yetkazish.', 'Barcha loyihalar'],
-['Server qismi (backend)', 'Ilova ortida turadigan serverni ham o‘zim yozaman: ma’lumotlar bazasi, foydalanuvchilar, huquqlar. Ya’ni loyihani boshidan oxirigacha bir o‘zim qila olaman.', 'IQ School, WedLink'],
-['Veb-saytlar', 'Brauzerda ishlaydigan saytlar va boshqaruv panellarini yarataman — masalan, maktabni boshqarish tizimi yoki to‘y taklifnomalari xizmati.', 'IQ School, WedLink, shu sayt'],
-['Xavfsizlik', 'Foydalanuvchi ma’lumotlarini himoya qilaman: barmoq izi yoki PIN bilan kirish, xavfsiz tokenlar, parollarni shifrlash. Bank ilovalari uchun bu majburiy.', 'Monitoring, IQ School'],
-['Xarita va joylashuv', 'Ilovada xarita, manzil va marshrutlarni ko‘rsataman; xodim joylashuvini real vaqtda kuzatish tizimini qilganman.', 'Unduruv, Monitoring, IDEA'],
-['Qo‘ng‘iroq, chat, bildirishnomalar', 'Ilova ichida video/audio qo‘ng‘iroq, chat va telefonga keladigan push-xabarlarni qilaman.', 'Monitoring, IQ School'],
-['Sun’iy intellekt (AI)', 'AI’ni ilovaga qo‘shaman — masalan, Farovon’dagi moliyaviy maslahatchi. Ishimni tezlashtirish uchun AI vositalaridan har kuni foydalanaman.', 'Farovon, Monitoring, IQ School'],
-['Jamoada ishlash va relizlar', 'Jamoa bilan bitta kod ustida xavfsiz ishlayman, ilovalarni Google Play’ga chiqaraman. Play Market’siz, o‘z serverimiz orqali yangilash tizimini ham qurganman.', 'Ipoteka-bank, Farovon']
-],
-termKicker: '// terminal', termTitle: 'Saytni buyruqlar bilan o‘rganing', termIntro: 'Haqiqiy terminal kabi: buyruq yozing yoki pastdagi tugmalardan birini bosing. Masalan, help.',
-termPlaceholder: 'help deb yozing…', termRun: 'run', termWelcome: 'Xush kelibsiz! Dostonbek’ning portfolio terminali.', termWelcome2: "Buyruqlar ro‘yxati uchun 'help' deb yozing.",
-termHelp: ['whoami       — men kimman', 'skills       — bilimlarim', 'experience   — ish tajribam', 'projects     — loyihalarim', 'contact      — bog‘lanish', 'hire         — ishga taklif qilish', 'lang uz|ru|en — tilni almashtirish', 'theme        — kunduzgi/tungi rejim', 'mode dev|hr  — dasturchi / oddiy til', 'clear        — tozalash'],
-termNotFound: "buyruq topilmadi: {c}. 'help' deb yozib ko‘ring.", termHire: 'Ajoyib tanlov! Menga yozing — tezda javob beraman.',
-moreLabel: '+ yana {n} ta', lessLabel: '− yig‘ish', swipe: 'suring',
-bnav: [{ k: 'home', label: 'bosh', href: '#top' }, { k: 'exp', label: 'tajriba', href: '#experience' }, { k: 'proj', label: 'loyiha', href: '#projects' }, { k: 'skills', label: 'stek', href: '#skills' }, { k: 'contact', label: 'aloqa', href: '#contact' }]
-}),
-en: build({
-first: 'Dostonbek', last: 'Eshmurodov',
-nav: [{ num: '01.', label: 'about', href: '#about' }, { num: '02.', label: 'experience', href: '#experience' }, { num: '03.', label: 'projects', href: '#projects' }, { num: '04.', label: 'full-stack', href: '#fullstack' }, { num: '05.', label: 'skills', href: '#skills' }, { num: '08.', label: 'contact', href: '#contact' }],
-themeLabel: 'Toggle light/dark theme',
-status: 'open to offers', city: 'Tashkent, UZ',
-heroText: 'For **6+ years** I have been building mobile apps for **banking, fintech and B2B** — from architecture to release and production support. I also build **full-stack web platforms** with Kotlin/Spring Boot and Vue/React.',
-ctaProjects: 'view projects →',
-codeComment: '// Mobile developer from Tashkent',
-stats: [{ key: 'experience', n: '6+', label: 'years in mobile development' }, { key: 'projects', n: '8', label: 'projects: mobile and full-stack web' }, { key: 'branches', n: '60+', label: 'IDEA branches use my apps' }, { key: 'google_play', n: '1', label: 'own app on Google Play' }],
-aboutKicker: '// about me', aboutTitle: 'Mobile development is my core specialization',
-aboutParas: [
-'I am an **Android and iOS developer** from Tashkent. I currently work at **Ipoteka Bank (OTP Group)**, building the bank’s internal apps — “Unduruv” for the problem-loans department and “Monitoring”.',
-'Because the bank’s apps run inside its internal network, I implemented **In-App Update** — new APK versions are distributed and installed through our own backend, without Google Play.',
-'I know all the major architecture patterns and work with today’s most relevant ones — **MVI and MVVM** — on top of **Clean Architecture**. My pet project **“Farovon”** is published on Google Play.',
-'Beyond mobile, I build **full-stack projects**: backends in **Kotlin + Spring Boot** (PostgreSQL, Redis, WebSocket) and frontends in **Vue 3 / React** — for example the **IQ School** platform and the **WedLink** invitation service. Every day I use **Claude, ChatGPT and Gemini** to speed up development and code review.'
-],
-skillsKicker: '// skills', skillsTitle: 'Tech stack',
-skillGroups: [{ k: 'android', title: 'Android', tag: 'core' }, { k: 'ios', title: 'iOS', tag: 'core' }, { k: 'arch', title: 'Architecture', tag: 'approaches' }, { k: 'data', title: 'Data & networking', tag: 'libraries' }, { k: 'web', title: 'Backend & Web', tag: 'additional' }, { k: 'tools', title: 'Tools & AI', tag: 'daily' }],
-expKicker: '// experience', expTitle: '6 years of commercial development',
-jobs: [
-{ period: 'Jun 2023 — present', company: 'Ipotekabank (OTP Group)', sector: 'Banking', role: 'Android Developer', points: ['Built **“Unduruv”** for collection officers — running in production and integrated with the bank’s HardCollection system.', 'Built **“Monitoring”** — a collateral-monitoring app with on-site act creation, integrated with the bank’s **Prism** system; multi-module (12 modules), MVI, offline-first, WebRTC, Gemini AI.', 'Implemented **In-App Update**: since the apps are internal, new APK versions ship through our own backend, without Google Play.', 'Architecture: **MVI and MVVM** on top of Clean Architecture; also fluent in MVP and MVC.', 'Integrations with banking services via REST API, Room, Google Maps API, Firebase.', 'Use **Claude, ChatGPT and Gemini** to speed up development and code review.'] },
-{ period: 'Sep 2022 — May 2023', company: 'OO IDEA CONCEPT GROUP', sector: 'Retail', role: 'Android Developer', points: ['Built **“Idea Delivery”** — delivery management and real-time order status tracking.', 'Created an app for staff of **60+ branches** to issue online installment plans for goods.', 'REST API integration, local data storage and maps.'] },
-{ period: 'Nov 2020 — Dec 2022', company: 'E-Invoice', sector: 'E-document management', role: 'Android Developer', points: ['App for tax and accounting documents: **invoices, acts and reconciliation statements**.', 'Viewing, creating and signing documents with **digital signature (EDS)** integration.', 'Maintenance and regular releases on Google Play.'] }
-],
-projKicker: '// projects', projTitle: 'What I have built', featured: 'featured project', storeLabel: 'Open on Google Play →',
-caseBadge: 'Ipotekabank · in production', nda: '// internal bank app — code and screenshots under NDA',
-cases: [
-{ kind: 'collateral monitoring', name: 'Monitoring', desc: 'An app for bank staff who go out into the field to monitor loan collateral: they inspect the asset, write a conclusion and create an act right on the spot. Integrated with the bank’s Prism system.', features: ['Multi-module Clean Architecture: 12 feature modules, MVI / UDF', 'Offline-first: Room cache and request queue with background sync', 'Monitoring acts created in-app and generated as PDF', 'Step-by-step wizard for adding new collateral', 'Real-time staff location (Foreground Service)', 'Staff chat and WebRTC calls', 'Gemini-powered AI assistant', 'PIN and biometric login, JWT with automatic token refresh', 'Adaptive UI for phones and tablets, 3 languages'] },
-{ kind: 'problem-loan collection', name: 'Unduruv', desc: 'An app for the problem-loans department to work with debtors in the field. Running in production and integrated with the bank’s HardCollection system.', features: ['Paginated debtor list (Paging 3) and detailed loan card', 'Logging payment promises, deferrals, penalties and comments', 'Step-by-step legal process tracking', 'Maps and geolocation: debtor addresses, routes, staff tracking', 'Audio recording and chat', 'Statistics and performance charts', 'Offline sync, push and real-time notifications', 'APK updates through our own backend (In-App Update)'] }
-],
-farovonDesc: 'An AI-powered personal finance assistant. Budget tracking, expense control, a loan calculator and AI advice in one modern interface. Data stays on the device.',
-farovonFeatures: ['Voice expense entry — amount, category and description recognized automatically', 'Gemini-powered AI analyst and chatbot', 'Loan calculator: annuity and differentiated, schedule exported to PDF', 'Real-time currency rates and converter', 'Works offline, dark theme with glassmorphism'],
-projects: [
-{ kind: 'logistics', name: 'Idea Delivery', desc: 'Delivery management and real-time order status tracking for internal control.' },
-{ kind: 'retail / fintech', name: 'Online installments', desc: 'App for staff of 60+ branches to issue online installment plans for goods.' },
-{ kind: 'e-document management', name: 'E-Invoice Mobile', desc: 'Electronic invoices, acts and reconciliation statements with EDS signing.' }
-],
-fsKicker: '// full-stack projects', fsTitle: 'Web platforms: frontend + backend', fsIntro: 'Beyond mobile, I build complete web platforms from scratch — backend in Kotlin/Spring Boot, frontend in Vue 3 or React.',
-shotTeacher: 'Teacher', shotDirector: 'Director',
-iqDesc: 'A multi-role management platform for a school with several branches: super admin, director, administrator, teacher, student and parent — each role has its own dashboard.',
-iqFeatures: ['RBAC: 7 roles with dedicated dashboards and permissions', 'School branches on a map (Yandex Maps)', 'Attendance, grading and homework', 'Drag-and-drop timetable: day / week / month', 'Online lessons and live classes on LiveKit', 'Real-time chat (WebSocket / STOMP)', 'AI textbook analysis and test generation with math validation', 'Test builder with formulas (LaTeX / KaTeX) and export', 'Lesson plans and documents as PDF, reports in Excel', 'Finance: payroll, bonuses, director reports', 'Security: JWT + refresh, Argon2, rate limiting, audit log', 'i18n: Uzbek, Russian, English'],
-wedDesc: 'An online invitation platform for weddings and events: users build an interactive invitation from a template, add music and a venue on the map, and collect guest responses.',
-wedFeatures: ['Invitation studio: templates, live preview, section toggles', 'Music picker and animations (Framer Motion, confetti)', 'Venue location on Yandex Maps', 'Guest RSVP responses and QR codes', 'Chat with files and location sharing', 'Order checkout and admin moderation', 'Google OAuth2 login, JWT (15 min / 7 days) in Redis', 'Hexagonal Architecture on the backend'],
-wedLink: 'Open wedlink.uz →',
-extraKicker: '// I can also help with', extraTitle: 'Backend & web',
-extras: [
-{ title: 'Spring Boot backend', desc: 'Server side and REST APIs in Kotlin/Java + Spring Boot: PostgreSQL, Redis, Spring Security, WebSocket — including the backend for my own mobile apps.' },
-{ title: 'Website development', desc: 'Building websites from scratch: from structure and layout to launch.' },
-{ title: 'Website support', desc: 'Maintaining live websites: bug fixes, new features and updates.' }
-],
-eduKicker: '// education', eduTitle: 'Education & languages', degree: 'Bachelor’s degree',
-uni: 'Tashkent University of Information Technologies named after Muhammad al-Khwarizmi (TUIT)', faculty: 'Computer Engineering',
-langsTitle: 'Languages', spoken: ['Uzbek — native', 'Russian', 'English', 'Tajik'],
-contactTitle: 'Let’s talk about your project', contactText: 'Open to interesting opportunities in mobile development.', location: 'Tashkent, Uzbekistan',
-footer: 'built with a Kotlin mindset',
-audLabel: 'view:', audDev: 'for developers', audHr: 'plain language',
-plainTitle: 'In short — plain language', plainSub: 'Clear even if you are not technical',
-plainRows: [{ k: 'Who?', v: 'A developer who builds phone apps — for Android and iPhone. 6+ years of experience.' }, { k: 'What?', v: 'Mobile apps for banks and companies, their server side, and websites.' }, { k: 'Where?', v: 'Ipoteka Bank (now), the IDEA retail chain, the E-Invoice e-document service.' }, { k: 'Results', v: '8 projects, apps used in 60+ branches, own app on Google Play.' }, { k: 'Contact', v: '+998 77 488-27-08 · Telegram @Programmer_2001' }],
-plainCta: 'Skills in plain language',
-skillsTitleHr: 'My skills — in plain language', skillsIntroDev: 'Tech stack. Not a developer? Pick “plain language” and I will explain what each skill means and how it helps your business.', skillsIntroHr: 'What each skill means and how it benefits an employer. Below each — the technical terms from that area.',
-usedIn: 'Where I used it:',
-gloss: [
-['Mobile apps — Android and iPhone', 'I build phone apps from scratch: for Android (Samsung, Xiaomi and others) and for iPhone. Kotlin and Swift are the main languages these apps are written in.', 'Ipoteka Bank, IDEA, E-Invoice, Farovon'],
-['Modern screen design', 'I build app screens — buttons, lists, animations — the modern way: fast, good-looking, and adapting to phones and tablets.', 'Monitoring, Farovon'],
-['Clean code architecture', 'I split code into parts and follow clear rules. Even a large app stays low on bugs, new features are quick and cheap to add, and other developers understand it easily.', 'Monitoring (12 modules), Unduruv'],
-['Works without internet', 'The app stores data on the phone, keeps working offline, and sends everything to the server once the connection is back. Critical for bank staff working in the field.', 'Monitoring, Unduruv, Farovon'],
-['Talking to the server', 'The app exchanges data securely with the bank or company server: lists, documents, payments. WebSocket delivers messages instantly, in real time.', 'All projects'],
-['Server side (backend)', 'I also write the server behind the app: database, users, permissions. So I can deliver a project end to end on my own.', 'IQ School, WedLink'],
-['Websites', 'I build websites and admin panels that run in the browser — for example a school management system or a wedding invitation service.', 'IQ School, WedLink, this site'],
-['Security', 'I protect user data: fingerprint or PIN login, secure tokens, password encryption. Mandatory for banking apps.', 'Monitoring, IQ School'],
-['Maps and location', 'I show maps, addresses and routes in apps, and built real-time staff location tracking.', 'Unduruv, Monitoring, IDEA'],
-['Calls, chat, notifications', 'I add in-app video/audio calls, chat, and push notifications to the phone.', 'Monitoring, IQ School'],
-['Artificial intelligence (AI)', 'I build AI into apps — like the financial assistant in Farovon — and use AI tools every day to work faster.', 'Farovon, Monitoring, IQ School'],
-['Teamwork and releases', 'I work safely with a team on one codebase and publish apps to Google Play. I also built an update system that ships new versions through our own server, without the Play Store.', 'Ipoteka Bank, Farovon']
-],
-termKicker: '// terminal', termTitle: 'Explore the site with commands', termIntro: 'Like a real terminal: type a command or tap one of the buttons below. Try help.',
-termPlaceholder: 'type help…', termRun: 'run', termWelcome: "Welcome to Dostonbek's portfolio terminal!", termWelcome2: "Type 'help' to see the list of commands.",
-termHelp: ['whoami       — who I am', 'skills       — my skills', 'experience   — work history', 'projects     — my projects', 'contact      — get in touch', 'hire         — make me an offer', 'lang uz|ru|en — switch language', 'theme        — light/dark theme', 'mode dev|hr  — developer / plain language', 'clear        — clear screen'],
-termNotFound: "command not found: {c}. Try 'help'.", termHire: 'Great choice! Write to me — I reply fast.',
-moreLabel: '+ {n} more', lessLabel: '− show less', swipe: 'swipe',
-bnav: [{ k: 'home', label: 'home', href: '#top' }, { k: 'exp', label: 'work', href: '#experience' }, { k: 'proj', label: 'projects', href: '#projects' }, { k: 'skills', label: 'stack', href: '#skills' }, { k: 'contact', label: 'contact', href: '#contact' }]
-})
-};
-}
-}
-
-window.__dcStart(Component, {"defaultLang": "ru", "defaultDark": true});
 </script>
 </body>
 </html>
